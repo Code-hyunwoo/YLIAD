@@ -15,7 +15,14 @@ function Home(){
         <div className={base.container}> 
             <BrowserView>
                 <div className={styles.P_container}>
-                    <span className={styles.title_P}>YLIAD</span>
+                    <div>
+                        <span className={styles.title_P}>Y</span>
+                        <span className={styles.title_P}>L</span>
+                        <span className={styles.title_P}>I</span>
+                        <span className={styles.title_P}>A</span>
+                        <span className={styles.title_P}>D</span>
+                    </div>
+
                     <span className={styles.subtitle_P}>  
                         나의 하루 나의 이야기
                     </span>
@@ -30,7 +37,13 @@ function Home(){
             </BrowserView>
             <MobileView>
                 <div className={styles.M_container}>
-                    <span className={styles.title_M}>YLIAD</span>
+                <div>
+                        <span className={styles.title_M}>Y</span>
+                        <span className={styles.title_M}>L</span>
+                        <span className={styles.title_M}>I</span>
+                        <span className={styles.title_M}>A</span>
+                        <span className={styles.title_M}>D</span>
+                    </div>
                     <span className={styles.subtitle_M}>  
                         나의 하루 나의 이야기
                     </span>
