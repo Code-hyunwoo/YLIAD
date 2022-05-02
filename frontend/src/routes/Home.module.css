@@ -17,6 +17,7 @@
     border-color: white;
     border-color: #ffed54;
     border-width: 0.4vw;
+    margin-top: 10vh;
 }
 
 .title_P {
@@ -115,7 +116,7 @@
 }
 
 
-#btn1_P:hover{transform:scale(1.1);}
+#btn1_P:hover{transform:scale(1.2);}
 #btn1_P:after{
     content:''; 
     position: absolute; 
@@ -138,6 +139,7 @@
 .M_container{
     display: flex;
     flex-direction: column;
+    margin-top: 5rem;
 }
 
 
@@ -203,14 +205,14 @@
     width: 6rem;
     position: relative;
     left: 2.5rem;
-    top: 6rem;
+    top: 10rem;
     margin-bottom: 5rem;
 }
 
 #fire_M {
     width: 10rem;
     position: relative;
-    top: 6rem;
+    top: 10rem;
     /* right: rem; */
     margin-bottom: 5rem;
 }
@@ -227,14 +229,14 @@
     text-align: center;
     margin-bottom: 1rem;
     position: relative;
-    top: 1.5rem;
+    top: 7rem;
     left: 0.2rem;
 
     transition:0.5s all; 
     overflow:hidden;
 }
 
-#btn1_M:hover{transform:scale(1.1);}
+#btn1_M:hover{transform:scale(1.2);}
 #btn1_M:after{
     content:''; 
     position: absolute; 
