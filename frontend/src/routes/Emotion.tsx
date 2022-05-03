@@ -33,7 +33,6 @@ function Emotion(){
                         moveToSelectDiary('red')}} id={styles.redbox}> red </div>
                     <div onClick={()=>{
                         moveToSelectDiary('pink')}} id={styles.pinkbox}> pink </div>
-                    <Link to="/lobby"><button> 로비로 이동 </button></Link>
                 </div>
             </BrowserView>
 
@@ -53,8 +52,6 @@ function Emotion(){
                         moveToSelectDiary('red')}} id={styles.redbox_M}> red </div>
                     <div onClick={()=>{
                         moveToSelectDiary('pink')}} id={styles.pinkbox_M}> pink </div>
-                    <Link to="/lobby"><button> 로비로 이동 </button></Link>
-                    <Link to="/selectdiary"><button> 일기 선택 </button></Link>
             </div>
 
             </MobileView>
