@@ -69,8 +69,8 @@ function App() {
           <Route path="/clinic" element={<Clinic />}></Route>
           <Route path="/trash" element={<Trash />}></Route>
           <Route path="/setting" element={<Setting />}></Route>
-          <Route path="/emotion" element={<Emotion />}></Route>
-          <Route path="/selectdiary" element={<SelectDiary />}></Route>
+          <Route path="/emotion/:date" element={<Emotion />}></Route>
+          <Route path="/selectdiary/:date/:emotion" element={<SelectDiary />}></Route>
           <Route path="/voicediary" element={<VoiceDiary />}></Route>
           <Route path="/textdiary" element={<TextDiary />}></Route>
           <Route path="/daydiary" element={<DayDiary />}></Route>
