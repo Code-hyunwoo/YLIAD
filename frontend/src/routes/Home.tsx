@@ -25,7 +25,7 @@ function Home(){
                     </div>
 
                     <span className={styles.subtitle_P}>  
-                        나의 하루 나의 이야기
+                        나의 하루, 나의 이야기
                     </span>
                     <div>
                         <Campfire ></Campfire>
@@ -46,7 +46,7 @@ function Home(){
                         <span className={styles.title_M}>D</span>
                     </div>
                     <span className={styles.subtitle_M}>  
-                        나의 하루 나의 이야기
+                        나의 하루, 나의 이야기
                     </span>
                     <div>
                         <Campfire ></Campfire>
