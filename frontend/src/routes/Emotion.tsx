@@ -27,7 +27,7 @@ function Emotion(){
                 <div className={styles.P_container}>
                     <p> 감정 선택 </p>
                     <div onClick={()=>{
-                        moveToSelectDiary('green')}} id={styles.greenbox}> green </div>
+                        moveToSelectDiary('green')}} id={styles.greenbox}> 녹색 </div>
                     <div onClick={()=>{
                         moveToSelectDiary('purple')}} id={styles.purplebox}> purple </div>
                     <div onClick={()=>{
