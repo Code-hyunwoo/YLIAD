@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WebViewKt</string>
+    <string name="title">비밀번호 입력</string>
+</resources>
