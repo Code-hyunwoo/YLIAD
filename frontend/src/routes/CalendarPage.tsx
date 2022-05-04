@@ -9,7 +9,7 @@ import moment from 'moment';
 import Modal from "@mui/material/Modal";
 import Read from "../assets/images/read.png"
 import Write from "../assets/images/write.png"
-import Stars from "../components/layout/Stars"
+import Stars2 from "../components/layout/Stars2"
 import Navbar from "../components/layout/Navbar";
 
 function CalendarPage(){
@@ -38,7 +38,7 @@ function CalendarPage(){
 
     return (
         <>
-        <Stars/>
+        <Stars2/>
         <Navbar />
         <div className={base.container}> 
             <BrowserView>
