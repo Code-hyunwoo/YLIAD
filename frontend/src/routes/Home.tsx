@@ -38,6 +38,7 @@ function Home(){
                     <Link to="/lobby"><button id={styles.btn1_P}> 로비로 이동 </button></Link>
                     <button id={styles.btn1_P}>로그인</button>
                     <button id={styles.btn1_P}>회원가입</button>
+                    
                 </div>
                 
                 
