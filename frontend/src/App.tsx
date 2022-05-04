@@ -20,8 +20,8 @@ import Alarm from "./routes/Alarm";
 import MyStar from "./assets/audio/MyStar.mp3"
 import Paesaggio from "./assets/audio/Paesaggio.mp3"
 import Summer from "./assets/audio/Summer.mp3"
-import Music from "./assets/images/music4.png"
-import Musicoff from "./assets/images/mute5.png"
+import Music from "./assets/images/music6.png"
+import Musicoff from "./assets/images/mute7.png"
 import "./App.css";
 import { BrowserView, MobileView } from 'react-device-detect';
 
@@ -101,7 +101,6 @@ function App() {
         <img className='Bgm_M' src={Musicoff} alt="music" onClick={BackgroundMusic}/>
         }
       </MobileView>
-      
 
 
     </div>

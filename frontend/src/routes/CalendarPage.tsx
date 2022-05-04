@@ -9,6 +9,8 @@ import moment from 'moment';
 import Modal from "@mui/material/Modal";
 import Read from "../assets/images/read.png"
 import Write from "../assets/images/write.png"
+import Stars from "../components/layout/Stars"
+import Navbar from "../components/layout/Navbar";
 
 function CalendarPage(){
 
@@ -35,6 +37,9 @@ function CalendarPage(){
     }
 
     return (
+        <>
+        <Stars/>
+        <Navbar />
         <div className={base.container}> 
             <BrowserView>
                 <div className='P_container'>
@@ -66,8 +71,6 @@ function CalendarPage(){
                         </div>
                     </div>
                 </Modal>
-
-                <Link to="/lobby"><button> 로비로 이동 </button></Link>
             </BrowserView>
 
             <MobileView>
@@ -103,6 +106,7 @@ function CalendarPage(){
             </MobileView>
 
         </div>
+        </>
     );
 }
 
