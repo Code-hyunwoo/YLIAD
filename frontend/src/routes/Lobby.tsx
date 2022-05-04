@@ -19,7 +19,7 @@ function Lobby(){
     return (
         <>
             <Navbar />
-            <Stars />
+            {/* <Stars /> */}
             <Stars2 />
                 {/* <img src={moon} className={Styles.moon}/>
                 <img src={star} className={Styles.star1}/>
