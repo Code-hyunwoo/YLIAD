@@ -31,7 +31,7 @@ function Emotion(){
                     <div onClick={()=>{
                         moveToSelectDiary('purple')}} id={styles.purplebox}> 보라 </div>
                     <div onClick={()=>{
-                        moveToSelectDiary('yellow')}} id={styles.yellowbox}> yellow </div>
+                        moveToSelectDiary('yellow')}} id={styles.yellowbox}> 노랑 </div>
                     <div onClick={()=>{
                         moveToSelectDiary('blue')}} id={styles.bluebox}> blue </div>
                     <div onClick={()=>{
