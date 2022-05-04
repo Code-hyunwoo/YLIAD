@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import base from "./Base.module.css"
+import Stars2 from "../components/layout/Stars2"
 
 
 function Setting(){
 
     return (
+        <>
+        <Stars2 />
         <div className={base.container}> 
             <h1>환경설정</h1>
 
@@ -15,6 +18,7 @@ function Setting(){
             <Link to="/passwordchange"><button> 비밀번호 변경 </button></Link>
             <Link to="/alarm"><button> 알림기능 </button></Link>
         </div>
+        </>
     );
 }
 

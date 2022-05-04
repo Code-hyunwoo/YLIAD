@@ -3,6 +3,8 @@ import base from "./Base.module.css"
 import { BrowserView, MobileView } from 'react-device-detect';
 import styles from "./Emotion.module.css"
 import { useNavigate, useParams } from "react-router-dom";
+import Stars from "../components/layout/Stars"
+import Navbar from "../components/layout/Navbar";
 
 
 function Emotion(){
@@ -17,6 +19,9 @@ function Emotion(){
 
 
     return (
+        <>
+        <Stars />
+        <Navbar />
         <div className={base.container}> 
             <BrowserView>
                 <div className={styles.P_container}>
@@ -53,10 +58,10 @@ function Emotion(){
                     <div onClick={()=>{
                         moveToSelectDiary('pink')}} id={styles.pinkbox_M}> pink </div>
             </div>
-
             </MobileView>
 
         </div>
+        </>
     );
 }
 

@@ -5,6 +5,8 @@ import man from "../assets/images/man.png"
 import fire from "../assets/images/fire.png"
 import { BrowserView, MobileView } from 'react-device-detect';
 import Campfire from "../components/Campfire";
+import Stars2 from "../components/layout/Stars2"
+
 
 
 
@@ -13,6 +15,8 @@ function Home(){
 
 
     return (
+        <>
+        <Stars2 />  
         <div className={base.container}> 
             <BrowserView>
                 <div className={styles.P_container}>
@@ -35,6 +39,8 @@ function Home(){
                     <button id={styles.btn1_P}>로그인</button>
                     <button id={styles.btn1_P}>회원가입</button>
                 </div>
+                
+                
             </BrowserView>
             <MobileView>
                 <div className={styles.M_container}>
@@ -58,6 +64,7 @@ function Home(){
                 </div>
             </MobileView>
         </div>
+        </>
     );
 }
 

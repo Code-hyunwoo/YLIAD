@@ -5,6 +5,8 @@ import styles from "./SelectDiary.module.css"
 import Voice from "../assets/images/voice.png"
 import Text from "../assets/images/text.png"
 import { useNavigate, useParams } from "react-router-dom";
+import Stars from "../components/layout/Stars"
+import Navbar from "../components/layout/Navbar";
 
 function SelectDiary(){
     
@@ -24,6 +26,9 @@ function SelectDiary(){
     }
 
     return (
+        <>
+        <Stars />
+        <Navbar />
         <div className={base.container}> 
              <BrowserView>
                 <div className={styles.P_container}>
@@ -45,10 +50,8 @@ function SelectDiary(){
                 <div id={styles.texttext_M}>문자 작성</div>         
             </div>
             </MobileView>
-
-
-
         </div>
+        </>
     );
 }
 
