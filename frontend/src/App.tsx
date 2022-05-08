@@ -64,7 +64,7 @@ function App() {
  
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename='/'>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/lobby" element={<Lobby />}></Route>
