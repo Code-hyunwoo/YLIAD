@@ -1,11 +1,12 @@
 
 var path = require('path');
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'); 
 
 
 module.exports = {
     mode: 'development',  // production, development, none  배포할 때는 production
-    entry: './App.tsx',
+    entry: './src/index.tsx',
     // 웹 자원을 변환하기위해 필요한 최초 진입점이자 자바스크립트 파일경로
     // entry 속성에 지정된 파일에는 웹 에플리케이션의 전반적인 구조와 내용이 담겨져 있어야 함.
 
@@ -16,7 +17,8 @@ module.exports = {
     },
     module: {
     // 웹팩으로 변환할 때 적용되는 loader들을 추가할 수 있다. 
-        rules: [{
+        rules: [
+            {
 			test: /\.(mp3|ogg)$/,      // 로더를 적용할 파일 유형
 			exclude: /(node_modules|bower_components)/,
 			use: {    // 해당 파일에 적용할 로더의 이름 
@@ -27,21 +29,58 @@ module.exports = {
 
 				}
 			}
-		}]
+		},
+        {
+            test: /\.(ts|tsx)$/,
+            use: [
+              'babel-loader',
+              {
+                loader: 'ts-loader',
+                options: {
+                  transpileOnly: true,
+                },
+              },
+            ],
+            exclude: /node_modules/,
+          },
+          {
+            test: /\.(png|jpe?g|gif|woff|woff2|ttf|svg|ico)$/i,
+            exclude: /(node_modules|bower_components)/,
+            use: [
+              {
+                loader: 'file-loader',
+              },
+            ],
+          },
+          {
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader'],
+          }
+        
+    ]
     },
-    // Plugin: [
-    //     new HtmlWebpackPlugin({
-    //         // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
-    //         template: 'index.html',
-    //       }),
-    // ]
+    plugins: [
+        // new HtmlWebpackPlugin({
+        //     // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
+        //     template: './src/index.html',
+        //     filename: 'index.html',
+        //   }),
+        new ForkTsCheckerWebpackPlugin(),
+    ],
     // 플러그인은 웹팩의 기본적인 동작에 추가적인 기능을 제공하는 속성
     // 로더랑 비교하면 로더는 파일을 해석하고 변환하는 과정에 관여하는 반면,
     // 플러그인은 해당 결과물의 형태를 바꾸는 역할 
 
-    // devServer: {
-    //     port: 9000,
-    //   },
+    devServer: {
+        historyApiFallback:true,
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js'],
+        alias: {
+          '@': path.resolve(__dirname, '../src/'),
+        },
+      },
+    devtool: "source-map"
     // resolve: {
     //     alias: {
     //       'vue$': 'vue/dist/vue.esm.js'
