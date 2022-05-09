@@ -22,7 +22,6 @@ public class User {
     private String nickname;
 
     @Builder
-
     public User(Long id, String password, String nickname) {
         this.id = id;
         this.password = password;
