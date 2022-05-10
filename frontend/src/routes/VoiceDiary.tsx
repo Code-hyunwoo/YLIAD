@@ -37,7 +37,7 @@ function VoiceDiary(){
 
 
     return (
-        <>
+        <div className={Styles.totalP}>
             <Navbar />
             <Stars2 />
             <BrowserView >
@@ -84,7 +84,7 @@ function VoiceDiary(){
                     </div>
                 {/* </div> */}
             </MobileView>
-        </>
+        </div>
     );
 }
 
