@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -20,6 +22,13 @@ public class User {
     private String password;
 
     private String nickname;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    private final List<User_diary> user_diary = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @JoinColumn(name="settingId")
+    private Setting setting;
 
     @Builder
     public User(Long id, String password, String nickname) {
