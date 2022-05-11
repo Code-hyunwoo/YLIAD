@@ -24,7 +24,7 @@ public class User {
     private String nickname;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true)
-    private final List<User_diary> user_diary = new ArrayList<>();
+    private final List<UserDiary> user_diary = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true)
     @JoinColumn(name="settingId")
