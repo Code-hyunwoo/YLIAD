@@ -4,14 +4,19 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import base from "./Base.module.css";
 import styles from "./Trash2.module.css";
+import { toast, ToastContainer } from "react-toastify";
 
 function Trash2() {
   const [text, setText] = useState<string>("");
   const [isburned, setIsburned] = useState<boolean>(false);
   function burn() {
-    setIsburned(true);
-    // setIsburned((prev) => !prev);
-    // console.log("clicked!", isburned);
+    if (text === "") {
+      alert("안 좋았던 기억을 입력하세요!");
+    } else {
+      setIsburned(true);
+      // setIsburned((prev) => !prev);
+      // console.log("clicked!", isburned);
+    }
   }
   function addTrash() {
     setIsburned(false);
@@ -19,6 +24,7 @@ function Trash2() {
   }
   return (
     <>
+      <ToastContainer />
       <Navbar />
       <BrowserView>
         <div className={base.container}>
@@ -120,27 +126,51 @@ function Trash2() {
             </div>
           </div>
           <div className={styles.input}>
-            <p>
-              지우고 싶은 기억을
-              <br />
-              불태우세요
-            </p>
-            <textarea
-              id={styles.text}
-              name="textdiary"
-              value={text}
-              onChange={(ev: React.ChangeEvent<HTMLTextAreaElement>): void =>
-                setText(ev.target.value)
-              }
-              className={isburned ? styles.burn : undefined}
-            />
-            <button onClick={addTrash}>추가 작성하기</button>
-            <span className={styles.burnButton} onClick={burn}>
-              Burn it
-            </span>
             <Link to="/lobby">
               <button> 로비로 이동 </button>
             </Link>
+            {isburned ? (
+              <p>
+                태우는중입니다..
+                <br />
+                모두 잊어버리세요!
+              </p>
+            ) : (
+              <p>
+                지우고 싶은 기억
+                <br />
+                여기에 놓고 가세요
+              </p>
+            )}
+            <div className={styles.letterContainer}>
+              {isburned && (
+                <div
+                  id={styles.addButton}
+                  onClick={addTrash}
+                  className={isburned ? styles.showButton : undefined}
+                >
+                  추가하기
+                </div>
+              )}
+              <textarea
+                id={styles.text}
+                name="textdiary"
+                value={text}
+                onChange={(ev: React.ChangeEvent<HTMLTextAreaElement>): void =>
+                  setText(ev.target.value)
+                }
+                className={isburned ? styles.burn : undefined}
+              />
+              {/* <div id={styles.burnButton} onClick={burn} hidden={isburned}> */}
+              <div
+                id={styles.burnButton}
+                onClick={burn}
+                className={isburned ? styles.hideButton : undefined}
+              >
+                태우기
+              </div>
+            </div>
+            <ToastContainer />
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>

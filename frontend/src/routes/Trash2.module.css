@@ -525,52 +525,107 @@
   font-family: "SDMiSaeng";
 }
 
-.burnButton {
-  width: 100%;
-  font-size: 1.5rem;
+.letterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#addButton {
+  width: 40%;
+  top: 50%;
+  font-size: 1rem;
   font-style: italic;
-  float: left;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  letter-spacing: 0.2rem;
+  color: #ffc107;
+  font-family: "Open Sans Condensed", sans-serif;
+  border: 0.1rem solid #ffc107;
+  position: absolute;
+}
+
+.showButton {
+  animation: fadein 10s forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#burnButton {
+  width: 40%;
+  font-size: 1rem;
+  font-style: italic;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
   margin: 1.875rem 0 0;
   letter-spacing: 0.2rem;
   color: #ffc107;
   font-family: "Open Sans Condensed", sans-serif;
+  border: 0.1rem solid #ffc107;
 }
-.burnButton:before {
-  content: "— ";
+
+.hideButton {
+  animation: fadeout2 2s forwards;
 }
-.burnButton::after {
-  content: " —";
+
+@keyframes fadeout2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 #text {
   width: 13rem;
   height: 20rem;
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0 0.5rem 0;
   padding-left: 2rem;
   padding-right: 2rem;
   line-height: 1.55rem;
   font-family: "SDMiSaeng";
   font-size: 2rem;
-  color: white;
+  /* color: white; */
+  color: black;
   letter-spacing: 0.05rem;
   word-spacing: 0.3rem;
-  background-color: rgba(173, 212, 246, 0);
+  /* background-color: rgba(173, 212, 246, 0); */
+  /* background-color: #ffd45d; */
+  background-color: blanchedalmond;
   background-image: repeating-linear-gradient(
-    rgba(119, 191, 246, 0) 0px,
-    rgba(119, 191, 246, 0) 24px,
-    rgb(113, 125, 250) 25px
+    rgba(119, 191, 246, 0) 0,
+    rgba(119, 191, 246, 0) 1.5rem,
+    rgb(113, 125, 250) 1.563rem
   );
+  border: none;
 }
 
 .burn {
-  animation: fadeout 5s forwards;
+  animation: fadeout1 ease-in 10s forwards;
 }
 
-@keyframes fadeout {
-  from {
+@keyframes fadeout1 {
+  0% {
+    transform: translateY(0);
     opacity: 1;
   }
-  to {
+  30% {
+    transform: translateY(9rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(18rem) scale(0.5);
     opacity: 0;
   }
 }
