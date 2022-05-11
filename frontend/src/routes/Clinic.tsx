@@ -12,7 +12,8 @@ function Clinic(){
         <Stars2 />
         <div className={base.container}> 
             <h1>클리닉</h1>
-        
+         인공지능 대화 
+         아 완전 귀찮은데 오늘 꼭 한다
         </div>
         </>
     );
