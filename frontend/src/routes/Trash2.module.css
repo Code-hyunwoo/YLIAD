@@ -244,7 +244,7 @@
     transform: translateY(-175px) translateX(-50px) scale(1);
   }
 }
-p {
+.inputP {
   color: white;
   position: absolute;
   left: 50%;
@@ -254,7 +254,7 @@ p {
   font-size: 42px;
   font-family: "Cinzel", serif;
 }
-p span {
+.inputP span {
   width: 100%;
   font-size: 22px;
   font-style: italic;
@@ -264,7 +264,7 @@ p span {
   color: #ffc107;
   font-family: "Open Sans Condensed", sans-serif;
 }
-p span:before {
+.inputP span:before {
   content: "— ";
 }
 
@@ -506,18 +506,26 @@ p span:before {
     transform: translateY(-175px) translateX(-50px) scale(1);
   }
 }
-p {
-  color: white;
+.input {
+  /* color: #ff9800; */
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 48%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 2rem;
-  font-family: "SDMiSaeng";
-  z-index: 10;
+  z-index: 2;
 }
-p span {
+.input p {
+  background: linear-gradient(#ff9800 0%, #ffc107 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: "SDMiSaeng";
+}
+
+.burnButton {
   width: 100%;
   font-size: 1.5rem;
   font-style: italic;
@@ -527,6 +535,42 @@ p span {
   color: #ffc107;
   font-family: "Open Sans Condensed", sans-serif;
 }
-p span:before {
+.burnButton:before {
   content: "— ";
+}
+.burnButton::after {
+  content: " —";
+}
+
+#text {
+  width: 13rem;
+  height: 20rem;
+  margin: 1rem 0 1rem 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 1.55rem;
+  font-family: "SDMiSaeng";
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 0.05rem;
+  word-spacing: 0.3rem;
+  background-color: rgba(173, 212, 246, 0);
+  background-image: repeating-linear-gradient(
+    rgba(119, 191, 246, 0) 0px,
+    rgba(119, 191, 246, 0) 24px,
+    rgb(113, 125, 250) 25px
+  );
+}
+
+.burn {
+  animation: fadeout 5s forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
