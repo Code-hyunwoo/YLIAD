@@ -49,9 +49,6 @@ function Trash2() {
             <textarea />
             <button>불태워 지우기</button>
             <span className={styles.authorP}>Burn it</span>
-            <Link to="/lobby">
-              <button> 로비로 이동 </button>
-            </Link>
           </p>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
@@ -114,9 +111,6 @@ function Trash2() {
             <textarea />
             <button>불태워 지우기</button>
             <span className={styles.author}>Burn it</span>
-            <Link to="/lobby">
-              <button> 로비로 이동 </button>
-            </Link>
           </p>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
