@@ -9,15 +9,18 @@ import { toast, ToastContainer } from "react-toastify";
 function Trash2() {
   const [text, setText] = useState<string>("");
   const [isburned, setIsburned] = useState<boolean>(false);
+
+  // 태우기 버튼
   function burn() {
-    if (text === "") {
+    // 앞뒤 공백제거 후 문자 없으면 alert
+    if (text.trim() === "") {
       alert("안 좋았던 기억을 입력하세요!");
     } else {
       setIsburned(true);
-      // setIsburned((prev) => !prev);
-      // console.log("clicked!", isburned);
     }
   }
+
+  // 추가하기 버튼
   function addTrash() {
     setIsburned(false);
     setText("");
@@ -161,7 +164,6 @@ function Trash2() {
                 }
                 className={isburned ? styles.burn : undefined}
               />
-              {/* <div id={styles.burnButton} onClick={burn} hidden={isburned}> */}
               <div
                 id={styles.burnButton}
                 onClick={burn}
