@@ -1,9 +1,14 @@
 server:
-  port: 8000
+  port: 8001
 
 spring:
   application:
     name: apigateway-service
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     gateway:
       default-filters:
@@ -13,14 +18,14 @@ spring:
             preLogger: true
             postLogger: true
       routes:
-#        - id: member-service
-#          uri: lb://MEMBER-SERVICE
-#          predicates:
-#            - Path=/member-service/**
-#          filters:
-#            - AddRequestHeader=first-request, first-request-header2
-#            - AddResponseHeader=first-response, first-response-header2
-#            - CustomFilter
+        #        - id: member-service
+        #          uri: lb://MEMBER-SERVICE
+        #          predicates:
+        #            - Path=/member-service/**
+        #          filters:
+        #            - AddRequestHeader=first-request, first-request-header2
+        #            - AddResponseHeader=first-response, first-response-header2
+        #            - CustomFilter
         - id: member-service
           uri: lb://MEMBER-SERVICE
           predicates:
@@ -81,17 +86,12 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://k6a308.p.ssafy.io:8761/eureka
-
+      defaultZone: http://discovery-service:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
-token:
-  expiration-time: 86400000
-  secret: tokenusersecretbabypizzacommonohmygodkimchi0123456894ASDWFER
 
 management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans, info, httptrace
+        include: refresh, health, beans, info, httptrace, busrefresh
