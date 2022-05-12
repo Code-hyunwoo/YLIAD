@@ -607,7 +607,10 @@
   word-spacing: 0.3rem;
   /* background-color: rgba(173, 212, 246, 0); */
   /* background-color: #ffd45d; */
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
+  background-color: transparent;
+  background-image: url("../assets/images/whitepaper.png");
+  background-size: 17rem 24rem;
   /* background-image: repeating-linear-gradient(
     rgba(119, 191, 246, 0) 0,
     rgba(119, 191, 246, 0) 1.5rem,
@@ -627,14 +630,14 @@
   }
   30% {
     transform: translateY(10rem);
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     opacity: 1;
   }
   45% {
   }
   100% {
     transform: translateY(20rem) scale(0.6);
-    background-color: #ff6600;
+    /* background-color: #ff6600; */
     opacity: 0;
   }
 }

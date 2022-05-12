@@ -164,7 +164,9 @@ function Trash2() {
                   setText(ev.target.value)
                 }
                 className={isburned ? styles.burn : undefined}
+                spellCheck="false"
               />
+              {/* <img src={paper} alt="paper" width="130rem" height="240rem" /> */}
               <div
                 id={styles.burnButton}
                 onClick={burn}
