@@ -615,7 +615,7 @@
     rgba(119, 191, 246, 0) 0,
     rgba(119, 191, 246, 0) 1.5rem,
     rgb(92, 93, 103) 1.563rem
-  ); */
+    ); */
   border: none;
 }
 
@@ -628,16 +628,17 @@
     transform: translateY(0);
     opacity: 1;
   }
-  30% {
+  20% {
     transform: translateY(10rem);
-    /* background-color: blanchedalmond; */
     opacity: 1;
   }
-  45% {
+  75% {
+    background-image: url("../assets/images/burningpaper.png");
+    opacity: 0.8;
   }
   100% {
+    background-image: url("../assets/images/burningpaper.png");
     transform: translateY(20rem) scale(0.6);
-    /* background-color: #ff6600; */
     opacity: 0;
   }
 }
