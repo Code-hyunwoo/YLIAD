@@ -534,26 +534,28 @@
 #addButton {
   width: 40%;
   top: 50%;
-  font-size: 1rem;
+  font-size: 2rem;
   font-style: italic;
   padding-top: 0.35rem;
   padding-bottom: 0.35rem;
   letter-spacing: 0.2rem;
   color: #ffc107;
-  font-family: "Open Sans Condensed", sans-serif;
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  font-family: "SDMiSaeng";
   border: 0.1rem solid #ffc107;
   position: absolute;
+  border-radius: 0.5rem;
 }
 
 .showButton {
-  animation: fadein 10s forwards;
+  animation: fadein 16s forwards;
 }
 
 @keyframes fadein {
   0% {
     opacity: 0;
   }
-  70% {
+  80% {
     opacity: 0;
   }
   100% {
@@ -563,15 +565,18 @@
 
 #burnButton {
   width: 40%;
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  font-size: 2rem;
   font-style: italic;
   padding-top: 0.35rem;
   padding-bottom: 0.35rem;
   margin: 1.875rem 0 0;
   letter-spacing: 0.2rem;
   color: #ffc107;
-  font-family: "Open Sans Condensed", sans-serif;
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  font-family: "SDMiSaeng";
   border: 0.1rem solid #ffc107;
+  border-radius: 0.5rem;
 }
 
 .hideButton {
@@ -603,16 +608,16 @@
   /* background-color: rgba(173, 212, 246, 0); */
   /* background-color: #ffd45d; */
   background-color: blanchedalmond;
-  background-image: repeating-linear-gradient(
+  /* background-image: repeating-linear-gradient(
     rgba(119, 191, 246, 0) 0,
     rgba(119, 191, 246, 0) 1.5rem,
-    rgb(113, 125, 250) 1.563rem
-  );
+    rgb(92, 93, 103) 1.563rem
+  ); */
   border: none;
 }
 
 .burn {
-  animation: fadeout1 ease-in 10s forwards;
+  animation: fadeout1 ease-in 16s forwards;
 }
 
 @keyframes fadeout1 {
@@ -622,10 +627,14 @@
   }
   30% {
     transform: translateY(9rem);
+    background-color: blanchedalmond;
     opacity: 1;
   }
+  45% {
+  }
   100% {
-    transform: translateY(18rem) scale(0.5);
+    transform: translateY(14rem) scale(0.6);
+    background-color: #ff6600;
     opacity: 0;
   }
 }
