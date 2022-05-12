@@ -5,7 +5,7 @@ import Navbar from "../components/layout/Navbar";
 import base from "./Base.module.css";
 import styles from "./Trash2.module.css";
 import { toast, ToastContainer } from "react-toastify";
-import paper from "../assets/images/paper.png";
+import "react-toastify/dist/ReactToastify.css";
 
 function Trash2() {
   const [text, setText] = useState<string>("");
@@ -15,7 +15,15 @@ function Trash2() {
   function burn() {
     // 앞뒤 공백제거 후 문자 없으면 alert
     if (text.trim() === "") {
-      alert("안 좋았던 기억을 입력하세요!");
+      // alert("안 좋았던 기억을 입력하세요!");
+      toast.error("잊고 싶은 일을 써보세요", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+      });
     } else {
       setIsburned(true);
     }
@@ -28,8 +36,8 @@ function Trash2() {
   }
   return (
     <>
-      <ToastContainer />
       <Navbar />
+      <ToastContainer />
       <BrowserView>
         <div className={base.container}>
           <div className={styles.backP}></div>
@@ -98,7 +106,6 @@ function Trash2() {
       <MobileView>
         <div className={base.container}>
           <div className={styles.back}></div>
-          <div className={styles.light}></div>
           <div className={styles.content}>
             <div className={styles.fire}>
               <div className={styles.bottom}></div>
@@ -129,36 +136,7 @@ function Trash2() {
               <div></div>
             </div>
           </div>
-          {/* <div className={styles.content}>
-            <div className={styles.fire}>
-              <div className={styles.bottom}></div>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-              <figure></figure>
-            </div>
-            <div className={styles.reverse}>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div> */}
+
           <div className={styles.input}>
             <Link to="/lobby">
               <button> 로비로 이동 </button>
@@ -204,7 +182,6 @@ function Trash2() {
                 태우기
               </div>
             </div>
-            <ToastContainer />
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>

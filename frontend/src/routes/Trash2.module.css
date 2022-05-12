@@ -272,28 +272,12 @@
 
 .back {
   background: #141e30;
-  /* background: rgba(255, 255, 255, 0); */
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-}
-
-.light {
-  width: 100%;
-  height: 100%;
-  animation: firelight 2s ease infinite;
-  background: radial-gradient(
-    ellipse at bottom,
-    rgba(255, 193, 7, 0.15) 0%,
-    rgba(255, 193, 7, 0) 90%
-  );
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  bottom: 0;
+  z-index: -1;
 }
 
 @keyframes firelight {
@@ -317,6 +301,7 @@
   overflow: hidden;
   border-radius: 100%;
 }
+
 .content .fire {
   filter: url(#goo);
   position: absolute;
@@ -567,7 +552,7 @@
   font-style: italic;
   padding-top: 0.35rem;
   padding-bottom: 0.35rem;
-  margin: 1.875rem 0 0;
+  margin: 1rem 0 0;
   letter-spacing: 0.2rem;
   color: #ffc107;
   font-family: "SDMiSaeng";
@@ -576,7 +561,7 @@
 }
 
 .hideButton {
-  animation: fadeout2 2s forwards;
+  animation: fadeout2 1s forwards;
 }
 
 @keyframes fadeout2 {
@@ -591,7 +576,7 @@
 #text {
   width: 12rem;
   height: 20rem;
-  margin: 1rem 0 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   padding: 2rem 2rem 1rem 2.5rem;
   line-height: 1.55rem;
   font-family: "SDMiSaeng";
@@ -602,7 +587,6 @@
   background-color: transparent;
   background-image: url("../assets/images/whitepaper.png");
   background-size: 17rem 24rem;
-
   border: none;
 }
 
