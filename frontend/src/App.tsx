@@ -25,6 +25,7 @@ import Musicoff from "./assets/images/mute7.png"
 import "./App.css";
 import { BrowserView, MobileView } from 'react-device-detect';
 import VoiceDiary4 from './routes/VoiceDiary4';
+import STT from './routes/STT';
 
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
           <Route path="/fontchange" element={<FontChange />}></Route>
           <Route path="/infochange" element={<InfoChange />}></Route>
           <Route path="/alarm" element={<Alarm />}></Route>
+          <Route path="/stt" element={<STT />}></Route>
         </Routes>
       </BrowserRouter>
       
