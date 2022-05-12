@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import Lobby from "./routes/Lobby";
 import CalendarPage from "./routes/CalendarPage";
@@ -8,7 +8,6 @@ import Trash from "./routes/Trash2";
 import Setting from "./routes/Setting";
 import Emotion from "./routes/Emotion";
 import SelectDiary from "./routes/SelectDiary";
-import VoiceDiary from "./routes/VoiceDiary";
 import TextDiary from "./routes/TextDiary";
 import DayDiary from "./routes/DayDiary";
 import Mypage from "./routes/Mypage";
@@ -24,6 +23,7 @@ import Music from "./assets/images/music6.png";
 import Musicoff from "./assets/images/mute7.png";
 import "./App.css";
 import { BrowserView, MobileView } from "react-device-detect";
+import VoiceDiary4 from "./routes/VoiceDiary4";
 
 function App() {
   const [bgmOn, setbgmOn] = useState<boolean>(false);
@@ -71,9 +71,10 @@ function App() {
             path="/selectdiary/:date/:color"
             element={<SelectDiary />}
           ></Route>
+          {/* <Route path="/voicediary/:date/:color" element={<VoiceDiary />}></Route> */}
           <Route
             path="/voicediary/:date/:color"
-            element={<VoiceDiary />}
+            element={<VoiceDiary4 />}
           ></Route>
           <Route path="/textdiary/:date/:color" element={<TextDiary />}></Route>
           <Route path="/daydiary" element={<DayDiary />}></Route>
