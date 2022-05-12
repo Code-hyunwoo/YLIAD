@@ -494,7 +494,7 @@
 .input {
   position: absolute;
   left: 50%;
-  top: 48%;
+  top: 44%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;
@@ -505,7 +505,7 @@
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-family: "SDMiSaeng";
 }
 
@@ -552,7 +552,7 @@
   font-style: italic;
   padding-top: 0.35rem;
   padding-bottom: 0.35rem;
-  margin: 1rem 0 0;
+  margin: 2rem 0 0;
   letter-spacing: 0.2rem;
   color: #ffc107;
   font-family: "SDMiSaeng";
@@ -600,11 +600,11 @@
     opacity: 1;
   }
   20% {
-    transform: translateY(10rem);
+    transform: translateY(12rem);
     background-image: url("../assets/images/whitepaper.png");
     opacity: 1;
   }
-  40% {
+  45% {
     background-image: url("../assets/images/burningpaper.png");
     opacity: 1;
   }
@@ -614,7 +614,7 @@
   }
   100% {
     background-image: url("../assets/images/burningpaper.png");
-    transform: translateY(20rem) scale(0.3);
+    transform: translateY(22rem) scale(0.3);
     opacity: 0;
   }
 }

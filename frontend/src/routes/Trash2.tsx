@@ -136,11 +136,7 @@ function Trash2() {
               <div></div>
             </div>
           </div>
-
           <div className={styles.input}>
-            <Link to="/lobby">
-              <button> 로비로 이동 </button>
-            </Link>
             {isburned ? (
               <p>
                 태우는중입니다..
