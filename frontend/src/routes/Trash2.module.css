@@ -593,11 +593,10 @@
 }
 
 #text {
-  width: 13rem;
-  height: 24rem;
+  width: 12rem;
+  height: 20rem;
   margin: 1rem 0 0.5rem 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 2rem 2rem 1rem 2.5rem;
   line-height: 1.55rem;
   font-family: "SDMiSaeng";
   font-size: 2rem;
@@ -629,16 +628,21 @@
     opacity: 1;
   }
   20% {
-    transform: translateY(10rem);
+    transform: translateY(12rem);
+    background-image: url("../assets/images/whitepaper.png");
     opacity: 1;
   }
-  75% {
+  35% {
     background-image: url("../assets/images/burningpaper.png");
-    opacity: 0.8;
+    opacity: 1;
+  }
+  50% {
+    background-image: url("../assets/images/burningpaper.png");
+    opacity: 0.7;
   }
   100% {
     background-image: url("../assets/images/burningpaper.png");
-    transform: translateY(20rem) scale(0.6);
+    transform: translateY(20rem) scale(0.5);
     opacity: 0;
   }
 }
