@@ -555,7 +555,7 @@
   0% {
     opacity: 0;
   }
-  80% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -619,7 +619,7 @@
 }
 
 .burn {
-  animation: fadeout1 ease-in 7s forwards;
+  animation: fadeout1 ease-out 7s forwards;
 }
 
 @keyframes fadeout1 {
@@ -632,17 +632,17 @@
     background-image: url("../assets/images/whitepaper.png");
     opacity: 1;
   }
-  35% {
+  40% {
     background-image: url("../assets/images/burningpaper.png");
     opacity: 1;
   }
-  50% {
+  65% {
     background-image: url("../assets/images/burningpaper.png");
-    opacity: 0.7;
+    opacity: 0.4;
   }
   100% {
     background-image: url("../assets/images/burningpaper.png");
-    transform: translateY(20rem) scale(0.5);
+    transform: translateY(20rem) scale(0.3);
     opacity: 0;
   }
 }
