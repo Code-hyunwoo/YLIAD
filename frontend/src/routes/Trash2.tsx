@@ -129,6 +129,36 @@ function Trash2() {
               <div></div>
             </div>
           </div>
+          {/* <div className={styles.content}>
+            <div className={styles.fire}>
+              <div className={styles.bottom}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+            </div>
+            <div className={styles.reverse}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div> */}
           <div className={styles.input}>
             <Link to="/lobby">
               <button> 로비로 이동 </button>
@@ -166,7 +196,6 @@ function Trash2() {
                 className={isburned ? styles.burn : undefined}
                 spellCheck="false"
               />
-              {/* <img src={paper} alt="paper" width="130rem" height="240rem" /> */}
               <div
                 id={styles.burnButton}
                 onClick={burn}
