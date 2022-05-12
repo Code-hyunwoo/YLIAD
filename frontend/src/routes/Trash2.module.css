@@ -548,7 +548,7 @@
 }
 
 .showButton {
-  animation: fadein 16s forwards;
+  animation: fadein 7s forwards;
 }
 
 @keyframes fadein {
@@ -594,7 +594,7 @@
 
 #text {
   width: 13rem;
-  height: 20rem;
+  height: 24rem;
   margin: 1rem 0 0.5rem 0;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -617,7 +617,7 @@
 }
 
 .burn {
-  animation: fadeout1 ease-in 16s forwards;
+  animation: fadeout1 ease-in 7s forwards;
 }
 
 @keyframes fadeout1 {
@@ -626,14 +626,14 @@
     opacity: 1;
   }
   30% {
-    transform: translateY(9rem);
+    transform: translateY(10rem);
     background-color: blanchedalmond;
     opacity: 1;
   }
   45% {
   }
   100% {
-    transform: translateY(14rem) scale(0.6);
+    transform: translateY(20rem) scale(0.6);
     background-color: #ff6600;
     opacity: 0;
   }

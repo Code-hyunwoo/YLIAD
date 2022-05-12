@@ -5,6 +5,7 @@ import Navbar from "../components/layout/Navbar";
 import base from "./Base.module.css";
 import styles from "./Trash2.module.css";
 import { toast, ToastContainer } from "react-toastify";
+import paper from "../assets/images/paper.png";
 
 function Trash2() {
   const [text, setText] = useState<string>("");
