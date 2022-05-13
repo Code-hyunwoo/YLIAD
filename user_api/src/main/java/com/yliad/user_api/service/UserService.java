@@ -1,7 +1,9 @@
 package com.yliad.user_api.service;
 
 import com.yliad.user_api.dto.request.SaveUserRequestDto;
+import com.yliad.user_api.entity.Setting;
 import com.yliad.user_api.entity.User;
+import com.yliad.user_api.repository.SettingRepository;
 import com.yliad.user_api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final SettingRepository settingRepository;
 
     //회원가입
     @Transactional
@@ -62,5 +65,31 @@ public class UserService {
     private User getUser(Long userId){
         return userRepository.findById(userId)
                 .orElseThrow(IllegalArgumentException::new);
+    }
+
+    private Setting getSettingUser(Long userId){
+        return settingRepository.findById(userId)
+                .orElseThrow(IllegalArgumentException::new);
+    }
+
+    //Bgm 변경
+    @Transactional
+    public void changeBgm(Long userId, String bgmName){
+        Setting setting = getSettingUser(userId);
+        setting.changeBgm(bgmName);
+    }
+
+    //Font 변경
+    @Transactional
+    public void changeFont(Long userId, String fontName){
+        Setting setting = getSettingUser(userId);
+        setting.changeFont(fontName);
+    }
+
+    //Theme 변경
+    @Transactional
+    public void changeTheme(Long userId, String themeName){
+        Setting setting = getSettingUser(userId);
+        setting.changeTheme(themeName);
     }
 }
