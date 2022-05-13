@@ -17,7 +17,7 @@ public class User extends BaseTimeEntity{
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "userId")
+    @Column(name = "user_id")
     private Long id;
 
     private String loginId;
@@ -31,7 +31,7 @@ public class User extends BaseTimeEntity{
     private final Set<UserRole> memberRole = new HashSet<>();
 
     @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true)
-    @JoinColumn(name="settingId")
+    @JoinColumn(name="setting_id")
     private Setting setting;
 
     @Builder

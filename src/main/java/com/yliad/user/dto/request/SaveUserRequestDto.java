@@ -3,11 +3,11 @@ package com.yliad.user.dto.request;
 import com.sun.istack.NotNull;
 import com.yliad.user.entity.User;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
-@NoArgsConstructor
+@Data
 public class SaveUserRequestDto {
     @NotNull
     private String loginId;
@@ -16,19 +16,11 @@ public class SaveUserRequestDto {
     @NotNull
     private String password;
 
-    @Builder
-    public SaveUserRequestDto(String loginId, String nickname, String password) {
-        this.loginId = loginId;
-        this.nickname = nickname;
-        this.password = password;
-    }
-
     public User toEntity(){
-        User user = User.builder()
+        return User.builder()
                 .loginId(loginId)
                 .nickname(nickname)
                 .password(password)
                 .build();
-        return user;
     }
 }

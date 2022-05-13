@@ -1,9 +1,11 @@
 package com.yliad.user.controller;
 
-import com.yliad.user.dto.request.SaveBgmSettingRequestDto;
-import com.yliad.user.dto.request.SaveFontSettingRequestDto;
-import com.yliad.user.dto.request.SaveThemeSettingRequestDto;
+import com.yliad.user.dto.request.UpdateBgmSettingRequestDto;
+import com.yliad.user.dto.request.UpdateFontSettingRequestDto;
+import com.yliad.user.dto.request.UpdateThemeSettingRequestDto;
 import com.yliad.user.dto.request.SaveUserRequestDto;
+import com.yliad.user.security.CurrentUser;
+import com.yliad.user.security.dto.UserDto;
 import com.yliad.user.service.UserService;
 //import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -47,22 +49,25 @@ public class UserController {
 
     @PatchMapping("/bgm")
 //    @ApiOperation(value = "Bgm 수정")
-    public ResponseEntity<Void> changeBgm(@RequestBody SaveBgmSettingRequestDto requestDto) {
-        service.changeBgm(requestDto.getUserId(), requestDto.getBgmName());
+    public ResponseEntity<Void> changeBgm(@RequestBody UpdateBgmSettingRequestDto requestDto,
+        @CurrentUser UserDto userDto) {
+        service.changeBgm(requestDto, userDto.getId());
         return ResponseEntity.status(200).build();
     }
 
     @PatchMapping("/font")
 //    @ApiOperation(value = "Font 수정")
-    public ResponseEntity<Void> changeFont(@RequestBody SaveFontSettingRequestDto requestDto) {
-        service.changeFont(requestDto.getUserId(), requestDto.getFontName());
+    public ResponseEntity<Void> changeFont(@RequestBody UpdateFontSettingRequestDto requestDto,
+        @CurrentUser UserDto userDto) {
+        service.changeFont(requestDto, userDto.getId());
         return ResponseEntity.status(200).build();
     }
 
     @PatchMapping("/theme")
 //    @ApiOperation(value = "Theme 수정")
-    public ResponseEntity<Void> changeTheme(@RequestBody SaveThemeSettingRequestDto requestDto) {
-        service.changeTheme(requestDto.getUserId(), requestDto.getThemeName());
+    public ResponseEntity<Void> changeTheme(@RequestBody UpdateThemeSettingRequestDto requestDto,
+        @CurrentUser UserDto userDto) {
+        service.changeTheme(requestDto, userDto.getId());
         return ResponseEntity.status(200).build();
     }
 }

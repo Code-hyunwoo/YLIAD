@@ -1,6 +1,9 @@
 package com.yliad.user.service;
 
 import com.yliad.user.dto.request.SaveUserRequestDto;
+import com.yliad.user.dto.request.UpdateBgmSettingRequestDto;
+import com.yliad.user.dto.request.UpdateFontSettingRequestDto;
+import com.yliad.user.dto.request.UpdateThemeSettingRequestDto;
 import com.yliad.user.entity.Setting;
 import com.yliad.user.entity.User;
 import com.yliad.user.repository.UserRepository;
@@ -67,22 +70,22 @@ public class UserService {
 
     //Bgm 변경
     @Transactional
-    public void changeBgm(Long userId, String bgmName){
+    public void changeBgm(UpdateBgmSettingRequestDto requestDto, Long userId){
         User findUser = getUser(userId);
-        findUser.getSetting().changeBgm(bgmName);
+        findUser.getSetting().changeBgm(requestDto.getBgmName());
     }
 
     //Font 변경
     @Transactional
-    public void changeFont(Long userId, String fontName){
+    public void changeFont(UpdateFontSettingRequestDto requestDto, Long userId){
         User findUser = getUser(userId);
-        findUser.getSetting().changeFont(fontName);
+        findUser.getSetting().changeFont(requestDto.getFontName());
     }
 
     //Theme 변경
     @Transactional
-    public void changeTheme(Long userId, String themeName){
+    public void changeTheme(UpdateThemeSettingRequestDto requestDto, Long userId){
         User findUser = getUser(userId);
-        findUser.getSetting().changeTheme(themeName);
+        findUser.getSetting().changeTheme(requestDto.getThemeName());
     }
 }

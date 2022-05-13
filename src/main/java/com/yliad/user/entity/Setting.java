@@ -13,11 +13,10 @@ public class Setting extends BaseTimeEntity{
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "settingId")
+    @Column(name = "setting_id")
     private Long id;
 
     @OneToOne(mappedBy = "setting", cascade = CascadeType.PERSIST, orphanRemoval = true)
-    @JoinColumn(name="settingId")
     private User user;
 
     private String bgmName;
@@ -25,8 +24,6 @@ public class Setting extends BaseTimeEntity{
     private String themeName;
 
     private String fontName;
-
-    //폰트,테마,bgm을 enum으로 넣은다면?
 
     public Setting(Long id, User user, String bgmName, String themeName, String fontName) {
         this.id = id;
