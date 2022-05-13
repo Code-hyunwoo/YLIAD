@@ -26,15 +26,15 @@ public class Diary {
 
     private String voiceFilePath;
 
-    private String diaryUUID;
+    private Long userID;
 
     @Builder
-    public Diary(Long id, LocalDateTime diaryDate, String content, String emotion, String voiceFilePath, String diaryUUID) {
+    public Diary(Long id, LocalDateTime diaryDate, String content, String emotion, String voiceFilePath, Long userID) {
         this.id = id;
         this.diaryDate = diaryDate;
         this.content = content;
         this.emotion = emotion;
         this.voiceFilePath = voiceFilePath;
-        this.diaryUUID = diaryUUID;
+        this.userID = userID;
     }
 }

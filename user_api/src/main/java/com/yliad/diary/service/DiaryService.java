@@ -16,7 +16,7 @@ public class DiaryService {
 
     private final DiaryRepository diaryRepository;
 
-    //텍스트 일기작성
+    //일기작성
     @Transactional
     public void saveDiary(SaveDiaryRequestDto requestDto) {
         Diary diary = requestDto.toEntity();
