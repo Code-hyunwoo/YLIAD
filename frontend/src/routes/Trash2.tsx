@@ -15,9 +15,8 @@ function Trash2() {
   function burn() {
     // 앞뒤 공백제거 후 문자 없으면 alert
     if (text.trim() === "") {
-      // alert("안 좋았던 기억을 입력하세요!");
       toast.error("잊고 싶은 일을 써보세요", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
         closeOnClick: true,
