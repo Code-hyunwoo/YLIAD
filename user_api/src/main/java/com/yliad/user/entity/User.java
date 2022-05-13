@@ -1,4 +1,4 @@
-package com.yliad.user_api.entity;
+package com.yliad.user.entity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -22,10 +22,6 @@ public class User {
     private String nickname;
 
     private String password;
-
-//    user_diary 엔티티삭제로 제거
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true)
-//    private final List<UserDiary> user_diary = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true)
     @JoinColumn(name="settingId")

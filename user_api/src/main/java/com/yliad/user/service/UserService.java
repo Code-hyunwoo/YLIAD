@@ -1,10 +1,8 @@
-package com.yliad.user_api.service;
+package com.yliad.user.service;
 
-import com.yliad.user_api.dto.request.SaveUserRequestDto;
-import com.yliad.user_api.entity.Setting;
-import com.yliad.user_api.entity.User;
-import com.yliad.user_api.repository.SettingRepository;
-import com.yliad.user_api.repository.UserRepository;
+import com.yliad.user.dto.request.SaveUserRequestDto;
+import com.yliad.user.entity.User;
+import com.yliad.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final SettingRepository settingRepository;
 
     //회원가입
     @Transactional
@@ -67,29 +64,24 @@ public class UserService {
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    private Setting getSettingUser(Long userId){
-        return settingRepository.findById(userId)
-                .orElseThrow(IllegalArgumentException::new);
-    }
-
     //Bgm 변경
     @Transactional
     public void changeBgm(Long userId, String bgmName){
-        Setting setting = getSettingUser(userId);
-        setting.changeBgm(bgmName);
+        User user = getUser(userId);
+        user.getSetting().changeBgm(bgmName);
     }
 
     //Font 변경
     @Transactional
     public void changeFont(Long userId, String fontName){
-        Setting setting = getSettingUser(userId);
-        setting.changeFont(fontName);
+        User user = getUser(userId);
+        user.getSetting().changeFont(fontName);
     }
 
     //Theme 변경
     @Transactional
     public void changeTheme(Long userId, String themeName){
-        Setting setting = getSettingUser(userId);
-        setting.changeTheme(themeName);
+        User user = getUser(userId);
+        user.getSetting().changeTheme(themeName);
     }
 }

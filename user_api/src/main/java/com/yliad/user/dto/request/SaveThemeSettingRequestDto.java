@@ -1,4 +1,4 @@
-package com.yliad.user_api.dto.request;
+package com.yliad.user.dto.request;
 
 import com.sun.istack.NotNull;
 import lombok.Builder;

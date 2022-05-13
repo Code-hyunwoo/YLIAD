@@ -1,4 +1,4 @@
-package com.yliad.user_api.entity;
+package com.yliad.user.entity;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -25,8 +25,6 @@ public class Setting {
     private String themeName;
 
     private String fontName;
-
-    //폰트,테마,bgm을 enum으로 넣은다면?
 
     public Setting(Long id, User user, String bgmName, String themeName, String fontName) {
         this.id = id;

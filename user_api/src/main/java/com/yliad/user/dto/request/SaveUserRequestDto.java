@@ -1,7 +1,7 @@
-package com.yliad.user_api.dto.request;
+package com.yliad.user.dto.request;
 
 import com.sun.istack.NotNull;
-import com.yliad.user_api.entity.User;
+import com.yliad.user.entity.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,7 +25,7 @@ public class SaveUserRequestDto {
 
     public User toEntity(){
         User user = User.builder()
-                .loginid(loginId)
+                .loginId(loginId)
                 .nickname(nickname)
                 .password(password)
                 .build();

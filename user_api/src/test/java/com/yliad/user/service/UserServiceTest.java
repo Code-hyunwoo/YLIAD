@@ -1,12 +1,10 @@
-package com.yliad.user_api.service;
+package com.yliad.user.service;
 
-import com.yliad.user_api.repository.UserRepository;
-import org.assertj.core.api.Assertions;
+import com.yliad.user.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.*;

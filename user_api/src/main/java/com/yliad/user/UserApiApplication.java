@@ -1,4 +1,4 @@
-package com.yliad.user_api;
+package com.yliad.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

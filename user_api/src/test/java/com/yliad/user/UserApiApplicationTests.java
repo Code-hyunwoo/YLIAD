@@ -1,4 +1,4 @@
-package com.yliad.user_api;
+package com.yliad.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,6 @@
-package com.yliad.user_api.repository;
+package com.yliad.user.repository;
 
-import com.yliad.user_api.entity.User;
-import org.assertj.core.api.Assertions;
+import com.yliad.user.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
