@@ -1,6 +1,5 @@
-package shop.member.main.security.config
+package com.yliad.user.security.config;
 
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder

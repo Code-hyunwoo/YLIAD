@@ -1,4 +1,4 @@
-package shop.member.main.security.config
+package com.yliad.user.security.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding
