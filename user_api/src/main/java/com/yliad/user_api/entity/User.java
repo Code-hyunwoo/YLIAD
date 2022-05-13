@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Entity
@@ -19,22 +17,23 @@ public class User {
     @Column(name = "userId")
     private Long id;
 
-    private String loginid;
+    private String loginId;
 
     private String nickname;
 
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true)
-    private final List<UserDiary> user_diary = new ArrayList<>();
+//    user_diary 엔티티삭제로 제거
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true)
+//    private final List<UserDiary> user_diary = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true)
     @JoinColumn(name="settingId")
     private Setting setting;
 
     @Builder
-    public User(String loginid, String nickname, String password) {
-        this.loginid = loginid;
+    public User(String loginId, String nickname, String password) {
+        this.loginId = loginId;
         this.nickname = nickname;
         this.password = password;
     }
