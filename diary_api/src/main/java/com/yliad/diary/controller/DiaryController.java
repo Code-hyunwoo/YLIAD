@@ -2,7 +2,6 @@ package com.yliad.diary.controller;
 
 import com.yliad.diary.dto.request.SaveDiaryRequestDto;
 import com.yliad.diary.service.DiaryService;
-import com.yliad.user_api.dto.request.SaveUserRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +21,7 @@ public class DiaryController {
     }
 
 //    @GetMapping
-//    @ApiOperation(value = "텍스트 일기 작성")
+////    @ApiOperation(value = "마이페이지")
+//    public ResponseEntity<>
 
 }

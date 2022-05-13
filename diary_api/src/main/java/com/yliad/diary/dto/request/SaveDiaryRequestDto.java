@@ -20,15 +20,15 @@ public class SaveDiaryRequestDto {
     @NotNull
     private String voiceFilePath;
     @NotNull
-    private String diaryUUID;
+    private Long userID;
 
     @Builder
-    public SaveDiaryRequestDto(LocalDateTime diaryDate, String content, String emotion, String voiceFilePath, String diaryUUID) {
+    public SaveDiaryRequestDto(LocalDateTime diaryDate, String content, String emotion, String voiceFilePath, Long userID) {
         this.diaryDate = diaryDate;
         this.content = content;
         this.emotion = emotion;
         this.voiceFilePath = voiceFilePath;
-        this.diaryUUID = diaryUUID;
+        this.userID = userID;
     }
 
     public Diary toEntity(){
@@ -37,7 +37,7 @@ public class SaveDiaryRequestDto {
                 .content(content)
                 .emotion(emotion)
                 .voiceFilePath(voiceFilePath)
-                .diaryUUID(diaryUUID)
+                .userID(userID)
                 .build();
         return diary;
     }
