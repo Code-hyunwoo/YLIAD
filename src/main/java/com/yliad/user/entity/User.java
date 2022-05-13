@@ -1,5 +1,6 @@
 package com.yliad.user.entity;
 
+import com.yliad.user.entity.common.BaseTimeEntity;
 import com.yliad.user.entity.status.UserRole;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User extends BaseTimeEntity{
+public class User extends BaseTimeEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

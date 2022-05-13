@@ -65,6 +65,7 @@ public class WebSecurityConfig {
         .authorizeRequests((auth) -> auth
             .antMatchers(HttpMethod.GET, "/api/**").permitAll()
             .antMatchers(HttpMethod.POST, "/api/users/**").permitAll()
+            .antMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
             .antMatchers(SWAGGER_URL_PATHS).permitAll()
             .anyRequest().authenticated())
         .cors();

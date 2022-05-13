@@ -1,4 +1,4 @@
-package com.yliad.user.entity;
+package com.yliad.user.entity.common;
 
 import java.time.LocalDateTime;
 import javax.persistence.EntityListeners;
