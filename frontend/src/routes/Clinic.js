@@ -160,13 +160,7 @@ function Clinic(){
                 <div id={styles.nametag3}>{message.who}</div>
                 <div> {renderCards(message.content.payload.fields.card.listValue.values)}</div>
             </div>
-                {/* <List.Item style={{ padding: '1rem' }}>
-                    <List.Item.Meta
-                        avatar={<Avatar icon={AvatarSrc} />}
-                        title={message.who}
-                        description={renderCards(message.content.payload.fields.card.listValue.values)}
-                    />
-                </List.Item> */}
+                
             </div>
             <div ref={divRef} />;
             </BrowserView>
@@ -176,16 +170,9 @@ function Clinic(){
                 <img id={styles.AD_M} src={AD} alt='avatar' />
                 <div id={styles.nametag3_M}>{message.who}</div>
                 <div> {renderCards(message.content.payload.fields.card.listValue.values)}</div>
-            </div>
-                {/* <List.Item style={{ padding: '1rem' }}>
-                    <List.Item.Meta
-                        avatar={<Avatar icon={AvatarSrc} />}
-                        title={message.who}
-                        description={renderCards(message.content.payload.fields.card.listValue.values)}
-                    />
-                </List.Item> */}
-            </div>
+                 </div>
             <div ref={divRef} />
+            </div>
             </MobileView>
             </>
              )
