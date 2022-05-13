@@ -4,21 +4,26 @@ import Navbar from "../components/layout/Navbar";
 import styles from "./Clinic.module.css"
 import { BrowserView, MobileView } from 'react-device-detect';
 import cure from "../assets/images/cure.png"
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveMessage } from '../_actions/message_actions';
 import Message from '../components/Sections/Message'
-import { List, Avatar } from 'antd';
 import Card from '../components/Sections/Card';
-import Icon from '@ant-design/icons';
 import ReactScrollableFeed from "react-scrollable-feed";
 import AD from '../assets/images/AD.png'
 
 function Clinic(){
 
+
     const dispatch = useDispatch();
     const messagesFromRedux = useSelector(state => state.message.messages)
+    const divRef = useRef(null);
+    
+
+    useEffect(() => {
+        divRef.current.scrollIntoView({ behavior: 'smooth' });
+      });
 
     useEffect(() => {
 
@@ -163,6 +168,7 @@ function Clinic(){
                     />
                 </List.Item> */}
             </div>
+            <div ref={divRef} />;
             </BrowserView>
             <MobileView>
             <div id={styles.CardBox_P}>
@@ -179,20 +185,12 @@ function Clinic(){
                     />
                 </List.Item> */}
             </div>
+            <div ref={divRef} />
             </MobileView>
             </>
              )
             
         }
-
-
-
-
-
-
-        // template for card message 
-
-
 
 
     }
@@ -207,6 +205,8 @@ function Clinic(){
             return null;
         }
     }
+
+    
 
 
     return (
@@ -224,6 +224,7 @@ function Clinic(){
                         <div id={styles.text_read}> 
                                 {renderMessage(messagesFromRedux)}
                         </div>
+                        <div ref={divRef} />;
                     </ReactScrollableFeed>
 
                 <input id={styles.text_input} type="text"
@@ -242,6 +243,7 @@ function Clinic(){
                         <div id={styles.text_read_M}> 
                                 {renderMessage(messagesFromRedux)}
                         </div>
+                        <div ref={divRef} />;
                     </ReactScrollableFeed>
 
                 <input id={styles.text_input_M} type="text"
@@ -249,6 +251,7 @@ function Clinic(){
                 placeholder="메세지를 입력해주세요."
                 maxLength="9" />
             </div>
+            
         </MobileView>
         </div>
         </>
