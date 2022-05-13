@@ -20,19 +20,35 @@ public class Setting {
     @JoinColumn(name="settingId")
     private User user;
 
-    private String bgmUUID;
+    private String bgmName;
 
-    private String themeUUID;
+    private String themeName;
 
-    private String fontUUID;
+    private String fontName;
 
     //폰트,테마,bgm을 enum으로 넣은다면?
 
-    public Setting(Long id, User user, String bgmUUID, String themeUUID, String fontUUID) {
+    public Setting(Long id, User user, String bgmName, String themeName, String fontName) {
         this.id = id;
         this.user = user;
-        this.bgmUUID = bgmUUID;
-        this.themeUUID = themeUUID;
-        this.fontUUID = fontUUID;
+        this.bgmName = bgmName;
+        this.themeName = themeName;
+        this.fontName = fontName;
+    }
+
+    public void setSetting() {
+        this.bgmName = "default";
+        this.fontName = "default";
+        this.themeName = "default";
+    }
+
+    public void changeBgm(String bgmName) {
+        this.bgmName = bgmName;
+    }
+    public void changeFont(String fontName) {
+        this.fontName = fontName;
+    }
+    public void changeTheme(String themeName) {
+        this.themeName = themeName;
     }
 }
