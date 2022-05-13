@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -18,6 +19,7 @@ public class Diary {
     @Column(name = "diaryId")
     private Long id;
 
+    @CreatedDate
     private LocalDateTime diaryDate;
 
     private String content;

@@ -1,6 +1,8 @@
 package com.yliad.diary.controller;
 
+import com.yliad.diary.dto.request.CheckMyPageRequestDto;
 import com.yliad.diary.dto.request.SaveDiaryRequestDto;
+import com.yliad.diary.dto.response.MyPageResponseDto;
 import com.yliad.diary.service.DiaryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +22,11 @@ public class DiaryController {
         return ResponseEntity.ok().build();
     }
 
-//    @GetMapping
-////    @ApiOperation(value = "마이페이지")
-//    public ResponseEntity<>
+    @GetMapping("/mypage")
+//    @ApiOperation(value = "마이페이지")
+    public ResponseEntity<MyPageResponseDto> checkMyPage (@RequestBody CheckMyPageRequestDto requestDto){
+        MyPageResponseDto responseDto = service.getMyPage(requestDto.getUserID(), requestDto.getCurrentTime());
+        return ResponseEntity.status(200).body(responseDto);
+    }
 
 }
