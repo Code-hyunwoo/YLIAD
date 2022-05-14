@@ -12,8 +12,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class SaveDiaryRequestDto {
     @NotNull
-    private LocalDateTime diaryDate;
-    @NotNull
     private String content;
     @NotNull
     private String emotion;
@@ -23,8 +21,7 @@ public class SaveDiaryRequestDto {
     private Long userID;
 
     @Builder
-    public SaveDiaryRequestDto(LocalDateTime diaryDate, String content, String emotion, String voiceFilePath, Long userID) {
-        this.diaryDate = diaryDate;
+    public SaveDiaryRequestDto(String content, String emotion, String voiceFilePath, Long userID) {
         this.content = content;
         this.emotion = emotion;
         this.voiceFilePath = voiceFilePath;
@@ -33,7 +30,6 @@ public class SaveDiaryRequestDto {
 
     public Diary toEntity(){
         Diary diary = Diary.builder()
-                .diaryDate(diaryDate)
                 .content(content)
                 .emotion(emotion)
                 .voiceFilePath(voiceFilePath)
