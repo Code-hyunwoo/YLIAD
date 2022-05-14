@@ -316,7 +316,7 @@
   /* top: 4vh; */
   transition: 0.4s all; 
   overflow:hidden;
-  top: 0.8vw;
+  top: 0.7vw;
 }
 
 #btn7_P {
@@ -336,6 +336,23 @@
   margin-top: 1.5vw;
 }
 
+#btn7_M {
+  width: 9rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  font-family: 'SDMiSaeng';
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: #ffed54;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  /* top: 4vh; */
+  transition: 0.4s all; 
+  overflow:hidden;
+  margin-top: 1.5rem;
+}
+
 
 #formInput{
   margin-top: 1vh;
@@ -343,6 +360,11 @@
 }
 
 #formInput_M{
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+#formInput_M2{
   margin-top: 0.7rem;
   margin-bottom: 0.7rem;
 }
@@ -401,6 +423,16 @@
   height: 3vh;
   width: 10vw;
 }
+
+#form_input8{
+  font-family: 'SDMiSaeng';
+  font-size: 1.2vw;
+  text-align: center;
+  height: 3vh;
+  width: 10vw;
+}
+
+
 #form_input4{
   font-family: 'SDMiSaeng';
   font-size: 1.2vw;
@@ -409,6 +441,16 @@
   width: 10vw;
   position: relative;
   left: 0.35vw;
+}
+
+#form_input4_M{
+  font-family: 'SDMiSaeng';
+  font-size: 1.5rem;
+  text-align: center;
+  height: 2rem;
+  width: 10rem;
+  position: relative;
+  left: 0.35rem;
 }
 
 #form_input2{
@@ -434,6 +476,22 @@
 #form_input1_M{
   font-family: 'SDMiSaeng';
   font-size: 1.2rem;
+  text-align: center;
+  height: 2rem;
+  width: 10rem;
+}
+
+#form_input8_M{
+  font-family: 'SDMiSaeng';
+  font-size: 1.2rem;
+  text-align: center;
+  height: 2rem;
+  width: 10rem;
+}
+
+#form_input1_M2{
+  font-family: 'SDMiSaeng';
+  font-size: 1.5rem;
   text-align: center;
   height: 2rem;
   width: 10rem;
@@ -512,6 +570,11 @@
   font-size: 1vw;
 }
 
+#confirm3 {
+  color: #e6710b;
+  font-size: 1vw;
+}
+
 #confirm_M {
   color: greenyellow;
   font-size: 1.1rem;
@@ -519,6 +582,11 @@
 
 #confirm2_M {
   color: red;
+  font-size: 1.1rem;
+}
+
+#confirm3_M {
+  color: #e6710b;
   font-size: 1.1rem;
 }
 
@@ -584,4 +652,32 @@
   align-items: center;
 }
 
+#modalbox_LM {
+  position: relative;
+  margin: auto;
+  top: 19rem;
+  background-color: #090b3b;
+  width: 17rem;
+  height: 17rem;
+  border: 5px solid rgb(255, 255, 255);
+  padding: 1rem;
+  font-family: 'SDMiSaeng';
+  color: #ffed54;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+
+#heart {
+  position: absolute;
+  width: 3rem;
+  right: 4.3rem;
+}
+
+#heart_P {
+  position: absolute;
+  width: 3vw;
+  right: 4vw;
+}
