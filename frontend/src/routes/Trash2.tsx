@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
-import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import base from "./Base.module.css";
 import styles from "./Trash2.module.css";
