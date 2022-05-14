@@ -7,8 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
 public class MyPageResponseDto {
 
     @NotNull
@@ -19,28 +18,43 @@ public class MyPageResponseDto {
     private int totalCount;
 
     @NotNull
-    private int joy;
-    @NotNull
-    private int sad;
-    @NotNull
     private int anger;
-    @NotNull
-    private int fear;
     @NotNull
     private int disgust;
     @NotNull
+    private int fear;
+    @NotNull
+    private int joy;
+    @NotNull
     private int love;
+    @NotNull
+    private int sad;
 
     @Builder
-    public MyPageResponseDto(int monthCount, int yearCount, int totalCount, int joy, int sad, int anger, int fear, int disgust, int love) {
+    public MyPageResponseDto(int monthCount, int yearCount, int totalCount, int anger, int disgust, int fear, int joy, int love, int sad) {
         this.monthCount = monthCount;
         this.yearCount = yearCount;
         this.totalCount = totalCount;
-        this.joy = joy;
-        this.sad = sad;
         this.anger = anger;
-        this.fear = fear;
         this.disgust = disgust;
+        this.fear = fear;
+        this.joy = joy;
         this.love = love;
+        this.sad = sad;
+    }
+
+    public MyPageResponseDto toEntity(){
+        MyPageResponseDto responseDto = MyPageResponseDto.builder()
+                .monthCount(0)
+                .yearCount(0)
+                .totalCount(0)
+                .anger(0)
+                .disgust(0)
+                .fear(0)
+                .joy(0)
+                .love(0)
+                .sad(0)
+                .build();
+        return responseDto;
     }
 }
