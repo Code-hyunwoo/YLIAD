@@ -14,7 +14,6 @@ function Sentiment(){
     const[positive, setPositive] = useState<number>(0)
     const[neutral, setNeutral] = useState<number>(0)
     const[negative, setNegative] = useState<number>(0)
-    const[sentence, setSentence] = useState([])
 
     const client_id = "ut8m57djxk"
     const client_Secret = "9ZiLKYJFFiZTN6afWEujreAwZGpsFCkGWHfbfsED"
@@ -42,7 +41,6 @@ function Sentiment(){
             setPositive(res.data.document.confidence.positive)
             setNeutral(res.data.document.confidence.neutral)
             setNegative(res.data.document.confidence.negative)
-            setSentence(res.data.sentences)
         })
         .catch(error => {
             console.log("error", error.response);
