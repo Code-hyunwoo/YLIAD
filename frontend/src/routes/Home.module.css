@@ -17,7 +17,7 @@
     border-color: white;
     border-color: #ffed54;
     border-width: 0.4vw;
-    margin-top: 10vh;
+    margin-top: 18vh;
 }
 
 .title_P {
@@ -70,7 +70,10 @@
   animation-delay: .5s;
 }
 
-
+#centerimage{
+  position: relative;
+  bottom: 8vh;
+}
 
 
 .subtitle_P {
@@ -86,7 +89,7 @@
     position: relative;
     left: 12vw;
     bottom: 14vh;
-    margin-bottom: 5vh;
+    margin-bottom: -3vh;
 }
 
 #fire_P {
@@ -94,7 +97,6 @@
     position: relative;
     top: 5vh;
     right: 2vw;
-    margin-bottom: 5vh;
 }
 
 #btn1_P {
@@ -114,6 +116,7 @@
     bottom: 10vh;
     transition: 0.4s all; 
     overflow:hidden;
+    margin-bottom: 3vh;
 }
 
 
@@ -253,10 +256,10 @@
 #modalbox {
     position: relative;
     margin: auto;
-    top: 19rem;
+    top: 16vw;
     background-color: #090b3b;
-    width: 22rem;
-    height: 24rem;
+    width: 20vw;
+    height: 20vw;
     border: 5px solid rgb(255, 255, 255);
     padding: 1vw;
     font-family: 'SDMiSaeng';
@@ -291,6 +294,15 @@
   text-align: center;
   border-bottom: double white;
   margin-bottom: 2vh;
+}
+
+#formTitle2{
+  font-family: 'SDMiSaeng';
+  font-size: 2.5vw;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: double white;
+  margin-bottom: 3.5vh;
 }
 
 #formTitle_M{
@@ -370,7 +382,7 @@
 }
 
 #btn3_P {
-  width: 3vw;
+  width: 3.3vw;
   height: 2vw;
   font-size: 1vw;
   font-family: 'SDMiSaeng';
@@ -385,7 +397,7 @@
   overflow:hidden;
   /* margin-left: 0.5vw; */
   position: relative;
-  left: 0.7vw;
+  left: 0.8vw;
 }
 
 #btn3_M {
@@ -413,7 +425,7 @@
   text-align: center;
   height: 3vh;
   width: 7vw;
-  left: 0.4vw;
+  left: 0.5vw;
 }
 
 #form_input1{
@@ -638,10 +650,10 @@
 #modalbox_L {
   position: relative;
   margin: auto;
-  top: 23rem;
+  top: 20vw;
   background-color: #090b3b;
-  width: 20rem;
-  height: 17rem;
+  width: 17vw;
+  height: 15vw;
   border: 5px solid rgb(255, 255, 255);
   padding: 1vw;
   font-family: 'SDMiSaeng';

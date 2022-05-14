@@ -95,7 +95,7 @@ function Home(){
         }
         else if (userIDCheck && userPassword === userPassword2){
 
-            // axios
+        // axios
         // .post(
         //   "https://j6a304.p.ssafy.io/api/members",
         //   {
@@ -234,7 +234,7 @@ function Home(){
                     <span className={styles.subtitle_P}>  
                         나의 하루, 나의 이야기
                     </span>
-                    <div>
+                    <div id={styles.centerimage}>
                         <Campfire ></Campfire>
                         <img id={styles.prince_P} src={man} alt="man" />
                     </div>
@@ -258,7 +258,7 @@ function Home(){
                                 <input id={styles.form_input8} type="password" onChange={changeInputPassword2} name="Password" placeholder="비밀번호 확인"/> </p>
                                 { userPassword !== '' && userPassword === userPassword2 ? 
                                 <div id={styles.confirm}>비밀번호 일치</div> : 
-                                userPassword === ''? <div id={styles.confirm3} >비밀번호 미입력</div> :
+                                userPassword === ''? <div id={styles.confirm3} ></div> :
                                 <div id={styles.confirm2}>비밀번호 불일치</div>} 
                                 <p id={styles.formInput}><label>닉네임 </label> 
                                  <input id={styles.form_input2} type="text" onChange={changeInputNickname} name="Nickname"  placeholder="닉네임"/> </p>
@@ -270,7 +270,7 @@ function Home(){
                         <div id={styles.modalbox_L}> 
                         <img id={styles.heart_P} src={Heart} alt="heart" />
                         <form onSubmit={onSubmitLogin}></form>
-                          <div id={styles.formTitle}> 로그인 </div>
+                          <div id={styles.formTitle2}> 로그인 </div>
                           <p id={styles.formInput}><label> 아이디 </label> 
                                 <input id={styles.form_input4} type="text" onChange={loginInputID} name="ID"  placeholder="아이디"/> 
                                 </p>
@@ -321,7 +321,7 @@ function Home(){
                                 <input id={styles.form_input8_M} type="password" onChange={changeInputPassword2} name="Password" placeholder="비밀번호 확인"/> </p>
                                 { userPassword !== '' && userPassword === userPassword2 ? 
                                 <div id={styles.confirm_M}>비밀번호 일치</div> : 
-                                userPassword === ''? <div id={styles.confirm3_M} >비밀번호 미입력</div> :
+                                userPassword === ''? <div id={styles.confirm3_M} ></div> :
                                 <div id={styles.confirm2_M}>비밀번호 불일치</div>} 
                                 <p id={styles.formInput_M}><label>닉네임 </label> 
                                  <input id={styles.form_input2_M} type="text" onChange={changeInputNickname} name="Nickname"  placeholder="닉네임"/> </p>
