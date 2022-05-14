@@ -28,7 +28,7 @@ dependencies {
 
 	/* h2 */
 	runtimeOnly 'com.h2database:h2'
-	
+
 //	/* maria */
 //	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 

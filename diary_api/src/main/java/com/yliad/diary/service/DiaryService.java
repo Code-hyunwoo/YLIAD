@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.time.Month;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -22,26 +22,50 @@ public class DiaryService {
     @Transactional
     public void saveDiary(SaveDiaryRequestDto requestDto) {
         Diary diary = requestDto.toEntity();
-        diaryRepository.save(requestDto.toEntity());
+        diaryRepository.save(diary);
     }
 
     public MyPageResponseDto getMyPage(Long userId, LocalDateTime currentTime){
         int year = currentTime.getYear();
-        Month month = currentTime.getMonth();
-        MyPageResponseDto responseDto = diaryRepository
-                .
+        int month = currentTime.getMonthValue();
 
-
-        return MyPageResponseDto.builder()
-                .monthCount(responseDto.getMonthCount())
-                .yearCount(responseDto.getYearCount())
-                .totalCount(responseDto.getTotalCount())
-                .anger(responseDto.getAnger())
-                .disgust(responseDto.getDisgust())
-                .fear(responseDto.getFear())
-                .joy(responseDto.getJoy())
-                .love(responseDto.getLove())
-                .sad(responseDto.getSad())
+        MyPageResponseDto responseDto = MyPageResponseDto.builder()
+                .monthCount(0)
+                .yearCount(0)
+                .totalCount(0)
+                .anger(0)
+                .disgust(0)
+                .fear(0)
+                .joy(0)
+                .love(0)
+                .sad(0)
                 .build();
+
+        int countYear = diaryRepository.countDiaryYear(userId, year);
+        int countMonth = diaryRepository.countDiaryMonth(userId, year, month);
+        int countTotal = diaryRepository.countDiaryTotal(userId);
+        List<String> list1 = diaryRepository.countMonthEmotion(userId, year, month);
+        List<Integer> list2 = diaryRepository.countMonthEmotionCount(userId, year, month);
+
+        responseDto.setYearCount(countYear);
+        responseDto.setMonthCount(countMonth);
+        responseDto.setTotalCount(countTotal);
+
+        for(int i = 0; i < list1.size(); i++){
+            if (list1.get(i).equals("anger"))
+                responseDto.setAnger(list2.get(i));
+            if (list1.get(i).equals("disgust"))
+                responseDto.setDisgust(list2.get(i));
+            if (list1.get(i).equals("fear"))
+                responseDto.setFear(list2.get(i));
+            if (list1.get(i).equals("joy"))
+                responseDto.setJoy(list2.get(i));
+            if (list1.get(i).equals("love"))
+                responseDto.setLove(list2.get(i));
+            if (list1.get(i).equals("sad"))
+                responseDto.setSad(list2.get(i));
+        }
+
+        return responseDto;
     }
 }

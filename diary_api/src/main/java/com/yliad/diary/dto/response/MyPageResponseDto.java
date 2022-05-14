@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-//@NoArgsConstructor
+@NoArgsConstructor
 public class MyPageResponseDto {
 
     @NotNull
@@ -41,20 +41,5 @@ public class MyPageResponseDto {
         this.joy = joy;
         this.love = love;
         this.sad = sad;
-    }
-
-    public MyPageResponseDto toEntity(){
-        MyPageResponseDto responseDto = MyPageResponseDto.builder()
-                .monthCount(0)
-                .yearCount(0)
-                .totalCount(0)
-                .anger(0)
-                .disgust(0)
-                .fear(0)
-                .joy(0)
-                .love(0)
-                .sad(0)
-                .build();
-        return responseDto;
     }
 }
