@@ -1,7 +1,8 @@
 /* PC 버전 */
 .navP {
   display: flex;
-  position: absolute;
+  /* position: absolute; */
+  justify-content: space-evenly;
   padding: 2vw;
   z-index: 50;
 }
@@ -15,20 +16,30 @@
   color: #ffed54;
   font-size: 2.8rem;
   font-family: "SDMiSaeng";
-  padding: 3% 14% 3% 14%;
-  width: 5vw;
-  height: 4vh;
+  padding: 3% 14% 3% 2%;
+  height: 3vh;
   text-decoration: none;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .leftP {
-  position: absolute;
+  display: flex;
+  /* position: absolute; */
   left: 10vw;
 }
 
 .rightP {
-  position: absolute;
-  right: -70vw;
+  display: flex;
+  /* position: absolute; */
+  right: -170vw;
+}
+
+.iconNav {
+  display: flex;
+  margin: 0 1rem 0 1rem;
 }
 
 /* ///////////////////////////////////////////////////////////////////// */

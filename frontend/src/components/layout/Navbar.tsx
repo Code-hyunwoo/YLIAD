@@ -15,32 +15,46 @@ function Navbar() {
       <BrowserView>
         <div className={Styles.navP}>
           <div className={Styles.leftP}>
-            <Link to="/lobby" className={Styles.homeP}>
-              {/* <img src={home} alt="home" /> */}
-              HOME
-            </Link>
-            <Link to="/mypage" className={Styles.peopleP}>
-              {/* <img src={people} alt="mypage" /> */}
-              MYPAGE
-            </Link>
-            <Link to="/calendar" className={Styles.calenderP}>
-              {/* <img src={calender} alt="calender" /> */}
-              CALENDAR
-            </Link>
+            <div className={Styles.iconNav}>
+              <img src={home} alt="home" />
+              <Link to="/lobby" className={Styles.homeP}>
+                HOME
+              </Link>
+            </div>
+            <div className={Styles.iconNav}>
+              <img src={people} alt="mypage" />
+              <Link to="/mypage" className={Styles.peopleP}>
+                MYPAGE
+              </Link>
+            </div>
+            <div className={Styles.iconNav}>
+              <img src={calender} alt="calender" />
+              <Link to="/calendar" className={Styles.calenderP}>
+                CALENDAR
+              </Link>
+            </div>
           </div>
+
           <div className={Styles.rightP}>
-            <Link to="/clinic" className={Styles.hospitalP}>
-              {/* <img src={hospital} alt="clinic" /> */}
-              CLINIC
-            </Link>
-            <Link to="/trash" className={Styles.trashP}>
-              {/* <img src={trash} alt="trash" /> */}
-              TRASH
-            </Link>
-            <Link to="/setting" className={Styles.gearP}>
-              {/* <img src={gear} alt="setting" /> */}
-              CONFIG
-            </Link>
+            <div className={Styles.iconNav}>
+              <img src={hospital} alt="clinic" />
+              <Link to="/clinic" className={Styles.hospitalP}>
+                CLINIC
+              </Link>
+            </div>
+            <div className={Styles.iconNav}>
+              <img src={trash} alt="trash" />
+              <Link to="/trash" className={Styles.trashP}>
+                TRASH
+              </Link>
+            </div>
+
+            <div className={Styles.iconNav}>
+              <img src={gear} alt="setting" />
+              <Link to="/setting" className={Styles.gearP}>
+                SETTING
+              </Link>
+            </div>
           </div>
         </div>
       </BrowserView>
