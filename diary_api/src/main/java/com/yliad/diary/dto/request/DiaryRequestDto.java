@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
-public class CheckMyPageRequestDto {
+public class DiaryRequestDto {
     @NotNull
     private Long userID;
     @NotNull
