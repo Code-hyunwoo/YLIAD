@@ -18,68 +18,23 @@ spring:
             preLogger: true
             postLogger: true
       routes:
-        #        - id: member-service
-        #          uri: lb://MEMBER-SERVICE
-        #          predicates:
-        #            - Path=/member-service/**
-        #          filters:
-        #            - AddRequestHeader=first-request, first-request-header2
-        #            - AddResponseHeader=first-response, first-response-header2
-        #            - CustomFilter
-        - id: member-service
-          uri: lb://MEMBER-SERVICE
+        - id: user-service
+          uri: lb://USER-SERVICE
           predicates:
-            - Path=/member-service/login
+            - Path=/user-service/api/auth
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/member-service/(?<segment>.*), /$\{segment}
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - CustomFilter
-        - id: member-service
-          uri: lb://MEMBER-SERVICE
+        - id: user-service
+          uri: lb://USER-SERVICE
           predicates:
-            - Path=/member-service/**
-            - Method=GET
+            - Path=/user-service/**
+            - Method=GET, POST, DELETE, PATCH
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/member-service/(?<segment>.*), /$\{segment}
-            - CustomFilter
-            - AuthorizationHeaderFilter
-        - id: member-service
-          uri: lb://MEMBER-SERVICE
-          predicates:
-            - Path=/member-service/members
-            - Method=POST
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/member-service/(?<segment>.*), /$\{segment}
-            - CustomFilter
-        - id: member-service
-          uri: lb://MEMBER-SERVICE
-          predicates:
-            - Path=/member-service/actuator/**
-            - Method=GET, POST
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/member-service/(?<segment>.*), /$\{segment}
-            - CustomFilter
-
-        - id: catalog-service
-          uri: lb://CATALOG-SERVICE
-          predicates:
-            - Path=/catalog-service/**
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/catalog-service/(?<segment>.*), /$\{segment}
-            - CustomFilter
-
-        - id: order-service
-          uri: lb://ORDER-SERVICE
-          predicates:
-            - Path=/order-service/**
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/order-service/(?<segment>.*), /$\{segment}
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - CustomFilter
 eureka:
   client:
