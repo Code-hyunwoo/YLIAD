@@ -16,20 +16,20 @@ function Navbar() {
         <div className={Styles.navP}>
           <div className={Styles.leftP}>
             <div className={Styles.iconNav}>
-              <img src={home} alt="home" />
               <Link to="/lobby" className={Styles.homeP}>
+                <img src={home} alt="home" />
                 HOME
               </Link>
             </div>
             <div className={Styles.iconNav}>
-              <img src={people} alt="mypage" />
               <Link to="/mypage" className={Styles.peopleP}>
+                <img src={people} alt="mypage" />
                 MYPAGE
               </Link>
             </div>
             <div className={Styles.iconNav}>
-              <img src={calender} alt="calender" />
               <Link to="/calendar" className={Styles.calenderP}>
+                <img src={calender} alt="calender" />
                 CALENDAR
               </Link>
             </div>
@@ -37,21 +37,21 @@ function Navbar() {
 
           <div className={Styles.rightP}>
             <div className={Styles.iconNav}>
-              <img src={hospital} alt="clinic" />
               <Link to="/clinic" className={Styles.hospitalP}>
+                <img src={hospital} alt="clinic" />
                 CLINIC
               </Link>
             </div>
             <div className={Styles.iconNav}>
-              <img src={trash} alt="trash" />
               <Link to="/trash" className={Styles.trashP}>
+                <img src={trash} alt="trash" />
                 TRASH
               </Link>
             </div>
 
             <div className={Styles.iconNav}>
-              <img src={gear} alt="setting" />
               <Link to="/setting" className={Styles.gearP}>
+                <img src={gear} alt="setting" />
                 SETTING
               </Link>
             </div>

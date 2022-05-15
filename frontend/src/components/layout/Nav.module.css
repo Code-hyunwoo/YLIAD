@@ -5,6 +5,7 @@
   justify-content: space-evenly;
   padding: 2vw;
   z-index: 50;
+  margin-bottom: -95px;
 }
 
 .navP .homeP,
@@ -21,8 +22,7 @@
   text-decoration: none;
   vertical-align: middle;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .leftP {
