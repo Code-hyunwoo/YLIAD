@@ -18,7 +18,7 @@ public class CorsConfig {
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     CorsConfiguration config = new CorsConfiguration();
     config.addAllowedOrigin("http://localhost:3000");
-    config.addAllowedOrigin("https://j6a304.p.ssafy.io");
+    config.addAllowedOrigin("https://k6a308.p.ssafy.io");
     config.addAllowedHeader("*");
     config.addAllowedMethod("*");
     config.setAllowedOriginPatterns(Collections.singletonList("*"));

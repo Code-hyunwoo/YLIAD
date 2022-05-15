@@ -38,6 +38,7 @@ public class WebSecurityConfig {
                 .antMatchers("/**/*.html")
                 .antMatchers("/**/*.css")
                 .antMatchers("/**/*.js")
+                .antMatchers("/h2-console")
                 .antMatchers("/**/h2-console"))
         .authorizeHttpRequests((authorize) -> authorize.anyRequest().permitAll())
         .requestCache().disable()
@@ -63,6 +64,8 @@ public class WebSecurityConfig {
         .sessionManagement(
             session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeRequests((auth) -> auth
+            .antMatchers("/**/h2-console").permitAll()
+            .antMatchers("/**/acurator/**").permitAll()
             .antMatchers(HttpMethod.GET, "/api/**").permitAll()
             .antMatchers(HttpMethod.POST, "/api/users/**").permitAll()
             .antMatchers(HttpMethod.POST, "/api/auth/**").permitAll()

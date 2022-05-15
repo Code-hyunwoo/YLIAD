@@ -6,8 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Data
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class SaveUserRequestDto {
     @NotNull
     private String loginId;
