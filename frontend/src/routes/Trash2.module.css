@@ -239,11 +239,9 @@ svg {
 .inputP {
   position: absolute;
   left: 50%;
-  top: 450px;
-  /* top: 50vh; */
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 2;
+  top: 450px;
 }
 .inputP p {
   background: linear-gradient(#ff9800 0%, #ffc107 100%);
@@ -342,10 +340,10 @@ svg {
 }
 
 #textP {
-  /* width: 15rem; */
-  /* height: 23rem; */
-  width: 13vw;
-  height: 20vw;
+  width: 15rem;
+  height: 23rem;
+  /* width: 13vw; */
+  /* height: 20vw; */
   margin: 0.5rem 0 0.5rem 0;
   padding: 2.5rem 2rem 0.5rem 2.5rem;
   line-height: 1.55rem;
@@ -356,7 +354,8 @@ svg {
   word-spacing: 0.3rem;
   background-color: transparent;
   background-image: url("../assets/images/whitepaper.png");
-  background-size: 17.5vw 23.5vw;
+  /* background-size: 17.5vw 23.5vw; */
+  background-size: 20rem 27rem;
   border: none;
   resize: none;
 }
