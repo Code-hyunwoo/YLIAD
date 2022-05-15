@@ -20,7 +20,7 @@ public class WebSecurityConfig {
   public static String[] SWAGGER_URL_PATHS = new String[]{"/swagger-ui.html",
       "/swagger-resources/**",
       "/v2/api-docs", "/webjars/**", "/swagger-ui/index.html", "/configuration/**",
-      "/swagger*/**"};
+      "/swagger*/**", "/swagger-ui/"};
   private final JwtTokenProvider jwtTokenProvider;
   private final CorsFilter corsFilter;
   private final JwtAuthenticationEntryPoint authenticationErrorHandler;
