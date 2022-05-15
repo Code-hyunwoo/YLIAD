@@ -17,38 +17,16 @@ import org.springframework.web.filter.CorsFilter;
 @RequiredArgsConstructor
 public class WebSecurityConfig {
 
-  public static String[] SWAGGER_URL_PATHS = new String[]{"/swagger-ui.html**",
+  public static String[] SWAGGER_URL_PATHS = new String[]{"/swagger-ui.html",
       "/swagger-resources/**",
-      "/v2/api-docs**", "/webjars/**", "swagger-ui/index.html"};
+      "/v2/api-docs", "/webjars/**", "/swagger-ui/index.html", "/configuration/**",
+      "/swagger*/**"};
   private final JwtTokenProvider jwtTokenProvider;
   private final CorsFilter corsFilter;
   private final JwtAuthenticationEntryPoint authenticationErrorHandler;
   private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
 
   @Bean
-  @Order(0)
-  SecurityFilterChain resources(HttpSecurity http) throws Exception {
-    http
-        .requestMatchers((matchers) ->
-            matchers
-                .antMatchers(HttpMethod.OPTIONS, "/**")
-                .antMatchers("/")
-                .antMatchers("/*.html")
-                .antMatchers("/favicon.ico")
-                .antMatchers("/**/*.html")
-                .antMatchers("/**/*.css")
-                .antMatchers("/**/*.js")
-                .antMatchers("/h2-console")
-                .antMatchers("/**/h2-console"))
-        .authorizeHttpRequests((authorize) -> authorize.anyRequest().permitAll())
-        .requestCache().disable()
-        .securityContext().disable()
-        .sessionManagement().disable();
-    return http.build();
-  }
-
-  @Bean
-  @Order(1)
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
         .csrf().disable()
@@ -64,8 +42,8 @@ public class WebSecurityConfig {
         .sessionManagement(
             session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeRequests((auth) -> auth
-            .antMatchers("/**/h2-console").permitAll()
-            .antMatchers("/**/acurator/**").permitAll()
+            .antMatchers("/h2-console/**").permitAll()
+            .antMatchers("/**/actuator/**").permitAll()
             .antMatchers(HttpMethod.GET, "/api/**").permitAll()
             .antMatchers(HttpMethod.POST, "/api/users/**").permitAll()
             .antMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
