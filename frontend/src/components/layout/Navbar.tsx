@@ -11,7 +11,6 @@ import { BrowserView, MobileView } from "react-device-detect";
 function Navbar() {
   return (
     <>
-      {/* <div className={base.container}> */}
       <BrowserView>
         <div className={Styles.navP}>
           <div className={Styles.leftP}>
