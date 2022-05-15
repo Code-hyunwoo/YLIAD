@@ -1,0 +1,53 @@
+.wrapper {
+  max-width: 80em;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 40px;
+  margin: 8px;
+  /* 아이콘과 제목 수직 가운데 정렬 */
+  display: flex;
+  align-items: center;
+}
+
+.title img {
+  width: 52px;
+  height: 52px;
+}
+
+.menu {
+  display: flex;
+  font-size: 25px;
+}
+
+.menu li {
+  list-style: none;
+  margin: 12px 42px;
+}
+
+.header p {
+  font-size: 54px;
+  margin-bottom: 20px;
+}
+
+.header span {
+  font-size: 30px;
+}
+
+.downsubs img {
+  margin-top: 50px;
+  width: 260px;
+  height: auto;
+}
+
+#movingAd {
+  position: absolute;
+  top: 210px;
+  right: 380px;
+}
