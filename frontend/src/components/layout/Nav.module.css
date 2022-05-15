@@ -1,11 +1,42 @@
 /* PC 버전 */
 .navP {
   display: flex;
-  /* position: absolute; */
   justify-content: space-evenly;
-  padding: 2vw;
+  align-items: center;
   z-index: 50;
-  margin-bottom: -125px;
+  margin-top: 15px;
+  margin-bottom: -99px;
+}
+
+.title {
+  font-size: 69px;
+  font-family: "SDMiSaeng";
+  display: flex;
+}
+
+.title .title_name {
+  text-decoration: none;
+  color: #ffed54;
+}
+
+.title img {
+  width: 60px;
+  height: 60px;
+  padding-right: 10px;
+}
+
+.menuP {
+  display: flex;
+  margin-left: -130px;
+}
+
+.menu_itemP {
+  color: #ffed54;
+}
+
+.menu_itemP img {
+  width: 32px;
+  height: 32px;
 }
 
 .homeP,
@@ -15,36 +46,96 @@
 .trashP,
 .gearP {
   color: #ffed54;
-  font-size: 3vw;
+  font-size: 52px;
   font-family: "SDMiSaeng";
-  padding: 3% 14% 3% 2%;
-  height: 3vh;
+  /* padding: 3% 14% 3% 2%; */
+  margin: 8px 24px;
+  /* height: 3vh; */
   text-decoration: none;
-  vertical-align: middle;
   display: flex;
   align-items: center;
 }
 
-.leftP {
-  display: flex;
-  /* position: absolute; */
-  left: 10vw;
+@media screen and (max-width: 1630px) and (min-width: 1471px) {
+  .title_name {
+    position: absolute;
+    margin-top: 55px;
+  }
 }
 
-.rightP {
-  display: flex;
-  /* position: absolute; */
-  right: -170vw;
+@media screen and (max-width: 1470px) and (min-width: 801px) {
+  .title {
+    position: absolute;
+    margin-top: 145px;
+    left: 20px;
+  }
 }
 
-.iconNav {
-  display: flex;
-  margin: 0 1rem 0 1rem;
+@media screen and (max-width: 1375px) {
+  .title {
+    display: none;
+  }
+  .menuP {
+    margin-left: 0;
+  }
 }
 
-.iconNav img {
-  width: 2vw;
-  height: 2vw;
+@media screen and (max-width: 1200px) {
+  .homeP,
+  .peopleP,
+  .calenderP,
+  .hospitalP,
+  .trashP,
+  .gearP {
+    font-size: 32px;
+    margin: 8px 12px;
+  }
+}
+
+.toggleBtn {
+  position: absolute;
+  top: 48px;
+  right: 32px;
+  font-size: 32px;
+  color: #ffed54;
+  z-index: 50;
+  cursor: pointer;
+  /* 평소에는 햄버거 버튼 안 보이게 */
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .homeP,
+  .peopleP,
+  .calenderP,
+  .hospitalP,
+  .trashP,
+  .gearP {
+    font-size: 48px;
+    margin: 6px 12px;
+  }
+  .navP {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .title {
+    /* display:none 적용 해제 */
+    display: block;
+    margin: 12px;
+  }
+  .menuP img {
+    display: none;
+  }
+  .menuP {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* 햄버거 버튼 눌렀을 때 display 속성을 flex로 바꿔야 함 */
+    display: none;
+  }
+  .toggleBtn {
+    display: block;
+  }
 }
 
 /* ///////////////////////////////////////////////////////////////////// */
