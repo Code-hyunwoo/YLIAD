@@ -8,6 +8,10 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Cinzel|Open+Sans+Condensed:300i");
 
+svg {
+  z-index: -1;
+}
+
 /* PC 버전 */
 
 .backP {
@@ -235,8 +239,8 @@
 .inputP {
   position: absolute;
   left: 50%;
-  /* top: 450px; */
-  top: 50vh;
+  top: 450px;
+  /* top: 50vh; */
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;
