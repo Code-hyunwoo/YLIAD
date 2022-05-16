@@ -1,6 +1,7 @@
 import styles from "./Intro.module.css";
-import moon from "../assets/images/moon.png";
+import moon from "../assets/images/night.png";
 import apk from "../assets/images/downloadapk.png";
+import ipa from "../assets/images/downloadipa.png";
 import moving from "../assets/images/movingad.gif";
 import read from "../assets/images/read.png";
 import ucc from "../assets/videos/POLLING_UCC.mp4";
@@ -56,8 +57,8 @@ function Intro() {
               YLIAD
             </div>
             <ul className={styles.menu}>
+              <li>INTRO VIDEO</li>
               <li>FEATURES</li>
-              <li>ABOUT US</li>
             </ul>
           </div>
           <div style={{ display: "flex" }}>
@@ -75,7 +76,8 @@ function Intro() {
               </div>
               {/* 서비스 다운로드 / 구독 */}
               <div className={styles.downsubs}>
-                <img src={apk} alt="apkLink" />
+                <img src={apk} alt="apkLink" id={styles.android_available} />
+                <img src={ipa} alt="ipaDisabled" id={styles.ios_NA} />
                 <div className={styles.subscribe}>
                   <input
                     type="email"
@@ -84,8 +86,8 @@ function Intro() {
                     onChange={getEmail}
                   />
                   <button onClick={subscribe}>Subscribe</button>
-                  <p>
-                    구독하시면 YLIAD의 최신 업데이트 내용, 이벤트 등의 소식을
+                  <p style={{ fontSize: "20px" }}>
+                    구독하시면 YLIAD의 최신 업데이트 내용, 이벤트 소식을
                     누구보다 빨리 받아보실 수 있습니다.
                   </p>
                 </div>
@@ -153,7 +155,11 @@ function Intro() {
           </div>
         </div>
       </section>
-      {/* 섹션 4 - 개발진 */}
+
+      {/* 섹션 4 - 푸터 */}
+      <section className={styles.section4}>
+        <div className={styles.wrapper_footer}></div>
+      </section>
     </>
   );
 }

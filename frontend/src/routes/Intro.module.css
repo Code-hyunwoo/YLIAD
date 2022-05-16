@@ -6,6 +6,13 @@
   font-style: normal;
 }
 
+.section1,
+.section2,
+.section3 {
+  font-family: "GowunDodum-Regular";
+  letter-spacing: 1px;
+}
+
 /* alert */
 .toast {
   width: 400px;
@@ -17,7 +24,6 @@
   padding-bottom: 100px;
   border-bottom: 1px solid #fcf18c;
   background-color: #0e1397;
-  font-family: "GowunDodum-Regular";
 }
 
 .wrapper_intro {
@@ -33,26 +39,29 @@
 }
 
 .icon {
-  font-size: 40px;
+  font-size: 44px;
   margin: 8px;
   /* 아이콘과 제목 수직 가운데 정렬 */
   display: flex;
   align-items: center;
+  color: #ffed54;
 }
 
 .icon img {
   width: 52px;
   height: 52px;
+  margin-right: 10px;
 }
 
 .menu {
   display: flex;
   font-size: 25px;
+  margin-left: 80px;
 }
 
 .menu li {
   list-style: none;
-  margin: 12px 42px;
+  margin: 12px 36px;
 }
 
 .header p {
@@ -66,30 +75,44 @@
 
 .downsubs img {
   margin-top: 50px;
+  margin-right: 50px;
   width: 240px;
   height: auto;
 }
 
+#android_available {
+  cursor: pointer;
+}
+
+#ios_NA {
+  filter: opacity(0.5);
+}
+
 .subscribe input {
-  width: 360px;
-  height: 45px;
+  width: 400px;
+  height: 55px;
   margin: 30px 0 10px 0;
   font-size: 20px;
   padding-left: 10px;
+  border: 2px solid #ffed54;
+  border-left: 5px solid #ffed54;
+  background-color: transparent;
+  color: #ffed54;
 }
 
 ::placeholder {
   font-size: 18px;
+  color: #ffed54;
 }
 
 .subscribe button {
-  width: 150px;
-  height: 45px;
+  width: 180px;
+  height: 55px;
   margin-left: 20px;
   padding: 2px 7px 2px 7px;
   box-sizing: content-box;
   background-color: #ffed54;
-  color: #090b3b;
+  color: #1c24bc;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -100,11 +123,10 @@
   padding: 80px 0;
   border-bottom: 1px solid #fcf18c;
   background-color: #1318ad;
-  font-family: "GowunDodum-Regular";
 }
 
 .wrapper_video {
-  max-width: 110em;
+  max-width: 80em;
   margin: 0 auto;
   text-align: center;
   font-size: 70px;
@@ -118,13 +140,13 @@
 /* 섹션 3 - 서비스 기능 */
 
 .section3 {
-  padding-top: 60px;
+  padding: 80px 0;
   background-color: #0e1397;
-  font-family: "GowunDodum-Regular";
+  border-bottom: 1px solid #fcf18c;
 }
 
 .wrapper_body {
-  max-width: 110em;
+  max-width: 80em;
   margin: 0 auto;
 }
 
@@ -148,4 +170,15 @@
 
 .feature_text span {
   font-size: 25px;
+}
+
+/* 섹션 4 - 푸터 */
+.section4 {
+  padding: 80px 0;
+  background-color: #1318ad;
+}
+
+.wrapper_body {
+  max-width: 80em;
+  margin: 0 auto;
 }
