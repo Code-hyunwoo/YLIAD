@@ -1,6 +1,7 @@
 package com.yliad.user.security.controller;
 
 import com.yliad.user.entity.User;
+import com.yliad.user.exception.CustomException;
 import com.yliad.user.repository.UserRepository;
 import com.yliad.user.security.adapter.UserAndDtoAdapter;
 import com.yliad.user.security.config.JwtTokenProvider;
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.yliad.user.exception.CustomErrorResult.USER_NOT_FOUND;
+import static com.yliad.user.exception.CustomErrorResult.WRONG_PASSWORD;
+
 /**
  * 사용자 SNS 및 네이티브 로그인 관련 컨트롤러
  */
@@ -36,9 +40,9 @@ public class AuthenticationRestController {
   public ResponseEntity<LoginResponseDto> authorize(@RequestBody LoginRequestDto loginDto,
       HttpServletResponse response) {
     User user = userRepository.findByLoginId(loginDto.getLoginId())
-        .orElseThrow(IllegalArgumentException::new);
+        .orElseThrow(()->new CustomException(USER_NOT_FOUND));
     if (!user.getPassword().equals(loginDto.getPassword())) {
-      throw new IllegalArgumentException();
+      throw new CustomException(WRONG_PASSWORD);
     }
     setTokenHeader(user, response);
     return ResponseEntity.status(200).body(LoginResponseDto.of(user));
