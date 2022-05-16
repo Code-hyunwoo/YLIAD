@@ -147,7 +147,9 @@ function Home(){
               })
             .then((res) => {
                 console.log(res);
-              toast.success('로그인', {
+                sessionStorage.setItem("token", res.data.id);
+
+                toast.success('로그인', {
                 position: "top-center",
                 autoClose: 1500,
                 hideProgressBar: false,
@@ -162,6 +164,16 @@ function Home(){
             })
             .catch((error) => {
               console.log("error", error.response);
+              toast.error(error.response.data.message, {
+                position: "top-center",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored"
+                });
             });            
         }
     
@@ -198,7 +210,7 @@ function Home(){
           } else {
             axios
               .get(
-                `http://k6a308.p.ssafy.io:8001/user-service/api/users/loginid/${userID}`
+                `http://k6a308.p.ssafy.io:8001/user-service/api/users/loginId/${userID}`
               )
               .then((res) => {
                 console.log(res)
@@ -215,21 +227,21 @@ function Home(){
                         theme: "colored"
                         });
                     setuserIDCheck(true);
-                } else {
-                    toast.error('사용할 수 없는 아이디입니다.', {
-                        position: "top-center",
-                        autoClose: 1500,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored"
-                        });
-                }
+                } 
+                
               })
               .catch(error => {
                 console.log("error", error.response);
+                toast.error('사용할 수 없는 아이디입니다.', {
+                    position: "top-center",
+                    autoClose: 1500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored"
+                    });
             });
           }
 

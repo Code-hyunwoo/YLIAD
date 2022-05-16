@@ -1,10 +1,16 @@
 @font-face {
-    font-family: 'SDMiSaeng';
+  font-family: 'SDMiSaeng';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDMiSaeng.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'KOTRAHOPE';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 /* PC */
@@ -103,9 +109,9 @@
 #btn1_P {
     width: 18vw;
     height: 4.5vh;
-    font-size: 2vw;
-    font-family: 'SDMiSaeng';
-    font-weight: 600;
+    font-size: 1.8vw;
+    font-family: 'KOTRAHOPE';
+    /* font-weight: 600; */
     border-radius: 10px;
     background-color: #ffed54;
     cursor: pointer;
@@ -217,9 +223,8 @@
 #btn1_M {
     width: 18rem;
     height: 2.8rem;
-    font-size: 2.5rem;
-    font-family: 'SDMiSaeng';
-    font-weight: 600;
+    font-size: 2rem;
+    font-family: 'KOTRAHOPE';
     border-radius: 10px;
     background-color: #ffed54;
     cursor: pointer;
@@ -227,7 +232,7 @@
     margin-bottom: 1rem;
     position: relative;
     top: 8rem;
-    left: 1rem;
+    left: 2.5rem;
 
     transition:0.4s all; 
     overflow:hidden;
@@ -263,7 +268,7 @@
     height: 20vw;
     border: 5px solid rgb(255, 255, 255);
     padding: 1vw;
-    font-family: 'SDMiSaeng';
+    font-family: 'KOTRAHOPE';
     color: #ffed54;
     font-size: 1.5vw;
     display: flex;
@@ -280,7 +285,7 @@
     height: 24rem;
     border: 5px solid rgb(255, 255, 255);
     padding: 1rem;
-    font-family: 'SDMiSaeng';
+    font-family: 'KOTRAHOPE';
     color: #ffed54;
     font-size: 1.7rem;
     display: flex;
@@ -289,8 +294,8 @@
 }
 
 #formTitle{
-  font-family: 'SDMiSaeng';
-  font-size: 2.5vw;
+  font-family: 'KOTRAHOPE';
+  font-size: 2.2vw;
   margin: 0 auto;
   text-align: center;
   border-bottom: double white;
@@ -298,7 +303,7 @@
 }
 
 #formTitle2{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 2.5vw;
   margin: 0 auto;
   text-align: center;
@@ -307,7 +312,7 @@
 }
 
 #formTitle_M{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 2.5rem;
   margin: 0 auto;
   text-align: center;
@@ -319,7 +324,7 @@
   width: 9vw;
   height: 2vw;
   font-size: 1.5vw;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-weight: 600;
   border-radius: 10px;
   background-color: #ffed54;
@@ -336,7 +341,7 @@
   width: 9vw;
   height: 2vw;
   font-size: 1.5vw;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-weight: 600;
   border-radius: 10px;
   background-color: #ffed54;
@@ -353,7 +358,7 @@
   width: 9rem;
   height: 2.5rem;
   font-size: 2rem;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-weight: 600;
   border-radius: 10px;
   background-color: #ffed54;
@@ -383,10 +388,10 @@
 }
 
 #btn3_P {
-  width: 3.3vw;
+  width: 3.6vw;
   height: 2vw;
   font-size: 1vw;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-weight: 600;
   border-radius: 10px;
   background-color: #ffed54;
@@ -398,14 +403,14 @@
   overflow:hidden;
   /* margin-left: 0.5vw; */
   position: relative;
-  left: 0.8vw;
+  left: 1vw;
 }
 
 #btn3_M {
   width: 3.5rem;
   height: 2.5rem;
   font-size: 1.1rem;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-weight: 600;
   border-radius: 10px;
   background-color: #ffed54;
@@ -421,43 +426,47 @@
 
 #form_input{
   position: relative;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.2vw;
   text-align: center;
   height: 3vh;
   width: 7vw;
-  left: 0.5vw;
+  left: 0.8vw;
 }
 
 #form_input1{
-  font-family: 'SDMiSaeng';
-  font-size: 1.2vw;
-  text-align: center;
-  height: 3vh;
-  width: 10vw;
-}
-
-#form_input8{
-  font-family: 'SDMiSaeng';
-  font-size: 1.2vw;
-  text-align: center;
-  height: 3vh;
-  width: 10vw;
-}
-
-
-#form_input4{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.2vw;
   text-align: center;
   height: 3vh;
   width: 10vw;
   position: relative;
-  left: 0.35vw;
+  left: 0.25vw;
+}
+
+#form_input8{
+  font-family: 'KOTRAHOPE';
+  font-size: 1.2vw;
+  text-align: center;
+  height: 3vh;
+  width: 10vw;
+  position: relative;
+  left: 0.25vw;
+}
+
+
+#form_input4{
+  font-family: 'KOTRAHOPE';
+  font-size: 1.2vw;
+  text-align: center;
+  height: 3vh;
+  width: 10vw;
+  position: relative;
+  left: 0.6vw;
 }
 
 #form_input4_M{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.5rem;
   text-align: center;
   height: 2rem;
@@ -467,7 +476,7 @@
 }
 
 #form_input2{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.2vw;
   text-align: center;
   height: 3vh;
@@ -478,7 +487,7 @@
 
 #form_input_M{
   position: relative;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.5rem;
   text-align: center;
   height: 2rem;
@@ -487,7 +496,7 @@
 }
 
 #form_input1_M{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.5rem;
   text-align: center;
   height: 2rem;
@@ -495,7 +504,7 @@
 }
 
 #form_input8_M{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.5rem;
   text-align: center;
   height: 2rem;
@@ -503,7 +512,7 @@
 }
 
 #form_input1_M2{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.5rem;
   text-align: center;
   height: 2rem;
@@ -511,7 +520,7 @@
 }
 
 #form_input2_M{
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-size: 1.5rem;
   text-align: center;
   height: 2rem;
@@ -576,11 +585,15 @@
 #confirm {
   color: greenyellow;
   font-size: 1vw;
+  position: relative;
+  left: 2.5vw;
 }
 
 #confirm2 {
   color: red;
   font-size: 1vw;
+  position: relative;
+  left: 2.5vw;
 }
 
 #confirm3 {
@@ -607,7 +620,7 @@
   width: 8rem;
   height: 2.5rem;
   font-size: 1.8rem;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   font-weight: 600;
   border-radius: 10px;
   background-color: #ffed54;
@@ -657,7 +670,7 @@
   height: 15vw;
   border: 5px solid rgb(255, 255, 255);
   padding: 1vw;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   color: #ffed54;
   font-size: 1.5vw;
   display: flex;
@@ -674,7 +687,7 @@
   height: 17rem;
   border: 5px solid rgb(255, 255, 255);
   padding: 1rem;
-  font-family: 'SDMiSaeng';
+  font-family: 'KOTRAHOPE';
   color: #ffed54;
   font-size: 2rem;
   display: flex;
