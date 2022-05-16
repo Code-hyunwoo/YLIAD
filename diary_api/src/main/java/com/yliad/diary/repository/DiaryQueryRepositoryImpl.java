@@ -38,7 +38,8 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
                         .and(diary.diaryDate.year().eq(currentYear))
                         .and(diary.diaryDate.month().eq(month)))
                 .groupBy(diary.id, formatDate)
-                .orderBy(diary.id.desc())
+                .having(diary.id.max().eq(userid))
+                .orderBy(diary.id.asc())
 //                .limit(1)
                 .fetch();
     }
