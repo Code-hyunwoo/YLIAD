@@ -4,6 +4,7 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.DateTemplate;
 import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import com.yliad.diary.dto.response.CalendarDayResponseDto;
 import com.yliad.diary.dto.response.CalendarResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -41,6 +42,27 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
                 .having(diary.id.max().eq(userid))
                 .orderBy(diary.id.asc())
 //                .limit(1)
+                .fetch();
+    }
+
+    @Override
+    public List<CalendarDayResponseDto> findDiaryDate(Long userid) {
+        int currentYear = LocalDateTime.now().getYear();
+        int currentMonth = LocalDateTime.now().getMonthValue();
+        int currentDay = LocalDateTime.now().getDayOfMonth();
+        return query.select(
+                        Projections.constructor(CalendarDayResponseDto.class,
+                                diary.diaryDate,
+                                diary.content,
+                                diary.emotion,
+                                diary.voiceFilePath
+                        ))
+                .from(diary)
+                .where(diary.userID.eq(userid)
+                        .and(diary.diaryDate.year().eq(currentYear))
+                        .and(diary.diaryDate.month().eq(currentMonth))
+                        .and(diary.diaryDate.dayOfMonth().eq(currentDay)))
+                .orderBy(diary.id.asc())
                 .fetch();
     }
 }
