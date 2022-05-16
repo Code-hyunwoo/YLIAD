@@ -42,6 +42,10 @@ public class WebSecurityConfig {
             .antMatchers("/**/actuator/**").permitAll()
             .antMatchers(HttpMethod.GET, "/api/**").permitAll()
             .antMatchers(HttpMethod.POST, "/api/users/**").permitAll()
+                //인증로직 개선전까지 임시허용
+                .antMatchers(HttpMethod.DELETE, "/api/**").permitAll()
+                .antMatchers(HttpMethod.PATCH, "/api/**").permitAll()
+                //인증로직 개선전까지 임시허용
             .antMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
             .antMatchers(SWAGGER_URL_PATHS).permitAll()
             .anyRequest().authenticated())
