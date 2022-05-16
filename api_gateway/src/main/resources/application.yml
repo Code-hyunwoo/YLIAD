@@ -11,6 +11,11 @@ spring:
     password: guest
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
       default-filters:
         - name: GlobalFilter
           args:
