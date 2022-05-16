@@ -1,14 +1,10 @@
 package com.yliad.diary.repository;
 
-import com.yliad.diary.dto.request.DiaryRequestDto;
-import com.yliad.diary.dto.request.EmotionDto;
-import com.yliad.diary.dto.response.CalendarResponseDto;
 import com.yliad.diary.entity.Diary;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.time.Month;
 import java.util.List;
 
 public interface DiaryRepository extends JpaRepository<Diary, Long> {

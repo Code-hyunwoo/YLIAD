@@ -4,7 +4,7 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.DateTemplate;
 import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.yliad.diary.dto.request.EmotionDto;
+import com.yliad.diary.dto.response.CalendarResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,14 +22,14 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
     private final JPAQueryFactory query;
 
     @Override
-    public List<EmotionDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid, int month) {
+    public List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid, int month) {
 
         DateTemplate<LocalDateTime> formatDate =
                 Expressions.dateTemplate(LocalDateTime.class,
                         "to_char({0}, {1})", diary.diaryDate, "YYYY-MM-DD");
         int currentYear = LocalDateTime.now().getYear();
         return query.select(
-                        Projections.constructor(EmotionDto.class,
+                        Projections.constructor(CalendarResponseDto.class,
                                 diary.diaryDate,
                                 diary.emotion
                         ))
