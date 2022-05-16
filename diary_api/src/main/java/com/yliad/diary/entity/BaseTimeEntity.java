@@ -16,6 +16,5 @@ import java.time.LocalDateTime;
 public class BaseTimeEntity {
 
   @CreatedDate
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
   private LocalDateTime diaryDate;
 }
