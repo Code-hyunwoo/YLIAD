@@ -19,13 +19,13 @@
 }
 
 .react-calendar {
-  width: 23rem;
+  width: 24rem;
   max-width: 100%;
   background-color: #090b3b;
   color: #ffed54;
   border: none;
   font-family: "SDMiSaeng";
-  font-size: 3rem;
+  font-size: 4rem;
   line-height: 1.125em;
 }
 .react-calendar__navigation button {
