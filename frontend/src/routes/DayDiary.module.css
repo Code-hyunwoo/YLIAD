@@ -98,10 +98,10 @@
       position: relative;
       justify-content: center;
       /* display: flex; */
-      top: 6.5rem;
+      top: 7rem;
       /* width: 30vw; */
       /* width: 31.7vw; */
-      width: 15rem;
+      width: 17rem;
       /* height: 45vh; */
       height: 13rem;
       /* padding-top: 3vh; */
@@ -111,7 +111,7 @@
       /* line-height: 3.6vh; */
       /* font-family: 'Dancing Script', cursive; */
       font-family: 'SDMiSaeng';
-      font-size: 1.3rem;
+      font-size: 1.7rem;
       color: white;
       resize: none;
       margin-bottom: 1rem;
@@ -159,8 +159,8 @@
 }
 #dateM {
     position: relative;
-    font-size: 2rem;
-    top: 5rem;
+    font-size: 3rem;
+    top: 6rem;
     color: #ffed54;
 }
 
@@ -200,7 +200,7 @@
     left: calc(100% + 50px); 
     opacity: 1;}
 
-    #btn1_M2 {
+#btn1_M2 {
         width: 8rem;
         height: 2.5rem;
         font-size: 2rem;
@@ -222,13 +222,13 @@
 
 #anal_resultM{
     font-family: 'ROKAFSansMedium';
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     top: 9rem;
     position: relative;
 }
 #anal_posiM{
     font-family: 'ROKAFSansMedium';
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 0.6rem;
     color: blue;
     top: 9rem;
@@ -236,7 +236,7 @@
 }
 #anal_neuM{
     font-family: 'ROKAFSansMedium';
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 0.6rem;
     color: #ffed54;
     top: 9rem;
@@ -244,7 +244,7 @@
 }
 #anal_negaM{
     font-family: 'ROKAFSansMedium';
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 0.6rem;
     color: red;
     top: 9rem;
@@ -283,7 +283,7 @@
 
 #anal_titleM{
     font-family: 'ROKAFSansMedium';
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     position: relative;
     margin-bottom: 1vh;
 }
