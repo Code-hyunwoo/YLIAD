@@ -85,11 +85,12 @@
 }
 
 #prince_P {
-    width: 6vw;
+    /* width: 6vw; */
+    width: 10vw;
     position: relative;
     left: 12vw;
     bottom: 14vh;
-    margin-bottom: -3vh;
+    margin-bottom: -12vh;
 }
 
 #fire_P {
