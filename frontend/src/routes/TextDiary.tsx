@@ -20,6 +20,7 @@ import axios from "axios";
 function TextDiary(){
     const params = useParams();
     const navigate = useNavigate();
+    const Font = sessionStorage.getItem("Font");
 
     //뒤로가기 버튼
     const color = params.color
@@ -85,6 +86,24 @@ function TextDiary(){
         });
     };
 
+    let fontstyle = Font;
+    if (fontstyle === 'Font1'){
+        fontstyle = 'Donoun-Medium'
+    } else if(fontstyle === "Font2"){
+        fontstyle = 'GangwonEdu_OTFBoldA'
+    } else if(fontstyle === "Font3"){
+        fontstyle = 'Pretendard'
+    } else if(fontstyle === "Font4"){
+        fontstyle = 'CookieRun-Regular'
+    } else if(fontstyle === "Font5"){
+        fontstyle = 'SDMiSaeng'
+    } else {
+        fontstyle = 'SDMiSaeng'
+    }
+
+    //일기 저장하기
+    const SavaDiary = () =>{
+
     //전송 실패 alert
     function fail() {
         toast.error("저장 실패!", {
@@ -136,7 +155,7 @@ function TextDiary(){
                 console.log("저장 실패!")
                 fail();
             })
-    }
+    }}
 
     return (
         <>
@@ -150,14 +169,17 @@ function TextDiary(){
                         {/* <div className={Styles.cylinderP} style={{left:'29vw'}}></div> */}
                         {/* <img src={spring} alt="spring" style={{width: '35vw', top:'16vh', position:'absolute', zIndex:'2'}} /> */}
                         <img src={spring2} alt="spring" style={{width: '6.5vw', top:'19.5vh', position:'absolute', zIndex:'2', left:'27.6vw'}} />
-                        <textarea name="textdiary" value={text} onChange={(
-                            ev: React.ChangeEvent<HTMLTextAreaElement>,
-                            ): void => setText(ev.target.value)} 
-                            id={Styles.contentP} 
-                            // className={Styles.timeP}
-                            style={{backgroundColor:`${bgcolor}`}}
-                        >
-                        </textarea>
+
+                    <textarea name="textdiary" value={text} onChange={(
+                        ev: React.ChangeEvent<HTMLTextAreaElement>,
+                        ): void => setText(ev.target.value)} 
+                        id={Styles.contentP} 
+                        // className={Styles.timeP}
+                        style={{backgroundColor:`${bgcolor}`,
+                    fontFamily:`${fontstyle}`}}
+                    > 
+                    </textarea>
+                        
                         {/* <div className={Styles.cylinderP} style={{right:'29.9vw'}}></div> */}
                         {/* <div className={Styles.cylinderP} style={{right:'29vw'}}></div> */}
                         <div className={Styles.buttonP}>
@@ -169,16 +191,18 @@ function TextDiary(){
             <MobileView>
                 <s></s><div className={base.container}>
                     {/* <Link to="/lobby"><button> 로비로 이동 </button></Link> */}
-                        {/* <div className={Styles.cylinder} style={{top: '8.5rem'}}></div> */}
-                        <img src={spring} alt="spring" style={{width: '22rem', top:'8.7rem', position:'absolute', zIndex:'2'}} />
-                        <textarea name="textdiary" value={text} onChange={(
-                            ev: React.ChangeEvent<HTMLTextAreaElement>,
-                            ): void => setText(ev.target.value)} 
-                            id={Styles.content}
-                            style={{backgroundColor:`${bgcolor}`}}
-                            // className={Styles.timeP}
-                        >
-                        </textarea>
+                        <div className={Styles.cylinder} style={{top: '8.5rem'}}></div>
+                      
+                    <textarea name="textdiary" value={text} onChange={(
+                        ev: React.ChangeEvent<HTMLTextAreaElement>,
+                        ): void => setText(ev.target.value)} 
+                        id={Styles.content} 
+                        // className={Styles.timeP}
+                        style={{backgroundColor:`${bgcolor}`,
+                        fontFamily:`${fontstyle}`}}
+                    > 
+                    </textarea>
+                  
                         <div className={Styles.button}>
                             <img onClick={SavaDiary} className={Styles.save} src="https://img.icons8.com/ios-filled/32/FFFFFF/installing-updates--v1.png" alt="SavaDiary"/>
                             <img onClick={moveselectDiary} className={Styles.back} src="https://img.icons8.com/office/30/FFFFFF/undo.png" alt="selectDiary"/>

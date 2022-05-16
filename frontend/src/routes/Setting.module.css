@@ -455,3 +455,61 @@
     top: 3rem;
     right: 3rem;
 }
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Donoun-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Donoun-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+#fontchange1 {
+    font-family: 'Donoun-Medium';
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#fontchange2 {
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-weight: bold;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+#fontchange3 {
+    font-family: Pretendard;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#fontchange4 {
+    font-family: 'CookieRun-Regular';
+    font-weight: bold;
+}
+
+#fontchange5 {
+    font-family: 'SDMiSaeng';
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+
+
+
+

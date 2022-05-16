@@ -21,6 +21,7 @@ function VoiceDiary4(){
     const navigate = useNavigate();
     const color = params.color;
     let bgcolor = color;
+    const Font = sessionStorage.getItem("Font");
 
     //뒤로가기 버튼
     function moveselectDiary(){
@@ -45,6 +46,24 @@ function VoiceDiary4(){
     } else if(bgcolor === 'green'){
         bgcolor = '#D3FFB095'
     }
+
+    //font  바꾸기
+    let fontstyle = Font;
+    if (fontstyle === 'Font1'){
+        fontstyle = 'Donoun-Medium'
+    } else if(fontstyle === "Font2"){
+        fontstyle = 'GangwonEdu_OTFBoldA'
+    } else if(fontstyle === "Font3"){
+        fontstyle = 'Pretendard'
+    } else if(fontstyle === "Font4"){
+        fontstyle = 'CookieRun-Regular'
+    } else if(fontstyle === "Font5"){
+        fontstyle = 'SDMiSaeng'
+    } else {
+        fontstyle = 'SDMiSaeng'
+    }
+
+
 
     //recode css 바꾸기
     // const [recoding, setRecoding] = useState<boolean>(false);
@@ -185,18 +204,13 @@ function VoiceDiary4(){
                     {/* <h1>음성 일기</h1> */}
                     {/* <div className={Styles.cylinderP} style={{left:'31.34vw'}}></div> */}
                     {/* <div className={Styles.cylinderP} style={{left:'30vw'}}></div> */}
-                    <img src={spring2} alt="spring" style={{width: '5.5vw', top:'19.5vh', position:'absolute', zIndex:'2', left:'28.7vw'}} />
-                    <div className={Styles.timeP} style={{backgroundColor:`${bgcolor}`}}>
+                    {/* <img src={spring} alt="spring" style={{width: '35vw', top:'15.5vh', position:'absolute', zIndex:'2'}} /> */}
+                    <img src={spring2} alt="spring" style={{width: '5.5vw', top:'19.5vh', position:'absolute', zIndex:'2', left:'29.2vw'}} />
+                    <div className={Styles.timeP} style={{backgroundColor:`${bgcolor}`,
+                    fontFamily:`${fontstyle}`}}>
                         <p>{transcript}</p>
-                        {/* <p>{dailytext}</p> */}
-                        {/* {
-                            audioURL?
-                            // `${recordlang}`
-                            `${moment(audioURL.duration * 1000).format("mm:ss")}`
-                            :
-                            `00:00`
-                        } */}
                     </div>
+                    
                     {/* <div className={Styles.cylinderP} style={{right:'31.34vw'}}></div> */}
                     {/* <div className={Styles.cylinderP} style={{right:'30vw'}}></div> */}
                     <div className={Styles.recodeGroupP}>
@@ -239,7 +253,8 @@ function VoiceDiary4(){
                         {/* <h1>음성 일기</h1> */}
                         {/* <div className={Styles.cylinder}></div> */}
                         <img src={spring} alt="spring" style={{width: '22rem', top:'8.7rem', position:'absolute', zIndex:'2'}} />
-                        <div className={Styles.time} style={{backgroundColor:`${bgcolor}`}}>
+                        <div className={Styles.time} style={{backgroundColor:`${bgcolor}`,
+                        fontFamily:`${fontstyle}`}}>
                             <p>{transcript}</p>
                         </div>
                         <div className={Styles.recodeGroup}>
