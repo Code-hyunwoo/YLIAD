@@ -7,6 +7,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BrowserView, MobileView } from 'react-device-detect';
 import spring from "../assets/images/spring.png"
 import spring2 from "../assets/images/spring2.png"
+import {toast, ToastContainer} from 'react-toastify';
+import axios from "axios";
 
 //form에서 받은 Props -> onSubmit 함수(인자로 form:{...}을 받음)
 //form의 textdiary는 문자
@@ -29,7 +31,6 @@ function TextDiary(){
     
     //textarea 값 받기
     const [text, setText] = useState<string>("");
-    console.log("1",text);
     // const [text, setText] = useState({textdiary: '' });
     // const textdiary = text;
     // const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -56,26 +57,91 @@ function TextDiary(){
     if(bgcolor === 'red'){
         bgcolor = '#FB5E3B95'
     } else if(bgcolor === 'pink'){
-        bgcolor = '#FFB7EB95'
+        // bgcolor = '#FFB7EB95'
+        bgcolor = '#FEA0E495'
+        // bgcolor = '#FA7ED795'
     } else if(bgcolor === 'purple'){
         // bgcolor = '#DCA3FF95'
         bgcolor = '#CA77FE95'
     } else if(bgcolor === 'yellow'){
-        bgcolor = '#FFE69295'
+        // bgcolor = '#FFE69295'
+        // bgcolor = '#FFDE6D95'
+        bgcolor = '#FDD03B95'
     } else if(bgcolor === 'blue'){
         bgcolor = '#6AA6FF95'
     } else if(bgcolor === 'green'){
         bgcolor = '#D3FFB095'
     }
 
-    //일기 저장하기
-    const SavaDiary = () =>{
+    //전송 성공 alert
+    function send() {
+        toast.success("저장 완료!", {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable:true,
+        });
+    };
 
+    //전송 실패 alert
+    function fail() {
+        toast.error("저장 실패!", {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable:true,
+        });
+    };
+    //색 감정으로 변환하기
+    let emotion = "";
+    if(color === 'red'){
+        emotion = 'anger';
+    } else if(color === 'pink'){
+        emotion = 'love';
+    } else if(color === 'purple'){
+        emotion = 'fear';
+    } else if(color === 'yellow'){
+        emotion = 'joy';
+    } else if(color === 'blue'){
+        emotion = 'sad';
+    } else if(color === 'green'){
+        emotion = 'disgust';
+    };
+
+
+    //text 백엔드에 전송
+    const SavaDiary = () => {
+        axios.post("http://localhost:8080/api/diary",
+                {
+                    "content" : text,
+                    "emotion" : emotion,
+                    "userID": 1,
+                    "voiceFilePath": "text"
+                },
+                {
+                    headers: {
+                    //   "Authorization":
+                    },
+                }
+            )
+            .then((res) => {
+                console.log("저장 완료!")
+                send();
+            })
+            .catch(error => {
+                console.log("저장 실패!")
+                fail();
+            })
     }
 
     return (
         <>
             <Navbar />
+            <ToastContainer />
             <Stars2 />
             <BrowserView>
                 <div className={base.container}>
@@ -103,7 +169,8 @@ function TextDiary(){
             <MobileView>
                 <s></s><div className={base.container}>
                     {/* <Link to="/lobby"><button> 로비로 이동 </button></Link> */}
-                        <div className={Styles.cylinder} style={{top: '8.5rem'}}></div>
+                        {/* <div className={Styles.cylinder} style={{top: '8.5rem'}}></div> */}
+                        <img src={spring} alt="spring" style={{width: '22rem', top:'8.7rem', position:'absolute', zIndex:'2'}} />
                         <textarea name="textdiary" value={text} onChange={(
                             ev: React.ChangeEvent<HTMLTextAreaElement>,
                             ): void => setText(ev.target.value)} 
