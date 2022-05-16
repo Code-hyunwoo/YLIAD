@@ -26,9 +26,9 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{userId}")
     @ApiOperation(value = "회원 탈퇴")
-    public ResponseEntity<Void> delete(@RequestBody Long userId) {
+    public ResponseEntity<Void> delete(@PathVariable Long userId) {
         service.delete(userId);
         return ResponseEntity.status(200).build();
     }
