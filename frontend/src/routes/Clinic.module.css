@@ -17,7 +17,7 @@
     position: relative;
     font-size: 2vw;
     text-align: center;
-    top: 10vh;
+    top: 15vh;
     font-family: "ROKAFSansBold";
 }
 
@@ -25,7 +25,7 @@
     position: relative;
     width: 30vw;
     height: 52vh;
-    top: 10vw;
+    top: 12vw;
     border: solid 8px rgb(238, 255, 0);
     border-radius: 5px;
     

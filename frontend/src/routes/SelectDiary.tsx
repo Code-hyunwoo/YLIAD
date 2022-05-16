@@ -28,8 +28,8 @@ function SelectDiary(){
         <>
         <Stars />
         <Navbar />
-        <div className={base.container}> 
              <BrowserView>
+              <div className={base.container}> 
                 <div className={styles.P_container}>
                 <div id={styles.voicebox_P}>
                     <div id={styles.voicetext_P}>Voice
@@ -38,6 +38,7 @@ function SelectDiary(){
                 <div id={styles.textbox_P}>
                     <div id={styles.texttext_P}>Text
                     <img onClick={moveTextDiary} id={styles.text_P} src={Text} alt="text" /></div>
+                </div>
                 </div>
                 </div>
             </BrowserView>
@@ -55,7 +56,7 @@ function SelectDiary(){
                 </div>
             </div>
             </MobileView>
-        </div>
+        
         </>
     );
 }
