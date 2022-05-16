@@ -25,13 +25,14 @@ function CalendarPage() {
     setModalOpen(false);
   }
 
-  function readDiary() {
-    navigate("/dayDiary");
-  }
-
   function writeDiary() {
     const selectdate: number = Number(moment(date).format("YYYYMMDD"));
     navigate(`/emotion/${selectdate}`);
+  }
+
+  function readDiary() {
+    const selectdate: number = Number(moment(date).format("YYYYMMDD"));
+    navigate(`/dayDiary/${selectdate}`);
   }
 
   return (

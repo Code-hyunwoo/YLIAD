@@ -4,6 +4,7 @@
   bottom: 3.5vw;
   right: 14.5vw;
   cursor: pointer;
+  z-index: 100;
 }
 
 .Bgm_M {
@@ -12,4 +13,5 @@
   top: 1.5rem;
   right: 1.95rem;
   cursor: pointer;
+  z-index: 100;
 }

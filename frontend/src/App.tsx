@@ -22,8 +22,11 @@ import Summer from "./assets/audio/Summer.mp3";
 import Music from "./assets/images/music6.png";
 import Musicoff from "./assets/images/mute7.png";
 import "./App.css";
-import { BrowserView, MobileView } from "react-device-detect";
-import VoiceDiary4 from "./routes/VoiceDiary4";
+import { BrowserView, MobileView } from 'react-device-detect';
+import VoiceDiary4 from './routes/VoiceDiary4';
+import STT from './routes/STT';
+import Sentiment from "./routes/Sentiment";
+
 
 function App() {
   const [bgmOn, setbgmOn] = useState<boolean>(false);
@@ -53,7 +56,6 @@ function App() {
       audio.play();
       audio.loop = true;
     }
-    console.log(changeBGM);
   }
 
   return (
@@ -77,7 +79,7 @@ function App() {
             element={<VoiceDiary4 />}
           ></Route>
           <Route path="/textdiary/:date/:color" element={<TextDiary />}></Route>
-          <Route path="/daydiary" element={<DayDiary />}></Route>
+          <Route path="/daydiary/:date" element={<DayDiary />}></Route>
           <Route path="/mypage" element={<Mypage />}></Route>
           <Route path="/theme" element={<Theme />}></Route>
           <Route
@@ -87,6 +89,8 @@ function App() {
           <Route path="/fontchange" element={<FontChange />}></Route>
           <Route path="/infochange" element={<InfoChange />}></Route>
           <Route path="/alarm" element={<Alarm />}></Route>
+          <Route path="/stt" element={<STT />}></Route>
+          <Route path="/sentiment" element={<Sentiment />}></Route>
         </Routes>
       </BrowserRouter>
 
