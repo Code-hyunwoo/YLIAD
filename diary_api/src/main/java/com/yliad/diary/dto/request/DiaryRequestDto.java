@@ -11,8 +11,4 @@ import java.time.LocalDateTime;
 public class DiaryRequestDto {
     @NotNull
     private Long userID;
-    @NotNull
-    private LocalDateTime currentTime;
-
-
 }

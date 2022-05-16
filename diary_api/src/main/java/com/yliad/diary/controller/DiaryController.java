@@ -31,15 +31,14 @@ public class DiaryController {
     @GetMapping("/mypage")
 //    @ApiOperation(value = "마이페이지")
     public ResponseEntity<MyPageResponseDto> checkMyPage (@RequestBody DiaryRequestDto requestDto){
-        MyPageResponseDto responseDto = service.getMyPage(requestDto.getUserID(), requestDto.getCurrentTime());
+        MyPageResponseDto responseDto = service.getMyPage(requestDto.getUserID());
         return ResponseEntity.status(200).body(responseDto);
     }
 
     @GetMapping("/calendar")
 //    @ApiOperation(value = "월별 일기 기록데이터 - 달력 표시용")
     public ResponseEntity<List<CalendarResponseDto>> checkCalendar (@RequestBody DiaryRequestDto requestDto){
-        List<CalendarResponseDto> list = diaryQueryRepository.findDiaryByDiaryDateAndUserIDOrderByDiaryDate(requestDto.getUserID()
-                , requestDto.getCurrentTime().getMonthValue());
+        List<CalendarResponseDto> list = diaryQueryRepository.findDiaryByDiaryDateAndUserIDOrderByDiaryDate(requestDto.getUserID());
         return ResponseEntity.status(200).body(list);
     }
 

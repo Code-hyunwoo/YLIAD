@@ -25,9 +25,9 @@ public class DiaryService {
         diaryRepository.save(diary);
     }
 
-    public MyPageResponseDto getMyPage(Long userId, LocalDateTime currentTime){
-        int year = currentTime.getYear();
-        int month = currentTime.getMonthValue();
+    public MyPageResponseDto getMyPage(Long userId){
+        int currentYear = LocalDateTime.now().getYear();
+        int currentMonth = LocalDateTime.now().getMonthValue();
 
         MyPageResponseDto responseDto = MyPageResponseDto.builder()
                 .monthCount(0)
@@ -41,11 +41,11 @@ public class DiaryService {
                 .sad(0)
                 .build();
 
-        int countYear = diaryRepository.countDiaryYear(userId, year);
-        int countMonth = diaryRepository.countDiaryMonth(userId, year, month);
+        int countYear = diaryRepository.countDiaryYear(userId, currentYear);
+        int countMonth = diaryRepository.countDiaryMonth(userId, currentYear, currentMonth);
         int countTotal = diaryRepository.countDiaryTotal(userId);
-        List<String> list1 = diaryRepository.countMonthEmotion(userId, year, month);
-        List<Integer> list2 = diaryRepository.countMonthEmotionCount(userId, year, month);
+        List<String> list1 = diaryRepository.countMonthEmotion(userId, currentYear, currentMonth);
+        List<Integer> list2 = diaryRepository.countMonthEmotionCount(userId, currentYear, currentMonth);
 
         responseDto.setYearCount(countYear);
         responseDto.setMonthCount(countMonth);

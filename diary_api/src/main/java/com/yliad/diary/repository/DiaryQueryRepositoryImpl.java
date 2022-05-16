@@ -23,12 +23,13 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
     private final JPAQueryFactory query;
 
     @Override
-    public List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid, int month) {
+    public List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid) {
 
         DateTemplate<LocalDateTime> formatDate =
                 Expressions.dateTemplate(LocalDateTime.class,
                         "to_char({0}, {1})", diary.diaryDate, "YYYY-MM-DD");
         int currentYear = LocalDateTime.now().getYear();
+        int currentMonth = LocalDateTime.now().getMonthValue();
         return query.select(
                         Projections.constructor(CalendarResponseDto.class,
                                 diary.diaryDate,
@@ -37,7 +38,7 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
                 .from(diary)
                 .where(diary.userID.eq(userid)
                         .and(diary.diaryDate.year().eq(currentYear))
-                        .and(diary.diaryDate.month().eq(month)))
+                        .and(diary.diaryDate.month().eq(currentMonth)))
                 .groupBy(diary.id, formatDate)
                 .having(diary.id.max().eq(userid))
                 .orderBy(diary.id.asc())
