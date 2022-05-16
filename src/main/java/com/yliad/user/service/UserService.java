@@ -6,6 +6,8 @@ import com.yliad.user.dto.request.UpdateFontSettingRequestDto;
 import com.yliad.user.dto.request.UpdateThemeSettingRequestDto;
 import com.yliad.user.entity.Setting;
 import com.yliad.user.entity.User;
+import com.yliad.user.exception.CustomErrorResult;
+import com.yliad.user.exception.CustomException;
 import com.yliad.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,7 @@ public class UserService {
     //회원가입
     @Transactional
     public void saveUser(SaveUserRequestDto requestDto) {
-        checkDuplicateUserNickname(requestDto.getNickname());
+        checkDuplicateUserLoginId(requestDto.getLoginId());
         User user = requestDto.toEntity();
         userRepository.save(requestDto.toEntity());
     }
@@ -50,16 +52,14 @@ public class UserService {
     //닉네임 중복체크
     public void checkDuplicateUserNickname(String nickname) {
         if(userRepository.existsByNickname(nickname)){
-//            throw new Exception("");
-            //예외처리코드만들기
+            throw new CustomException(CustomErrorResult.DUPLICATE_NICKNAME);
         }
     }
 
     //로그인아이디 중복체크
-    public void checkDuplicateUserLoginId(String loginid) {
-        if(userRepository.existsByLoginId(loginid)){
-//            throw new Exception("");
-            //예외처리코드만들기
+    public void checkDuplicateUserLoginId(String loginId) {
+        if(userRepository.existsByLoginId(loginId)){
+            throw new CustomException(CustomErrorResult.DUPLICATE_USERID);
         }
     }
 
