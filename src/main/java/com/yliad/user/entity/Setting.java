@@ -2,6 +2,7 @@ package com.yliad.user.entity;
 
 import com.yliad.user.entity.common.BaseTimeEntity;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +10,6 @@ import javax.persistence.*;
 
 @Getter
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Setting extends BaseTimeEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,18 +26,10 @@ public class Setting extends BaseTimeEntity {
 
     private String fontName;
 
-    public Setting(Long id, User user, String bgmName, String themeName, String fontName) {
-        this.id = id;
-        this.user = user;
-        this.bgmName = bgmName;
-        this.themeName = themeName;
-        this.fontName = fontName;
-    }
-
-    public void setSetting() {
+    public Setting() {
         this.bgmName = "default";
-        this.fontName = "default";
         this.themeName = "default";
+        this.fontName = "default";
     }
 
     public void changeBgm(String bgmName) {

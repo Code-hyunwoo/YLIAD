@@ -24,7 +24,6 @@ public class UserService {
     @Transactional
     public void saveUser(SaveUserRequestDto requestDto) {
         checkDuplicateUserLoginId(requestDto.getLoginId());
-        User user = requestDto.toEntity();
         userRepository.save(requestDto.toEntity());
     }
 

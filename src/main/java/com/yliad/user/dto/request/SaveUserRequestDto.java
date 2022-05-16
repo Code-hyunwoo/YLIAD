@@ -1,6 +1,7 @@
 package com.yliad.user.dto.request;
 
 import com.sun.istack.NotNull;
+import com.yliad.user.entity.Setting;
 import com.yliad.user.entity.User;
 import lombok.Builder;
 import lombok.Data;
