@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class DiaryRequestDto {
+public class CheckDiaryDayRequestDto {
     @NotNull
     private Long userID;
+    @NotNull
+    private Long day;
 }

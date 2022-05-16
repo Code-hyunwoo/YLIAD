@@ -1,5 +1,6 @@
 package com.yliad.diary.controller;
 
+import com.yliad.diary.dto.request.CheckDiaryDayRequestDto;
 import com.yliad.diary.dto.request.DiaryRequestDto;
 import com.yliad.diary.dto.response.CalendarDayResponseDto;
 import com.yliad.diary.dto.response.CalendarResponseDto;
@@ -44,8 +45,8 @@ public class DiaryController {
 
     @GetMapping("/date")
 //    @ApiOperation(value = "달력-날짜 선택")
-    public ResponseEntity<List<CalendarDayResponseDto>> selectDate (@RequestBody DiaryRequestDto requestDto){
-        List<CalendarDayResponseDto> list = diaryQueryRepository.findDiaryDate(requestDto.getUserID());
+    public ResponseEntity<List<CalendarDayResponseDto>> selectDate (@RequestBody CheckDiaryDayRequestDto requestDto){
+        List<CalendarDayResponseDto> list = diaryQueryRepository.findDiaryDate(requestDto.getUserID(), requestDto.getDay());
         return ResponseEntity.status(200).body(list);
     }
 

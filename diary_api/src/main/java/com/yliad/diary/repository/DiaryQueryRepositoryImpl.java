@@ -47,10 +47,9 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
     }
 
     @Override
-    public List<CalendarDayResponseDto> findDiaryDate(Long userid) {
+    public List<CalendarDayResponseDto> findDiaryDate(Long userid, Long day) {
         int currentYear = LocalDateTime.now().getYear();
         int currentMonth = LocalDateTime.now().getMonthValue();
-        int currentDay = LocalDateTime.now().getDayOfMonth();
         return query.select(
                         Projections.constructor(CalendarDayResponseDto.class,
                                 diary.diaryDate,
@@ -62,7 +61,7 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
                 .where(diary.userID.eq(userid)
                         .and(diary.diaryDate.year().eq(currentYear))
                         .and(diary.diaryDate.month().eq(currentMonth))
-                        .and(diary.diaryDate.dayOfMonth().eq(currentDay)))
+                        .and(diary.diaryDate.dayOfMonth().eq(day.intValue())))
                 .orderBy(diary.id.asc())
                 .fetch();
     }
