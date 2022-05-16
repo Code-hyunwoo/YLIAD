@@ -1,7 +1,16 @@
-.wrapper {
+/* 섹션 1 */
+
+.section1 {
+  padding-bottom: 80px;
+  border-bottom: 1px solid #fcf18c;
+}
+
+.wrapper_intro {
   max-width: 80em;
   margin: 0 auto;
 }
+
+/* 내비게이션 바 */
 
 .navbar {
   display: flex;
@@ -16,7 +25,7 @@
   align-items: center;
 }
 
-.title img {
+.icon img {
   width: 52px;
   height: 52px;
 }
@@ -42,7 +51,7 @@
 
 .downsubs img {
   margin-top: 50px;
-  width: 260px;
+  width: 240px;
   height: auto;
 }
 
@@ -50,4 +59,38 @@
   position: absolute;
   top: 210px;
   right: 380px;
+}
+
+.subscribe input {
+  width: 360px;
+  height: 45px;
+  margin: 30px 0 10px 0;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+::placeholder {
+  font-size: 18px;
+}
+
+.subscribe button {
+  width: 150px;
+  height: 45px;
+  margin-left: 20px;
+  padding: 2px 7px 2px 7px;
+  box-sizing: content-box;
+  background-color: #ffed54;
+  color: #090b3b;
+  font-size: 20px;
+}
+
+/* 섹션 2 */
+
+.section2 {
+  padding-top: 60px;
+}
+
+.wrapper_body {
+  max-width: 110em;
+  margin: 0 auto;
 }
