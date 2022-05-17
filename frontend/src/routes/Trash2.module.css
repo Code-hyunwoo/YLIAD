@@ -22,7 +22,7 @@ svg {
 /* PC 버전 */
 
 .backP {
-  background: #141e30;
+  /* background: #141e30; */
   position: absolute;
   left: 0;
   top: 0;
@@ -50,8 +50,9 @@ svg {
   margin: 0 0 -30px -100px;
   width: 200px;
   height: 200px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 100%;
+  
 }
 
 .contentP .fireP {
@@ -166,7 +167,7 @@ svg {
   bottom: 0;
   width: 70px;
   height: 70px;
-  background: #141e30;
+  background: #090b3b;
   border-radius: 100%;
 }
 .contentP .reverseP div:nth-child(1) {
@@ -256,7 +257,7 @@ svg {
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
-  font-size: 55px;
+  font-size: 40px;
   font-family: 'KOTRAHOPE';
   margin-bottom: 10px;
   margin-top: 10px;
@@ -353,8 +354,8 @@ svg {
   /* height: 20vw; */
   margin: 0.5rem 0 0.5rem 0;
   padding: 2.5rem 2rem 0.5rem 2.5rem;
-  line-height: 1.55rem;
-  font-family: "SDMiSaeng";
+  /* line-height: 1.55rem; */
+  font-family: 'KOTRAHOPE';
   font-size: 2rem;
   color: black;
   letter-spacing: 0.05rem;
@@ -542,7 +543,7 @@ svg {
   bottom: 0;
   width: 70px;
   height: 70px;
-  background: #141e30;
+  background: #090b3b;
   /* background: rgba(255, 255, 255, 0); */
   border-radius: 100%;
 }
