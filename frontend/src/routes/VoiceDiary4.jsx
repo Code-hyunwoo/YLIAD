@@ -61,9 +61,9 @@ function VoiceDiary4(){
     } else if(fontstyle === "Font5"){
         fontstyle = 'SDMiSaeng'
     } else {
-        fontstyle = 'SDMiSaeng'
+        fontstyle = 'KOTRAHOPE'
     }
-
+   
 
 
     //recode css 바꾸기
@@ -204,7 +204,7 @@ function VoiceDiary4(){
                     <img src={spring2} alt="spring" style={{width: '5.5vw', top:'22.5vh', position:'absolute', zIndex:'2', left:'28.7vw'}} />
                     <div className={Styles.timeP} style={{backgroundColor:`${bgcolor}`,
                     fontFamily:`${fontstyle}`}}>
-                        <p>{transcript}</p>
+                        <p style={{ padding:'1.7vw'}}>{transcript}</p>
                     </div>
                     
                     {/* <div className={Styles.cylinderP} style={{right:'31.34vw'}}></div> */}

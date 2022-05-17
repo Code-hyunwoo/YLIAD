@@ -18,9 +18,9 @@ function Clinic() {
   const messagesFromRedux = useSelector((state) => state.message.messages);
   const divRef = useRef(null);
 
-  useEffect(() => {
-    divRef.current.scrollIntoView({ behavior: "smooth" });
-  });
+  // useEffect(() => {
+  //   divRef.current.scrollIntoView({ behavior: "smooth" });
+  // });
 
   useEffect(() => {
     eventQuery("Basic");
