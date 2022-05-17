@@ -84,16 +84,16 @@ module.exports = {
     hot: true,
     port: 3000,
   },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js"],
-    alias: {
-      "@": path.resolve(__dirname, "../src/"),
-    },
-    fallback: {
-      util: require.resolve("util/"),
-      // "fs": false
-    },
-  },
+  // resolve: {
+  //   extensions: [".ts", ".tsx", ".js"],
+  //   alias: {
+  //     "@": path.resolve(__dirname, "../src/"),
+  //   },
+  //   fallback: {
+  //     util: require.resolve("util/"),
+  //     // "fs": false
+  //   },
+  // },
   // target : 'node',
   // node :{
   //   fs:'empty',
