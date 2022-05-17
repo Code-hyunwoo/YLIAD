@@ -11,8 +11,9 @@ import { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
-import { BrowserView } from "react-device-detect";
+import { BrowserView,MobileView } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Intro() {
   const [email, setEmail] = useState<string>("");
@@ -224,6 +225,9 @@ function Intro() {
           </div>
         </section>
       </BrowserView>
+      <MobileView>
+      <Link to='/lobby'><button id={styles.btn1_M}>로비로 이동</button></Link>
+      </MobileView>
     </>
   );
 }

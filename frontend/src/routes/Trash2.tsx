@@ -75,7 +75,7 @@ function Trash2() {
           </div>
 
           
-          <div className={styles.contentP} style={{left:'55%'}}>
+          <div className={styles.contentP} style={{left:'60%'}}>
             <div className={styles.fireP}>
               <div className={styles.bottomP}></div>
               <figure></figure>
@@ -108,7 +108,7 @@ function Trash2() {
           </div>
 
             
-          <div className={styles.contentP} style={{left:'45%'}}>
+          <div className={styles.contentP} style={{left:'40%'}}>
             <div className={styles.fireP}>
               <div className={styles.bottomP}></div>
               <figure></figure>
@@ -142,7 +142,7 @@ function Trash2() {
 
 
 
-          <div className={styles.contentP} style={{left:'60%'}}>
+          <div className={styles.contentP} style={{left:'70%'}}>
             <div className={styles.fireP}>
               <div className={styles.bottomP}></div>
               <figure></figure>
@@ -176,7 +176,7 @@ function Trash2() {
 
 
 
-          <div className={styles.contentP} style={{left:'40%'}}>
+          <div className={styles.contentP} style={{left:'30%'}}>
             <div className={styles.fireP}>
               <div className={styles.bottomP}></div>
               <figure></figure>
@@ -209,7 +209,7 @@ function Trash2() {
          </div>
 
 
-          <div className={styles.contentP} style={{left:'65%'}}>
+          <div className={styles.contentP} style={{left:'80%'}}>
             <div className={styles.fireP}>
               <div className={styles.bottomP}></div>
               <figure></figure>
@@ -242,7 +242,7 @@ function Trash2() {
          </div>
 
 
-          <div className={styles.contentP} style={{left:'35%'}}>
+          <div className={styles.contentP} style={{left:'20%'}}>
             <div className={styles.fireP}>
               <div className={styles.bottomP}></div>
               <figure></figure>
@@ -341,9 +341,71 @@ function Trash2() {
       </BrowserView>
 
       <MobileView>
+      <Stars />  
         <div className={base.container}>
+        <Stars />  
           <div className={styles.back}></div>
           <div className={styles.content}>
+            <div className={styles.fire}>
+              <div className={styles.bottom}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+            </div>
+            <div className={styles.reverse}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div className={styles.content} style={{left:'20%'}}>
+            <div className={styles.fire}>
+              <div className={styles.bottom}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+            </div>
+            <div className={styles.reverse}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div className={styles.content} style={{left:'80%'}}>
             <div className={styles.fire}>
               <div className={styles.bottom}></div>
               <figure></figure>
