@@ -26,12 +26,15 @@ public class LoginResponseDto {
   private String bgm;
   @NotNull
   private String font;
+  @NotNull
+  private String jwtToken;
 
-  public static LoginResponseDto of(User user) {
+  public static LoginResponseDto of(User user, String jwtToken) {
     return new LoginResponseDto(user.getId(),
         user.getNickname(),
             user.getSetting().getThemeName(),
             user.getSetting().getBgmName(),
-            user.getSetting().getFontName());
+            user.getSetting().getFontName(),
+            jwtToken);
   }
 }

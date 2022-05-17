@@ -44,11 +44,11 @@ public class AuthenticationRestController {
     if (!user.getPassword().equals(loginDto.getPassword())) {
       throw new CustomException(WRONG_PASSWORD);
     }
-    setTokenHeader(user, response);
-    return ResponseEntity.status(200).body(LoginResponseDto.of(user));
+    String jwtToken = setTokenHeader(user, response);
+    return ResponseEntity.status(200).body(LoginResponseDto.of(user, jwtToken));
   }
 
-  public void setTokenHeader(User user, HttpServletResponse response) {
+  public String setTokenHeader(User user, HttpServletResponse response) {
     UserDto userDto = UserAndDtoAdapter.entityToDto(user);
     String accessToken = jwtTokenProvider.createAccessToken(userDto.getId().toString(),
         userDto.getUserRole());
@@ -56,5 +56,6 @@ public class AuthenticationRestController {
         userDto.getUserRole());
     jwtTokenProvider.setHeaderAccessToken(response, accessToken);
     jwtTokenProvider.setHeaderRefreshToken(response, refreshToken);
+    return refreshToken;
   }
 }
