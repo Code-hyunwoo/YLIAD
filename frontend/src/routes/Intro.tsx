@@ -56,7 +56,7 @@ function Intro() {
   const navigate = useNavigate();
 
   const goWebVersion = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   const LightTooltip = styled(({ className, ...props }: TooltipProps) => (

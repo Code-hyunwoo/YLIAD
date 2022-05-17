@@ -62,8 +62,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/intro" element={<Intro />}></Route>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Intro />}></Route>
+          <Route path="/home" element={<Home />}></Route>
           <Route path="/lobby" element={<Lobby />}></Route>
           <Route path="/calendar" element={<CalendarPage />}></Route>
           <Route path="/clinic" element={<Clinic />}></Route>
