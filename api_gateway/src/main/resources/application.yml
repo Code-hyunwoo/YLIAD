@@ -58,15 +58,6 @@ spring:
         - id: api_diary
           uri: lb://API_DIARY
           predicates:
-            - Path=/api_diary/api/auth
-            - Method=POST
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/api_diary/(?<segment>.*), /$\{segment}
-            - CustomFilter
-        - id: api_diary
-          uri: lb://API_DIARY
-          predicates:
             - Path=/api_diary/**
           filters:
             - RemoveRequestHeader=Cookie
