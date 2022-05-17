@@ -237,57 +237,56 @@ function Intro() {
                 YLIAD
               </div>
               <ul className={styles.menuM}>
-                <li>INTRO VIDEO</li>
+                <li>INTRO</li>
                 <li>FEATURES</li>
               </ul>
             </div>
-            <div style={{ display: "flex" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
               {/* 아드를 옆에 일정 간격으로 배치하기 위한 flex 설정 */}
               <div>
                 {/* 서비스 소개 - 제목 */}
                 <div className={styles.headerM}>
                   <p>
-                    AI Voice Diary App for Web, Android
+                    AI Voice Diary App
+                    <br />
+                    for Web, Android
                     <br />
                   </p>
                   <span>
-                    인공지능 음성 다이어리 YLIAD로 하루를 아름답게 마무리하세요!
+                    인공지능 음성 다이어리 YLIAD로
+                    <br />
+                    하루를 아름답게 마무리하세요!
                   </span>
                 </div>
                 {/* 서비스 다운로드 / 구독 */}
                 <div className={styles.downsubsM}>
-                  <LightTooltip
-                    placement="top"
-                    title="WEB으로 시작하기"
-                    arrow
-                    TransitionComponent={Zoom}
-                  >
+                  <div className={styles.mobileWeb}>
+                    <a
+                      href="https://bit.ly/DownloadYLIAD"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={apk}
+                        alt="apkLink"
+                        id={styles.android_availableM}
+                      />
+                    </a>
+
                     <img
                       src={web}
                       alt="webVersion"
                       id={styles.web_availableM}
                       onClick={goWebVersion}
                     />
-                  </LightTooltip>
-                  <a
-                    href="https://bit.ly/DownloadYLIAD"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={apk}
-                      alt="apkLink"
-                      id={styles.android_availableM}
-                    />
-                  </a>
-                  <LightTooltip
-                    placement="top"
-                    title="iOS 버전도 곧 출시될 예정이에요!"
-                    arrow
-                    TransitionComponent={Zoom}
-                  >
-                    <img src={ipa} alt="ipaDisabled" id={styles.ios_NAM} />
-                  </LightTooltip>
+                  </div>
+
                   <div className={styles.subscribeM}>
                     <input
                       type="email"
@@ -296,14 +295,15 @@ function Intro() {
                       onChange={getEmail}
                     />
                     <button onClick={subscribe}>Subscribe</button>
-                    <p style={{ fontSize: "20px" }}>
-                      구독하시면 YLIAD의 최신 업데이트 내용, 이벤트 소식을
-                      누구보다 빨리 받아보실 수 있습니다.
+                    <p style={{ fontSize: "22px" }}>
+                      구독하시면 YLIAD의 최신 업데이트 내용,
+                      <br /> 이벤트 소식을 누구보다 빨리 받아보실 수<br />{" "}
+                      있습니다.
                     </p>
                   </div>
                 </div>
               </div>
-              <img src={moving} alt="movingad" />
+              <img src={moving} alt="movingad" id={styles.movingAd} />
             </div>
           </div>
         </section>
@@ -322,18 +322,26 @@ function Intro() {
             <div className={styles.feature1M}>
               <img src={read} alt="YLIAD1" />
               <div className={styles.feature_textM}>
-                <p>YLIAD는 인공지능입니다.</p>
-                <span>
-                  인공지능 챗봇을 통해 힘든 마음을 치유할 수 있고,
+                <p>
+                  YLIAD는
                   <br />
-                  감정분석도 해줍니다.
+                  인공지능입니다.
+                </p>
+                <span>
+                  인공지능 챗봇을 통해 힘든 마음을 치유하고,
+                  <br />
+                  감정분석도 받아보세요.
                 </span>
               </div>
             </div>
             <div className={styles.feature2M}>
               <img src={read} alt="YLIAD2" />
               <div className={styles.feature_textM}>
-                <p>YLIAD는 감정쓰레기통입니다.</p>
+                <p>
+                  YLIAD는
+                  <br />
+                  감정쓰레기통입니다.
+                </p>
                 <span>
                   감정쓰레기통에서는
                   <br />
@@ -359,11 +367,15 @@ function Intro() {
             <div className={styles.feature4M}>
               <img src={read} alt="YLIAD4" />
               <div className={styles.feature_textM}>
-                <p>YLIAD는 감정쓰레기통입니다.</p>
-                <span>
-                  감정쓰레기통에서는
+                <p>
+                  YLIAD는
                   <br />
-                  잊고 싶은 오늘의 기억을 버려두고 가세요.
+                  앵무새입니다.
+                </p>
+                <span>
+                  당신이 하는 말을 듣고
+                  <br />
+                  대신 일기를 적어줄 거예요.
                 </span>
               </div>
             </div>
@@ -373,7 +385,11 @@ function Intro() {
         {/* 섹션 4 - 푸터 */}
         <section className={styles.section4M}>
           <div className={styles.wrapper_footerM}>
-            <p>Copyright © 2022 YLIAD. All Rights Reserved.</p>
+            <p>
+              Copyright © 2022 YLIAD.
+              <br />
+              All Rights Reserved.
+            </p>
           </div>
         </section>
       </MobileView>

@@ -148,6 +148,7 @@
   font-size: 20px;
   cursor: pointer;
   font-family: "paybooc-Bold";
+  border: none;
 }
 
 /* 섹션 2 - UCC */
@@ -232,20 +233,17 @@
 
 /* alert */
 .toastM {
-  width: 400px;
+  width: 480px;
 }
 
 /* 섹션 1 */
 
 .section1M {
-  padding-bottom: 100px;
   border-bottom: 1px solid #fcf18c;
   background-color: #131554;
 }
 
 .wrapper_introM {
-  max-width: 88em;
-  margin: 0 auto;
 }
 
 /* 내비게이션 바 */
@@ -253,11 +251,12 @@
 .navbarM {
   display: flex;
   align-items: center;
+  margin-left: 32px;
 }
 
 .iconM {
-  font-size: 44px;
-  margin: 8px;
+  font-size: 24px;
+  font-weight: bold;
   /* 아이콘과 제목 수직 가운데 정렬 */
   display: flex;
   align-items: center;
@@ -273,31 +272,39 @@
 
 .menuM {
   display: flex;
-  font-size: 25px;
-  margin-left: 80px;
+  font-size: 20px;
+  padding-left: 20px;
 }
 
 .menuM li {
   list-style: none;
-  margin: 12px 36px;
+  margin: 12px 8px;
   cursor: pointer;
 }
 
+.headerM {
+}
+
 .headerM p {
-  font-size: 56px;
+  font-size: 40px;
   margin-bottom: 20px;
   font-family: "paybooc-Bold";
 }
 
 .headerM span {
-  font-size: 30px;
+  font-size: 22px;
 }
 
 .downsubsM img {
   margin-top: 50px;
-  width: auto;
   height: 83px;
-  margin-right: 30px;
+  width: auto;
+}
+
+.mobileWeb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #web_availableM {
@@ -317,8 +324,13 @@
   height: auto;
 }
 
+.subscribeM {
+  display: flex;
+  flex-direction: column;
+}
+
 .subscribeM input {
-  width: 400px;
+  width: 380px;
   height: 55px;
   margin: 50px 0 10px 0;
   font-size: 20px;
@@ -335,19 +347,25 @@
   color: #ffed54;
 }
 
+.subscribeM p {
+}
+
 .subscribeM button {
-  width: 180px;
+  width: 387px;
   height: 55px;
-  margin-left: 20px;
-  padding: 2px 7px 2px 7px;
+  margin-bottom: 20px;
   box-sizing: content-box;
   background-color: #ffed54;
   color: #161da3;
   font-size: 20px;
   cursor: pointer;
   font-family: "paybooc-Bold";
+  border: none;
 }
 
+#movingAd {
+  width: 312px;
+}
 /* 섹션 2 - UCC */
 .section2M {
   padding: 80px 0;
@@ -357,14 +375,12 @@
 }
 
 .wrapper_videoM {
-  max-width: 88em;
-  margin: 0 auto;
   text-align: center;
-  font-size: 70px;
+  font-size: 40px;
 }
 
 .wrapper_videoM video {
-  width: 1120px;
+  width: 460px;
   height: auto;
 }
 
@@ -377,8 +393,6 @@
 }
 
 .wrapper_bodyM {
-  max-width: 88em;
-  margin: 0 auto;
 }
 
 .feature1M,
@@ -386,22 +400,30 @@
 .feature3M,
 .feature4M {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 0;
+  padding: 60px 0;
+}
+
+.feature1M img,
+.feature2M img,
+.feature3M img,
+.feature4M img {
+  width: 300px;
+  height: auto;
 }
 
 .feature_textM {
-  margin-left: 100px;
+  text-align: center;
 }
 
 .feature_textM p {
-  font-size: 40px;
+  font-size: 38px;
   font-family: "paybooc-Bold";
 }
 
 .feature_textM span {
-  font-size: 25px;
+  font-size: 22px;
 }
 
 /* 섹션 4 - 푸터 */
@@ -411,9 +433,7 @@
 }
 
 .wrapper_footerM {
-  max-width: 88em;
-  margin: 0 auto;
   text-align: center;
-  font-size: 26px;
+  font-size: 22px;
   color: #b0b0d8;
 }
