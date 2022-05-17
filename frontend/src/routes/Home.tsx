@@ -147,7 +147,9 @@ function Home(){
               })
             .then((res) => {
                 console.log(res);
-                sessionStorage.setItem("token", res.data.id);
+                sessionStorage.setItem("userid", res.data.id);
+                sessionStorage.setItem("token", res.data.jwtToken);
+                sessionStorage.setItem("Font", res.data.font);
 
                 toast.success('로그인', {
                 position: "top-center",
