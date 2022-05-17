@@ -14,19 +14,26 @@ interface AudioProps {
   }
 
 function BGM(props: AudioProps){
+
+
+
+    const token: any = sessionStorage.getItem("token");
+    const userid = sessionStorage.getItem("userid");
+
+
     function changeBGM1(){
         props.setbgmOn(false)
         props.setChangeBGM('MyStar')
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
             {
                 "bgmName": "MyStar"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
@@ -54,14 +61,14 @@ function BGM(props: AudioProps){
         props.setChangeBGM('Summer')
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
             {
                 "bgmName": "Summer"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
@@ -87,14 +94,14 @@ function BGM(props: AudioProps){
         props.setChangeBGM('Paesaggio')
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
             {
                 "bgmName": "Paesaggio"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }

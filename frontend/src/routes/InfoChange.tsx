@@ -16,6 +16,7 @@ function InfoChange(){
     const [NewPassword2, setNewPassword2] = useState('')
 
     const token = sessionStorage.getItem("token");
+    const userid = sessionStorage.getItem("userid");
 
     function onchangeNick(e: any){
         setuserNickname(e.target.value)
@@ -42,7 +43,7 @@ function InfoChange(){
         } else {
         axios
         .patch(
-          `http://k6a308.p.ssafy.io:8001/user-service/api/users/nickname/update/${token}`,
+          `http://k6a308.p.ssafy.io:8001/user-service/api/users/nickname/update/${userid}`,
           {
             "nickname": userNickname,
           })
@@ -104,7 +105,7 @@ function InfoChange(){
         } else {
             axios
             .patch(
-              `http://k6a308.p.ssafy.io:8001/user-service/api/users/password/update/${token}`,
+              `http://k6a308.p.ssafy.io:8001/user-service/api/users/password/update/${userid}`,
               {
                 "password": NewPassword
               })

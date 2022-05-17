@@ -1,5 +1,5 @@
 var path = require("path");
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
@@ -68,11 +68,11 @@ module.exports = {
     ],
   },
   plugins: [
-    // new HtmlWebpackPlugin({
-    //     // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
-    //     template: './src/index.html',
-    //     filename: 'index.html',
-    //   }),
+    new HtmlWebpackPlugin({
+        // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
+        template: './src/index.html',
+        filename: 'index.html',
+      }),
     new ForkTsCheckerWebpackPlugin(),
   ],
   // 플러그인은 웹팩의 기본적인 동작에 추가적인 기능을 제공하는 속성

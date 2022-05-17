@@ -13,6 +13,7 @@ import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import { BrowserView, MobileView } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Intro() {
   const [email, setEmail] = useState<string>("");
