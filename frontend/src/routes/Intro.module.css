@@ -76,23 +76,32 @@
 
 .downsubs img {
   margin-top: 50px;
-  width: 240px;
-  height: auto;
+  width: auto;
+  height: 83px;
+  margin-right: 30px;
+}
+
+#web_available {
+  cursor: pointer;
 }
 
 #android_available {
   cursor: pointer;
+  width: 240px;
+  height: auto;
+  margin-right: 30px;
 }
 
 #ios_NA {
-  margin-left: 20px;
-  filter: opacity(0.5);
+  filter: opacity(0.4);
+  width: 240px;
+  height: auto;
 }
 
 .subscribe input {
   width: 400px;
   height: 55px;
-  margin: 30px 0 10px 0;
+  margin: 50px 0 10px 0;
   font-size: 20px;
   padding-left: 10px;
   border: 2px solid #ffed54;
