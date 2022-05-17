@@ -8,7 +8,8 @@
 
 .section1,
 .section2,
-.section3 {
+.section3,
+.section4 {
   font-family: "GowunDodum-Regular";
   letter-spacing: 1px;
 }
@@ -178,7 +179,10 @@
   background-color: #1318ad;
 }
 
-.wrapper_body {
+.wrapper_footer {
   max-width: 80em;
   margin: 0 auto;
+  text-align: center;
+  font-size: 26px;
+  color: #b0b0d8;
 }

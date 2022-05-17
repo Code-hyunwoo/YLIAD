@@ -7,12 +7,17 @@ import read from "../assets/images/read.png";
 import ucc from "../assets/videos/POLLING_UCC.mp4";
 import { toast, ToastContainer } from "react-toastify";
 import { useState } from "react";
+import { styled } from "@mui/material/styles";
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import Zoom from "@mui/material/Zoom";
 
 function Intro() {
   const [email, setEmail] = useState<string>("");
+
   function getEmail(e: React.ChangeEvent<HTMLInputElement>) {
     setEmail(e.target.value);
   }
+
   function subscribe() {
     if (email === "") {
       toast.error("이메일 주소를 입력하세요.", {
@@ -44,6 +49,18 @@ function Intro() {
       setEmail("");
     }
   }
+
+  const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: theme.palette.common.white,
+      color: "rgba(0, 0, 0, 0.87)",
+      boxShadow: theme.shadows[1],
+      fontSize: 14,
+    },
+  }));
+
   return (
     <>
       {/* 섹션 1 - 내브바 & 다운링크 & 구독 */}
@@ -83,7 +100,14 @@ function Intro() {
                 >
                   <img src={apk} alt="apkLink" id={styles.android_available} />
                 </a>
-                <img src={ipa} alt="ipaDisabled" id={styles.ios_NA} />
+                <LightTooltip
+                  title="iOS 버전도 곧 출시될 예정이에요!"
+                  placement="top"
+                  arrow
+                  TransitionComponent={Zoom}
+                >
+                  <img src={ipa} alt="ipaDisabled" id={styles.ios_NA} />
+                </LightTooltip>
                 <div className={styles.subscribe}>
                   <input
                     type="email"
