@@ -17,6 +17,7 @@ function Clinic() {
   const dispatch = useDispatch();
   const messagesFromRedux = useSelector((state) => state.message.messages);
   const divRef = useRef(null);
+  const nickname = sessionStorage.getItem("nickname");
 
   // useEffect(() => {
   //   divRef.current.scrollIntoView({ behavior: "smooth" });
@@ -29,7 +30,7 @@ function Clinic() {
   const textQuery = async (text) => {
     //  First  Need to  take care of the message I sent
     let conversation = {
-      who: "현우",
+      who: nickname,
       content: {
         text: {
           text: text,

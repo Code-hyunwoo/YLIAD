@@ -18,12 +18,21 @@ import Firefly from "../components/lobby/Firefly";
 
 function Lobby(){
 
+    const theme = sessionStorage.getItem("theme");
+
+
+
     return (
         <>
             <Navbar />
             <Stars2 />
-            {/* <Fire /> */}
-            <Firefly />
+
+            {theme === 'modak'?
+            <Fire /> : theme ==='bandi'?
+            <Firefly/>: theme ==='super'?
+            <Fire/>: <Fire/>
+        }
+            {/* <Firefly /> */}
                 {/* <img className={Styles.earthP} src="https://img.icons8.com/officel/400/000000/globe-asia.png" alt="earth"/> */}
             {/* <BrowserView >
                 <div className={base.container}> 
