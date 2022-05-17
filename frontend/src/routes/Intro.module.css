@@ -243,9 +243,6 @@
   background-color: #131554;
 }
 
-.wrapper_introM {
-}
-
 /* 내비게이션 바 */
 
 .navbarM {
@@ -280,9 +277,6 @@
   list-style: none;
   margin: 12px 8px;
   cursor: pointer;
-}
-
-.headerM {
 }
 
 .headerM p {
@@ -347,9 +341,6 @@
   color: #ffed54;
 }
 
-.subscribeM p {
-}
-
 .subscribeM button {
   width: 387px;
   height: 55px;
@@ -390,9 +381,6 @@
   padding: 80px 0;
   background-color: #131554;
   border-bottom: 1px solid #fcf18c;
-}
-
-.wrapper_bodyM {
 }
 
 .feature1M,
