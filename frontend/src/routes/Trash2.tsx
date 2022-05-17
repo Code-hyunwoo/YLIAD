@@ -5,6 +5,8 @@ import base from "./Base.module.css";
 import styles from "./Trash2.module.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Stars2 from "../components/layout/Stars2"
+import Stars from "../components/layout/Stars"
 
 function Trash2() {
   const [text, setText] = useState<string>("");
@@ -35,6 +37,7 @@ function Trash2() {
   return (
     <>
       <Navbar />
+      <Stars />  
       <ToastContainer />
       <BrowserView>
         <div className={base.container}>
@@ -58,7 +61,8 @@ function Trash2() {
               <figure></figure>
               <figure></figure>
             </div>
-            <div className={styles.reverseP}>
+         
+          <div className={styles.reverseP}>
               <div></div>
               <div></div>
               <div></div>
@@ -69,6 +73,209 @@ function Trash2() {
               <div></div>
             </div>
           </div>
+
+          
+          <div className={styles.contentP} style={{left:'60%'}}>
+            <div className={styles.fireP}>
+              <div className={styles.bottomP}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              </div>
+         
+          <div className={styles.reverseP}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+            
+          <div className={styles.contentP} style={{left:'40%'}}>
+            <div className={styles.fireP}>
+              <div className={styles.bottomP}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              </div>
+         
+          <div className={styles.reverseP}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+
+
+          <div className={styles.contentP} style={{left:'70%'}}>
+            <div className={styles.fireP}>
+              <div className={styles.bottomP}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              </div>
+         
+         <div className={styles.reverseP}>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+           </div>
+         </div>
+
+
+
+          <div className={styles.contentP} style={{left:'30%'}}>
+            <div className={styles.fireP}>
+              <div className={styles.bottomP}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              </div>
+         
+         <div className={styles.reverseP}>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+           </div>
+         </div>
+
+
+          <div className={styles.contentP} style={{left:'80%'}}>
+            <div className={styles.fireP}>
+              <div className={styles.bottomP}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              </div>
+         
+         <div className={styles.reverseP}>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+           </div>
+         </div>
+
+
+          <div className={styles.contentP} style={{left:'20%'}}>
+            <div className={styles.fireP}>
+              <div className={styles.bottomP}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              </div>
+         
+         <div className={styles.reverseP}>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+           </div>
+         </div>
+
+
+
           <div className={styles.inputP}>
             {isburned ? (
               <p>
@@ -80,7 +287,7 @@ function Trash2() {
               <p>
                 지우고 싶은 기억
                 <br />
-                여기에 놓고 가세요
+                여기에 놓고 가세요.
               </p>
             )}
             <div className={styles.letterContainerP}>
@@ -134,9 +341,71 @@ function Trash2() {
       </BrowserView>
 
       <MobileView>
+      <Stars />  
         <div className={base.container}>
+        <Stars />  
           <div className={styles.back}></div>
           <div className={styles.content}>
+            <div className={styles.fire}>
+              <div className={styles.bottom}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+            </div>
+            <div className={styles.reverse}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div className={styles.content} style={{left:'20%'}}>
+            <div className={styles.fire}>
+              <div className={styles.bottom}></div>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+              <figure></figure>
+            </div>
+            <div className={styles.reverse}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div className={styles.content} style={{left:'80%'}}>
             <div className={styles.fire}>
               <div className={styles.bottom}></div>
               <figure></figure>

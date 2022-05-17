@@ -12,32 +12,37 @@ import Stars from "../components/layout/Stars";
 import Navbar from "../components/layout/Navbar";
 import Stars2 from "../components/layout/Stars2";
 import { BrowserView, MobileView } from 'react-device-detect';
+import Fire from "../components/lobby/Fire";
+import Firefly from "../components/lobby/Firefly";
 
 
 function Lobby(){
 
+    const theme = sessionStorage.getItem("theme");
+
+
+
     return (
         <>
             <Navbar />
-            {/* <Stars /> */}
             <Stars2 />
-                {/* <img src={moon} className={Styles.moon}/>
-                <img src={star} className={Styles.star1}/>
-                <img src={star2} className={Styles.star2}/>
-                <img src={star3} className={Styles.star3}/>
-                <img src={star4} className={Styles.star4}/>
-                <img src={star5} className={Styles.star5}/>
-                <img src={star6} className={Styles.star6}/> */}
-            <BrowserView>
-                <div className={base.container}>
-                <img className={Styles.earthP} src="https://img.icons8.com/officel/400/000000/globe-asia.png" alt="earth"/>
+
+            {theme === 'modak'?
+            <Fire /> : theme ==='bandi'?
+            <Firefly/>: theme ==='super'?
+            <Fire/>: <Fire/>
+        }
+            {/* <Firefly /> */}
+                {/* <img className={Styles.earthP} src="https://img.icons8.com/officel/400/000000/globe-asia.png" alt="earth"/> */}
+            {/* <BrowserView >
+                <div className={base.container}> 
                 </div>
             </BrowserView>
             <MobileView>
                 <div className={base.container}>
-                    <img className={Styles.earth} src="https://img.icons8.com/officel/500/000000/globe-asia.png" alt="earth"/>
                 </div>
-            </MobileView>
+            </MobileView> */}
+                    {/* <img className={Styles.earth} src="https://img.icons8.com/officel/500/000000/globe-asia.png" alt="earth"/> */}
         </>
     );
 }

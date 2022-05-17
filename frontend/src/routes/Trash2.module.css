@@ -22,7 +22,7 @@ svg {
 /* PC 버전 */
 
 .backP {
-  background: #141e30;
+  /* background: #141e30; */
   position: absolute;
   left: 0;
   top: 0;
@@ -50,8 +50,9 @@ svg {
   margin: 0 0 -30px -100px;
   width: 200px;
   height: 200px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 100%;
+  
 }
 
 .contentP .fireP {
@@ -166,7 +167,7 @@ svg {
   bottom: 0;
   width: 70px;
   height: 70px;
-  background: #141e30;
+  background: #090b3b;
   border-radius: 100%;
 }
 .contentP .reverseP div:nth-child(1) {
@@ -256,7 +257,7 @@ svg {
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
-  font-size: 55px;
+  font-size: 40px;
   font-family: 'KOTRAHOPE';
   margin-bottom: 10px;
   margin-top: 10px;
@@ -353,8 +354,8 @@ svg {
   /* height: 20vw; */
   margin: 0.5rem 0 0.5rem 0;
   padding: 2.5rem 2rem 0.5rem 2.5rem;
-  line-height: 1.55rem;
-  font-family: "SDMiSaeng";
+  /* line-height: 1.55rem; */
+  font-family: 'KOTRAHOPE';
   font-size: 2rem;
   color: black;
   letter-spacing: 0.05rem;
@@ -399,7 +400,7 @@ svg {
 /* 모바일 버전 */
 
 .back {
-  background: #141e30;
+  background: #090b3b;
   position: absolute;
   left: 0;
   top: 0;
@@ -426,7 +427,7 @@ svg {
   margin: 0 0 -30px -100px;
   width: 200px;
   height: 200px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 100%;
 }
 
@@ -542,7 +543,7 @@ svg {
   bottom: 0;
   width: 70px;
   height: 70px;
-  background: #141e30;
+  background: #090b3b;
   /* background: rgba(255, 255, 255, 0); */
   border-radius: 100%;
 }
@@ -622,7 +623,7 @@ svg {
 .input {
   position: absolute;
   left: 50%;
-  top: 48%;
+  top: 49%;
   transform: translate(-50%, -50%);
   text-align: center;
   
@@ -694,7 +695,7 @@ svg {
   margin: 2rem 0 0;
   letter-spacing: 0.2rem;
   color: #ff6e07;
-  font-family: "SDMiSaeng";
+  font-family: 'KOTRAHOPE';
   border: 0.1rem solid #ff6e07;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -726,10 +727,10 @@ svg {
   width: 15rem;
   height: 23rem;
   margin: 0.5rem 0 0.5rem 0;
-  padding: 2rem 2rem 1rem 2.5rem;
+  padding: 3rem 3rem 1.2rem 2.5rem;
   line-height: 1.55rem;
-  font-family: "SDMiSaeng";
-  font-size: 2rem;
+  font-family: 'KOTRAHOPE';
+  font-size: 2.3rem;
   color: black;
   letter-spacing: 0.05rem;
   word-spacing: 0.3rem;

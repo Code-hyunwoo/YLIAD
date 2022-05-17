@@ -11,20 +11,21 @@ import axios from "axios";
 
 function FontChange(){
 
-    const token = sessionStorage.getItem("token");
+    const token: any = sessionStorage.getItem("token");
+    const userid = sessionStorage.getItem("userid");
 
     function changeFont1(){
         sessionStorage.setItem("Font", "Font1");
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/font",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font1"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
@@ -50,14 +51,14 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font2");
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/font",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font2"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
@@ -83,14 +84,14 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font3");
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/font",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font3"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
@@ -116,14 +117,14 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font4");
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/font",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font4"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
@@ -149,14 +150,14 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font5");
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/font",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font5"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
@@ -182,14 +183,14 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font6");
         axios
         .patch(
-            "http://k6a308.p.ssafy.io:8001/user-service/api/users/font",
+            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font6"
             },
             {
                 headers: {
                     "Content-Type": "application/json",
-                    // "Authorization": token,
+                    "Authorization": token,
                     "Accept" : "*/*",
                 } 
             }
