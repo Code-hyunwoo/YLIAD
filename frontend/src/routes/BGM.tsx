@@ -123,8 +123,8 @@ function BGM(props: AudioProps){
         <Navbar />
         <Stars2 />
         <ToastContainer />
-        <div className={base.container}> 
         <BrowserView>
+        <div className={base.container}> 
          <div className={styles.P_container2}>
             <h1 id={styles.title_P}>BGM</h1>
             
@@ -133,6 +133,8 @@ function BGM(props: AudioProps){
             <button id={styles.btn2_P} onClick={changeBGM3}> Paesaggio Italiano </button>
             <Link to="/setting"><button id={styles.btn1_P}> 돌아가기 </button></Link>
         </div>
+        </div>
+
         </BrowserView>
 
         <MobileView>
@@ -147,7 +149,6 @@ function BGM(props: AudioProps){
 
         </MobileView>
 
-        </div>
 
         </>
     );

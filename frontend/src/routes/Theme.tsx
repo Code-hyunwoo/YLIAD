@@ -11,12 +11,13 @@ function Theme(){
         <>
         <Navbar />
         <Stars2 />
-        <div className={base.container}> 
         <BrowserView>
+        <div className={base.container}> 
          <div className={styles.P_container2}>
             <h1 id={styles.title_P}>Theme</h1>
             
             <Link to="/setting"><button id={styles.btn1_P}> 돌아가기 </button></Link>
+        </div>
         </div>
         </BrowserView>
 
@@ -27,7 +28,7 @@ function Theme(){
             <Link to="/setting"><button id={styles.btn1_M}> 돌아가기 </button></Link>
         </div>
         </MobileView>
-        </div>
+       
         </>
     );
 }

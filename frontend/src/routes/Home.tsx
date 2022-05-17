@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import base from "./Base.module.css"
 import styles from "./Home.module.css"
-import ard from "../assets/images/ardCape.png"
+// import ard from "../assets/images/ardCape.png"
+import ard from "../assets/images/adCape_move_left2.gif"
 import { BrowserView, MobileView } from 'react-device-detect';
 import Campfire from "../components/Campfire";
 import Stars2 from "../components/layout/Stars2"
@@ -141,11 +142,14 @@ function Home(){
             .post(
               "http://k6a308.p.ssafy.io:8001/user-service/api/auth",
               {
-                loginId: userID,
-                password: userPassword
+                "loginId": loginID,
+                "password": loginPassword
               })
-            .then(() => {
-              toast.success('로그인', {
+            .then((res) => {
+                console.log(res);
+                sessionStorage.setItem("token", res.data.id);
+
+                toast.success('로그인', {
                 position: "top-center",
                 autoClose: 1500,
                 hideProgressBar: false,
@@ -155,10 +159,21 @@ function Home(){
                 progress: undefined,
                 theme: "colored"
                 });
+                console.log('로그인 성공!')
                 navigate('/lobby')
             })
             .catch((error) => {
               console.log("error", error.response);
+              toast.error(error.response.data.message, {
+                position: "top-center",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored"
+                });
             });            
         }
     
@@ -195,7 +210,7 @@ function Home(){
           } else {
             axios
               .get(
-                `http://k6a308.p.ssafy.io:8001/user-service/api/users/loginid/${userID}`
+                `http://k6a308.p.ssafy.io:8001/user-service/api/users/loginId/${userID}`
               )
               .then((res) => {
                 console.log(res)
@@ -212,21 +227,21 @@ function Home(){
                         theme: "colored"
                         });
                     setuserIDCheck(true);
-                } else {
-                    toast.error('사용할 수 없는 아이디입니다.', {
-                        position: "top-center",
-                        autoClose: 1500,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "colored"
-                        });
-                }
+                } 
+                
               })
               .catch(error => {
                 console.log("error", error.response);
+                toast.error('사용할 수 없는 아이디입니다.', {
+                    position: "top-center",
+                    autoClose: 1500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored"
+                    });
             });
           }
 
@@ -260,7 +275,7 @@ function Home(){
                     </span>
                     <div id={styles.centerimage}>
                         <Campfire ></Campfire>
-                        <img id={styles.prince_P} src={ard} alt="man" />
+                        <img id={styles.prince_P} src={ard} alt="man"/>
                     </div>
                     <button onClick={onClickLogin} id={styles.btn1_P}>로그인</button>
                     <button onClick={onClickSignin} id={styles.btn1_P}>회원가입</button>
@@ -327,6 +342,7 @@ function Home(){
                     </div>
                     <button onClick={onClickLogin} id={styles.btn1_M}>로그인</button>
                     <button onClick={onClickSignin} id={styles.btn1_M}>회원가입</button>
+                    <Link to='/lobby'><button id={styles.btn1_M}>로비로 이동</button></Link>
                 </div>
 
                 {/* 회원가입 */}
