@@ -75,7 +75,6 @@
 
 .downsubs img {
   margin-top: 50px;
-  margin-right: 50px;
   width: 240px;
   height: auto;
 }
@@ -85,6 +84,7 @@
 }
 
 #ios_NA {
+  margin-left: 20px;
   filter: opacity(0.5);
 }
 

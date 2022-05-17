@@ -76,7 +76,13 @@ function Intro() {
               </div>
               {/* 서비스 다운로드 / 구독 */}
               <div className={styles.downsubs}>
-                <img src={apk} alt="apkLink" id={styles.android_available} />
+                <a
+                  href="https://bit.ly/DownloadYLIAD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={apk} alt="apkLink" id={styles.android_available} />
+                </a>
                 <img src={ipa} alt="ipaDisabled" id={styles.ios_NA} />
                 <div className={styles.subscribe}>
                   <input
@@ -158,7 +164,9 @@ function Intro() {
 
       {/* 섹션 4 - 푸터 */}
       <section className={styles.section4}>
-        <div className={styles.wrapper_footer}></div>
+        <div className={styles.wrapper_footer}>
+          <p>Copyright © 2022 YLIAD. All Rights Reserved.</p>
+        </div>
       </section>
     </>
   );
