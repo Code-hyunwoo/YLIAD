@@ -105,7 +105,7 @@ function Intro() {
                 <div className={styles.downsubs}>
                   <LightTooltip
                     placement="top"
-                    title="WEB으로 이용하기"
+                    title="WEB으로 시작하기"
                     arrow
                     TransitionComponent={Zoom}
                   >
