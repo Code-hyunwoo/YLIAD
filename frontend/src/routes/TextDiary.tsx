@@ -103,7 +103,7 @@ function TextDiary(){
     }
 
     //일기 저장하기
-    const SavaDiary = () =>{
+    // const SavaDiary = () =>{
 
     //전송 실패 alert
     function fail() {
@@ -134,14 +134,15 @@ function TextDiary(){
 
 
     //text 백엔드에 전송
-    const SavaDiary = () => {
-        axios.post("http://localhost:8080/api/diary",
+    function SavaDiary(){
+        axios.post("http://k6a308.p.ssafy.io:8001/user-service/api/diary",
                 {
                     "content" : text,
                     "emotion" : emotion,
                     "userID": token,
                     "voiceFilePath": "text"
                 },
+
             )
             .then((res) => {
                 console.log("저장 완료!", res)
@@ -151,7 +152,7 @@ function TextDiary(){
                 console.log("저장 실패!", error.response)
                 fail();
             })
-    }}
+    }
 
     return (
         <>
