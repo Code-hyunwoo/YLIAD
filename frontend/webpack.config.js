@@ -4,7 +4,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
   mode: "development", // production, development, none  배포할 때는 production
-  entry: "./src/index.tsx",
+  entry: "./src/index.js",
   // 웹 자원을 변환하기위해 필요한 최초 진입점이자 자바스크립트 파일경로
   // entry 속성에 지정된 파일에는 웹 에플리케이션의 전반적인 구조와 내용이 담겨져 있어야 함.
 
