@@ -58,27 +58,24 @@ public class UserController {
         return ResponseEntity.status(200).build();
     }
 
-    @PatchMapping("/bgm")
+    @PatchMapping("/bgm/{userId}")
     @ApiOperation(value = "Bgm 수정")
-    public ResponseEntity<Void> changeBgm(@RequestBody UpdateBgmSettingRequestDto requestDto,
-        @CurrentUser UserDto userDto) {
-        service.changeBgm(requestDto, userDto.getId());
+    public ResponseEntity<Void> changeBgm(@PathVariable("userId") Long userId, @RequestBody UpdateBgmSettingRequestDto requestDto) {
+        service.changeBgm(requestDto, userId);
         return ResponseEntity.status(200).build();
     }
 
-    @PatchMapping("/font")
+    @PatchMapping("/font/{userId}")
     @ApiOperation(value = "Font 수정")
-    public ResponseEntity<Void> changeFont(@RequestBody UpdateFontSettingRequestDto requestDto,
-        @CurrentUser UserDto userDto) {
-        service.changeFont(requestDto, userDto.getId());
+    public ResponseEntity<Void> changeFont(@PathVariable("userId") Long userId, @RequestBody UpdateFontSettingRequestDto requestDto) {
+        service.changeFont(requestDto, userId);
         return ResponseEntity.status(200).build();
     }
 
-    @PatchMapping("/theme")
+    @PatchMapping("/theme/{userId}")
     @ApiOperation(value = "Theme 수정")
-    public ResponseEntity<Void> changeTheme(@RequestBody UpdateThemeSettingRequestDto requestDto,
-        @CurrentUser UserDto userDto) {
-        service.changeTheme(requestDto, userDto.getId());
+    public ResponseEntity<Void> changeTheme(@PathVariable("userId") Long userId, @RequestBody UpdateThemeSettingRequestDto requestDto) {
+        service.changeTheme(requestDto, userId);
         return ResponseEntity.status(200).build();
     }
 }
