@@ -27,9 +27,9 @@ public class Setting extends BaseTimeEntity {
     private String fontName;
 
     public Setting() {
-        this.bgmName = "default";
+        this.bgmName = "MyStar";
         this.themeName = "default";
-        this.fontName = "default";
+        this.fontName = "Font6";
     }
 
     public void changeBgm(String bgmName) {
