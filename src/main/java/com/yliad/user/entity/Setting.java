@@ -28,7 +28,7 @@ public class Setting extends BaseTimeEntity {
 
     public Setting() {
         this.bgmName = "MyStar";
-        this.themeName = "default";
+        this.themeName = "modak";
         this.fontName = "Font6";
     }
 
