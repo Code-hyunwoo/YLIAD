@@ -22,10 +22,6 @@
   margin-top: 10rem;
 }
 
-.calendar_P {
-  width: 30rem;
-}
-
 .react-calendar {
   width: 24rem;
   max-width: 100%;
@@ -41,7 +37,7 @@
   color: #ffffff;
   min-width: 44px;
   background: none;
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-family: "KOTRAHOPE";
 }
 

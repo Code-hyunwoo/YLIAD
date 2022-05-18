@@ -53,9 +53,7 @@ function CalendarPage() {
           },
         }
       )
-      .then((res) =>
-        console.log("리스폰스:", res, `올해는: ${year}`, `이번달은: ${month}`)
-      );
+      .then((res) => console.log("Response:", res.data));
   });
 
   // view -> 현재 화면에 보이는 달의 첫 날(activeStartDate)을 포함한 객체(Object)
@@ -106,7 +104,6 @@ function CalendarPage() {
         <div className={base.container}>
           <div className="P_container">
             <Calendar
-              // onChange={setDate}
               value={date}
               formatDay={(locale: string, date: Date): string =>
                 moment(date).format("DD")
@@ -158,38 +155,47 @@ function CalendarPage() {
           <div className="M_container">
             <Calendar
               locale="ko"
-              onChange={setDate}
               value={date}
-              formatDay={(locale, date) => moment(date).format("DD")}
+              formatDay={(locale: string, date: Date): string =>
+                moment(date).format("DD")
+              }
               showNeighboringMonth={false}
               next2Label=""
               prev2Label=""
               nextLabel=">"
               prevLabel="<"
-              onClickDay={onClickDay}
+              onClickDay={(value: Date) => onClickDay(value)}
+              onActiveStartDateChange={(view: any) => giveMeDate(view)}
+              onViewChange={(view: any) => giveMeDate(view)}
             ></Calendar>
-
-            <Modal open={modalOpen} onClose={handleClose}>
-              <div id="modalbox">
-                <div className="modaldate">
-                  {moment(date).format("YYYY년 MM월 DD일")}
-                </div>
-                <div className="modalimgbox">
-                  <img onClick={readDiary} id="readimg" src={Read} alt="read" />
-                  <img
-                    onClick={writeDiary}
-                    id="writeimg"
-                    src={Write}
-                    alt="write"
-                  />
-                </div>
-                <div className="modaltextbox">
-                  <span>일기 읽기</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>일기 쓰기 </span>
-                </div>
-              </div>
-            </Modal>
           </div>
+
+          <Modal open={modalOpen} onClose={handleClose}>
+            <div id="modalbox">
+              <div className="modaldate">
+                {moment(date).format("YYYY년 MM월 DD일")}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  marginTop: "30px",
+                }}
+              >
+                <div className="readDiary" onClick={readDiary}>
+                  <img id="readimg" src={Read} alt="read" />
+                  <span>일기 읽기</span>
+                </div>
+
+                {moment(date).format("YYYYMMDD") === today ? (
+                  <div className="writeDiary" onClick={writeDiary}>
+                    <img id="writeimg" src={Write} alt="write" />
+                    <span>일기 쓰기</span>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          </Modal>
         </div>
       </MobileView>
     </>
