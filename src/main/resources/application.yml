@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: diary-api
+    name: api_diary
   rabbitmq:
     host: rabbitmq
     port: 5672
