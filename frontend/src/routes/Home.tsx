@@ -283,7 +283,7 @@ function Home(){
                         <Campfire ></Campfire>
                         <img id={styles.prince_P} src={ard} alt="man"/>
                     </div>
-                    <button onClick={onClickLogin} id={styles.btn1_P}>로그인</button>
+                    <button onClick={onClickLogin} id={styles.btn1_P}>로그인zz</button>
                     <button onClick={onClickSignin} id={styles.btn1_P}>회원가입</button>
                     
                 {/* 회원가입 */}
