@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 33333
 
 spring:
   application:
@@ -9,17 +9,12 @@ spring:
     port: 5672
     username: guest
     password: guest
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
-      path: /h2-console
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-    username: admin
-    password:
+    url: jdbc:mariadb://k6a308.p.ssafy.io:3306/yliad?serverTimezone=Asia/Seoul&useLegacyDatetimeCode=false
+    username: root
+    password: root!
+    driver-class-name: org.mariadb.jdbc.Driver
+
 
   jpa:
     generate-ddl: true

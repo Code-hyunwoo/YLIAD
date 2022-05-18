@@ -33,6 +33,7 @@ dependencies {
 	runtimeOnly ("io.jsonwebtoken:jjwt-impl:0.11.5")
 	runtimeOnly ("io.jsonwebtoken:jjwt-jackson:0.11.5")
 	runtimeOnly("com.h2database:h2:1.3.176")
+	runtimeOnly ("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
