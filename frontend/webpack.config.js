@@ -4,7 +4,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
   mode: "development", // production, development, none  배포할 때는 production
-  entry: "./src/index.tsx",
+  entry: "./src/index.js",
   // 웹 자원을 변환하기위해 필요한 최초 진입점이자 자바스크립트 파일경로
   // entry 속성에 지정된 파일에는 웹 에플리케이션의 전반적인 구조와 내용이 담겨져 있어야 함.
 
@@ -16,7 +16,16 @@ module.exports = {
   },
   module: {
     // 웹팩으로 변환할 때 적용되는 loader들을 추가할 수 있다.
-    rules: [
+    rules: [{
+      test: /\.(m?js)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-react']
+        }
+      }
+    },
       {
         test: /\.(mp3|ogg)$/, // 로더를 적용할 파일 유형
         exclude: /(node_modules|bower_components)/,
@@ -70,7 +79,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
         // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
-        template: './src/index.html',
+        template: './public/index.html',
         filename: 'index.html',
       }),
     new ForkTsCheckerWebpackPlugin(),
@@ -93,6 +102,9 @@ module.exports = {
       util: require.resolve("util/"),
       // "fs": false
     },
+  },
+  stats: {
+    children: true,
   },
   // target : 'node',
   // node :{
