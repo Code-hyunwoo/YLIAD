@@ -35,8 +35,8 @@ dependencies {
 	/* h2 */
 	runtimeOnly 'com.h2database:h2'
 
-//	/* maria */
-//	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	/* maria */
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
