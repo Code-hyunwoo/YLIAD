@@ -18,7 +18,7 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font1");
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font1"
             },
@@ -51,7 +51,7 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font2");
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font2"
             },
@@ -84,7 +84,7 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font3");
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font3"
             },
@@ -117,7 +117,7 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font4");
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font4"
             },
@@ -150,7 +150,7 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font5");
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font5"
             },
@@ -183,7 +183,7 @@ function FontChange(){
         sessionStorage.setItem("Font", "Font6");
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/font/${userid}`,
             {
                 "fontName": "Font6"
             },

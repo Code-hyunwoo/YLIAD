@@ -26,7 +26,7 @@ function BGM(props: AudioProps){
         props.setChangeBGM('MyStar')
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
             {
                 "bgmName": "MyStar"
             },
@@ -61,7 +61,7 @@ function BGM(props: AudioProps){
         props.setChangeBGM('Summer')
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
             {
                 "bgmName": "Summer"
             },
@@ -94,7 +94,7 @@ function BGM(props: AudioProps){
         props.setChangeBGM('Paesaggio')
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/bgm/${userid}`,
             {
                 "bgmName": "Paesaggio"
             },

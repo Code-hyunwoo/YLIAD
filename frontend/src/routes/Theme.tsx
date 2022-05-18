@@ -19,7 +19,7 @@ function Theme(){
         sessionStorage.setItem("theme", "modak");
         axios
         .patch(
-            `http://k6a308.p.ssafy.io:8001/user-service/api/users/theme/${userid}`,
+            `https://k6a308.p.ssafy.io:8001/user-service/api/users/theme/${userid}`,
             {
                 "themeName": "modak"
             },
@@ -55,7 +55,7 @@ function Theme(){
             sessionStorage.setItem("theme", "bandi");
             axios
             .patch(
-                `http://k6a308.p.ssafy.io:8001/user-service/api/users/theme/${userid}`,
+                `https://k6a308.p.ssafy.io:8001/user-service/api/users/theme/${userid}`,
                 {
                     "themeName": "bandi"
                 },
@@ -90,7 +90,7 @@ function Theme(){
                 sessionStorage.setItem("theme", "super");
                 axios
                 .patch(
-                    `http://k6a308.p.ssafy.io:8001/user-service/api/users/theme/${userid}`,
+                    `https://k6a308.p.ssafy.io:8001/user-service/api/users/theme/${userid}`,
                     {
                         "themeName": "super"
                     },
