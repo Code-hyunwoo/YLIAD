@@ -24,7 +24,6 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
 
     @Override
     public List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid, Long year, Long month) {
-
         DateTemplate<LocalDateTime> formatDate =
                 Expressions.dateTemplate(LocalDateTime.class,
                         "to_char({0}, {1})", diary.diaryDate, "YYYY-MM-DD");
@@ -38,7 +37,6 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
                         .and(diary.diaryDate.year().eq(year.intValue()))
                         .and(diary.diaryDate.month().eq(month.intValue())))
                 .groupBy(diary.id, formatDate)
-                .having(diary.id.max().eq(userid))
                 .orderBy(diary.id.asc())
 //                .limit(1)
                 .fetch();
