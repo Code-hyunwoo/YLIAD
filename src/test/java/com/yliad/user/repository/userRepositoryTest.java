@@ -13,23 +13,23 @@ public class userRepositoryTest {
     @Autowired
     UserRepository repository;
 
-    @Test
-    public void UserRepositoryIsNotNull() throws Exception{
-        assertThat(repository).isNotNull();
-    }
-
-    @Test
-    public void 회원가입() throws Exception{
-        User user = User.builder()
-                .nickname("지환")
-                .password("1234")
-                .build();
-        User savedUser = repository.save(user);
-
-        assertThat(savedUser.getId()).isEqualTo(1L);
-        assertThat(savedUser.getNickname()).isEqualTo("지환");
-        assertThat(savedUser.getPassword()).isEqualTo("1234");
-    }
+//    @Test
+//    public void UserRepositoryIsNotNull() throws Exception{
+//        assertThat(repository).isNotNull();
+//    }
+//
+//    @Test
+//    public void 회원가입() throws Exception{
+//        User user = User.builder()
+//                .nickname("지환")
+//                .password("1234")
+//                .build();
+//        User savedUser = repository.save(user);
+//
+//        assertThat(savedUser.getId()).isEqualTo(1L);
+//        assertThat(savedUser.getNickname()).isEqualTo("지환");
+//        assertThat(savedUser.getPassword()).isEqualTo("1234");
+//    }
 
 //    @Test
 //    public void 회원조회() throws Exception{

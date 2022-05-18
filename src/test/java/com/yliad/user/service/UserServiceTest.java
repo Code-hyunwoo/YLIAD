@@ -12,16 +12,16 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
-    @InjectMocks
-    private UserService service;
-
-    @Mock
-    private UserRepository repository;
-
-    @Test
-    public void UserServiceIsNotNull() throws Exception{
-        assertThat(service).isNotNull();
-    }
+//    @InjectMocks
+//    private UserService service;
+//
+//    @Mock
+//    private UserRepository repository;
+//
+//    @Test
+//    public void UserServiceIsNotNull() throws Exception{
+//        assertThat(service).isNotNull();
+//    }
 
 //    @Test
 //    public void 회원가입_실패() throws Exception{
