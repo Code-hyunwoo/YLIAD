@@ -9,4 +9,10 @@ import lombok.NoArgsConstructor;
 public class DiaryRequestDto {
     @NotNull
     private Long userID;
+    @NotNull
+    private Long year;
+    @NotNull
+    private Long month;
+    @NotNull
+    private Long day;
 }

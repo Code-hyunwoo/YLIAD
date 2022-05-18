@@ -23,13 +23,11 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
     private final JPAQueryFactory query;
 
     @Override
-    public List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid) {
+    public List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid, Long year, Long month) {
 
         DateTemplate<LocalDateTime> formatDate =
                 Expressions.dateTemplate(LocalDateTime.class,
                         "to_char({0}, {1})", diary.diaryDate, "YYYY-MM-DD");
-        int currentYear = LocalDateTime.now().getYear();
-        int currentMonth = LocalDateTime.now().getMonthValue();
         return query.select(
                         Projections.constructor(CalendarResponseDto.class,
                                 diary.diaryDate,
@@ -37,8 +35,8 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
                         ))
                 .from(diary)
                 .where(diary.userID.eq(userid)
-                        .and(diary.diaryDate.year().eq(currentYear))
-                        .and(diary.diaryDate.month().eq(currentMonth)))
+                        .and(diary.diaryDate.year().eq(year.intValue()))
+                        .and(diary.diaryDate.month().eq(month.intValue())))
                 .groupBy(diary.id, formatDate)
                 .having(diary.id.max().eq(userid))
                 .orderBy(diary.id.asc())
@@ -47,9 +45,7 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
     }
 
     @Override
-    public List<CalendarDayResponseDto> findDiaryDate(Long userid, Long day) {
-        int currentYear = LocalDateTime.now().getYear();
-        int currentMonth = LocalDateTime.now().getMonthValue();
+    public List<CalendarDayResponseDto> findDiaryDate(Long userid, Long year, Long month, Long day) {
         return query.select(
                         Projections.constructor(CalendarDayResponseDto.class,
                                 diary.diaryDate,
@@ -59,8 +55,8 @@ public class DiaryQueryRepositoryImpl implements DiaryQueryRepository {
                         ))
                 .from(diary)
                 .where(diary.userID.eq(userid)
-                        .and(diary.diaryDate.year().eq(currentYear))
-                        .and(diary.diaryDate.month().eq(currentMonth))
+                        .and(diary.diaryDate.year().eq(year.intValue()))
+                        .and(diary.diaryDate.month().eq(month.intValue()))
                         .and(diary.diaryDate.dayOfMonth().eq(day.intValue())))
                 .orderBy(diary.id.asc())
                 .fetch();

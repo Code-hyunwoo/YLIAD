@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface DiaryQueryRepository {
 
-    List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid);
-    List<CalendarDayResponseDto> findDiaryDate(Long userid, Long day);
+    List<CalendarResponseDto> findDiaryByDiaryDateAndUserIDOrderByDiaryDate(Long userid, Long year, Long month);
+    List<CalendarDayResponseDto> findDiaryDate(Long userid, Long year, Long month, Long day);
 }
