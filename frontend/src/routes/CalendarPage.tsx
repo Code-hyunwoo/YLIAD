@@ -12,6 +12,12 @@ import Write from "../assets/images/write.png";
 import Stars2 from "../components/layout/Stars2";
 import Navbar from "../components/layout/Navbar";
 import axios from "axios";
+import blue from "../assets/images/blue.png";
+import green from "../assets/images/green.png";
+import pink from "../assets/images/pink.png";
+import purple from "../assets/images/purple.png";
+import red from "../assets/images/red.png";
+import yellow from "../assets/images/yellow.png";
 
 function CalendarPage() {
   // 세션 스토리지에 저장되는 모든 값은 문자열 타입
@@ -22,7 +28,6 @@ function CalendarPage() {
   // date -> 사용자가 클릭한 날짜 할당
   const [date, setDate] = useState<Date>(new Date());
   const [toggleBoal, setToggleBoal] = useState<Boolean>(false);
-  console.log("오늘날짜임:", today);
 
   const [month, setMonth] = useState<Number>(
     parseInt(moment(date).format("YYYYMM").slice(-2))
