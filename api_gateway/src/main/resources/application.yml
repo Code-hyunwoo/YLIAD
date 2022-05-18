@@ -55,13 +55,13 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - CustomFilter
-        - id: api_diary
-          uri: lb://API_DIARY
+        - id: api-diary
+          uri: lb://API-DIARY
           predicates:
-            - Path=/api_diary/**
+            - Path=/api-diary/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api_diary/(?<segment>.*), /$\{segment}
+            - RewritePath=/api-diary/(?<segment>.*), /$\{segment}
             - CustomFilter
 eureka:
   client:
