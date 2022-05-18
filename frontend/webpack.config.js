@@ -16,7 +16,16 @@ module.exports = {
   },
   module: {
     // 웹팩으로 변환할 때 적용되는 loader들을 추가할 수 있다.
-    rules: [
+    rules: [{
+      test: /\.(m?js)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-react']
+        }
+      }
+    },
       {
         test: /\.(mp3|ogg)$/, // 로더를 적용할 파일 유형
         exclude: /(node_modules|bower_components)/,
@@ -70,7 +79,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
         // index.html 템플릿을 기반으로 빌드 결과물을 추가해줌
-        template: './src/index.html',
+        template: './public/index.html',
         filename: 'index.html',
       }),
     new ForkTsCheckerWebpackPlugin(),
@@ -93,6 +102,9 @@ module.exports = {
       util: require.resolve("util/"),
       // "fs": false
     },
+  },
+  stats: {
+    children: true,
   },
   // target : 'node',
   // node :{
