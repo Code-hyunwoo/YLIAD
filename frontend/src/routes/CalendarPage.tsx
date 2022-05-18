@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import base from "./Base.module.css";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -17,12 +17,20 @@ function CalendarPage() {
   // 세션 스토리지에 저장되는 모든 값은 문자열 타입
   const token: string | null = sessionStorage.getItem("token");
   const id: string | null = sessionStorage.getItem("userid");
-  // date -> 사용자가 클릭한 날짜 할당
-  const [date, setDate] = useState(new Date());
-  const [toggleBoal, setToggleBoal] = useState<Boolean>(false);
 
-  const [month, setMonth] = useState<Number>(0);
-  const [year, setYear] = useState<Number>(0);
+  const today: string = moment(new Date()).format("YYYYMMDD");
+  // date -> 사용자가 클릭한 날짜 할당
+  const [date, setDate] = useState<Date>(new Date());
+  const [toggleBoal, setToggleBoal] = useState<Boolean>(false);
+  console.log("오늘날짜임:", today);
+
+  const [month, setMonth] = useState<Number>(
+    parseInt(moment(date).format("YYYYMM").slice(-2))
+  );
+  const [year, setYear] = useState<Number>(
+    parseInt(moment(date).format("YYYYMM").slice(0, 4))
+  );
+
   useEffect(() => {
     axios
       .post(
@@ -43,7 +51,7 @@ function CalendarPage() {
       .then((res) =>
         console.log("리스폰스:", res, `올해는: ${year}`, `이번달은: ${month}`)
       );
-  }, [toggleBoal]);
+  });
 
   // view -> 현재 화면에 보이는 달의 첫 날(activeStartDate)을 포함한 객체(Object)
   // view의 타입 alias 설정
@@ -63,10 +71,12 @@ function CalendarPage() {
   }
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
-  function onClickDay() {
+  function onClickDay(value: Date) {
     setModalOpen(true);
+    setDate(value);
+    console.log("클릭한 날짜임:", moment(value).format("YYYYMMDD"));
   }
 
   function handleClose() {
@@ -91,15 +101,17 @@ function CalendarPage() {
         <div className={base.container}>
           <div className="P_container">
             <Calendar
-              onChange={setDate}
+              // onChange={setDate}
               value={date}
-              formatDay={(locale, date) => moment(date).format("DD")}
+              formatDay={(locale: string, date: Date): string =>
+                moment(date).format("DD")
+              }
               showNeighboringMonth={false}
               next2Label=""
               prev2Label=""
               nextLabel=">"
               prevLabel="<"
-              onClickDay={onClickDay}
+              onClickDay={(value: Date) => onClickDay(value)}
               // 좌우 화살표로 이동했을 때만 giveMeDate 호출
               onActiveStartDateChange={(view: any) => giveMeDate(view)}
               // 달을 직접 선택했을 때만 giveMeDate 호출
@@ -112,18 +124,24 @@ function CalendarPage() {
               <div className="modaldate">
                 {moment(date).format("YYYY년 MM월 DD일")}
               </div>
-              <div className="modalimgbox">
-                <img onClick={readDiary} id="readimg" src={Read} alt="read" />
-                <img
-                  onClick={writeDiary}
-                  id="writeimg"
-                  src={Write}
-                  alt="write"
-                />
-              </div>
-              <div className="modaltextbox">
-                <span>일기 읽기</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span>일기 쓰기 </span>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  marginTop: "30px",
+                }}
+              >
+                <div className="readDiary" onClick={readDiary}>
+                  <img id="readimg" src={Read} alt="read" />
+                  <span>일기 읽기</span>
+                </div>
+
+                {moment(date).format("YYYYMMDD") === today ? (
+                  <div className="writeDiary" onClick={writeDiary}>
+                    <img id="writeimg" src={Write} alt="write" />
+                    <span>일기 쓰기</span>
+                  </div>
+                ) : null}
               </div>
             </div>
           </Modal>

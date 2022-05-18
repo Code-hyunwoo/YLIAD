@@ -187,6 +187,8 @@ abbr[title] {
   height: 20rem;
   border: 5px solid rgb(255, 255, 255);
   padding: 3px;
+  display: flex;
+  flex-direction: column;
 }
 
 .modaldate {
@@ -198,30 +200,30 @@ abbr[title] {
   margin-top: 2rem;
 }
 
-.modalimgbox {
-  position: relative;
-  margin-top: 1.2rem;
-  padding: 0.7rem;
-  text-align: center;
+.readDiary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "KOTRAHOPE";
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 #readimg {
   width: 8rem;
-  cursor: pointer;
 }
 
 #writeimg {
   width: 8rem;
-  position: relative;
-  cursor: pointer;
-  top: 0.8rem;
-  margin-left: 1rem;
+  margin-top: 20px;
+  margin-bottom: -20px;
 }
 
-.modaltextbox {
-  position: relative;
-  /* padding: 0.7rem; */
-  text-align: center;
+.writeDiary {
   font-family: "KOTRAHOPE";
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
