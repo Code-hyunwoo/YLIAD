@@ -1,16 +1,32 @@
-import { Link } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import base from "./Base.module.css"
 import Navbar from "../components/layout/Navbar";
 import Stars2 from "../components/layout/Stars2";
 import styles from "./DayDiary.module.css"
 import { BrowserView, MobileView } from 'react-device-detect';
 import axios from "axios";
-import { useState } from 'react';
-import Sentence from "./Sentence"
+import { useEffect, useState } from 'react';
+import Sentence from "./Sentence";
+import spring from "../assets/images/spring.png";
+import spring2 from "../assets/images/spring2.png";
+
+// interface diary {
+//     state:{
+//         content: string;
+//         emotion: string;
+//     }
+// }
 
 function DayDiary(){
+    const params = useParams();
+    const date: string|undefined = params.date; //넘어오는 값은 20220519'st
+    // const date ="2022-05-22"
+    const year = date?.slice(0,4);
+    const month = date?.slice(4,6);
+    const day = date?.slice(-2);
 
-    const[content, setContent] = useState('오늘의 일기를 써보도록 하자. 오늘은 너무나도 즐겁고 행복한 하루였다. 모든게 힘들고 짜증나며, 포기하고 싶어진다.')
+    // const[content, setContent] = useState('오늘의 일기를 써보도록 하자. 오늘은 너무나도 즐겁고 행복한 하루였다. 모든게 힘들고 짜증나며, 포기하고 싶어진다.')
+    const[content, setContent] = useState<string>('')
     const[senti, setSenti] = useState('없음')
     const[positive, setPositive] = useState<number>(0)
     const[neutral, setNeutral] = useState<number>(0)
@@ -20,23 +36,42 @@ function DayDiary(){
     const client_id = "ut8m57djxk"
     const client_Secret = "9ZiLKYJFFiZTN6afWEujreAwZGpsFCkGWHfbfsED"
 
-
+    const token: string | null = sessionStorage.getItem("token");
+    const userid: string | null = sessionStorage.getItem("userid");
     const Font = sessionStorage.getItem("Font");
-    const date ="2022-05-22"
     
-    let bgcolor = 'blue'
-    if(bgcolor === 'red'){
+    const location= useLocation();
+    // const LinkProps= useLocation();
+    // const [emotion, setEmotion] = useState<string>('sad');
+    // const emotion = location.state.emotion;
+    // const emotion = location.state as {emotion: string};
+    // type DiaryEmotion = {
+    //     content: string;
+    //     emotion: string;
+    // }
+
+    const diary = location.state as {emotion: string, content:string};
+    console.log('diary',diary);
+    // {content:'', emotion:''}
+    console.log('content',diary.content);
+
+    useEffect(() => {
+
+    },[]);
+    
+
+    let bgcolor = diary.emotion;
+    if(bgcolor === 'anger'){
         bgcolor = '#FB5E3B95'
-    } else if(bgcolor === 'pink'){
+    } else if(bgcolor === 'love'){
         bgcolor = '#FFB7EB95'
-    } else if(bgcolor === 'purple'){
-        // bgcolor = '#DCA3FF95'
+    } else if(bgcolor === 'fear'){
         bgcolor = '#CA77FE95'
-    } else if(bgcolor === 'yellow'){
+    } else if(bgcolor === 'joy'){
         bgcolor = '#FFE69295'
-    } else if(bgcolor === 'blue'){
+    } else if(bgcolor === 'sad'){
         bgcolor = '#6AA6FF95'
-    } else if(bgcolor === 'green'){
+    } else if(bgcolor === 'disgust'){
         bgcolor = '#D3FFB095'
     }
     
@@ -85,9 +120,6 @@ function DayDiary(){
 
     }
     
-    
-    
-    
     return (
         <>
             <Navbar />
@@ -95,11 +127,12 @@ function DayDiary(){
             <BrowserView>
             <div className={base.container}> 
                 <div id={styles.date}
-                 style={{ fontFamily:`${fontstyle}`}}> {date}</div>
+                 style={{ fontFamily:`${fontstyle}`}}> {year}-{month}-{day}</div>
+                 <img src={spring2} alt="spring" style={{width: '4.5vw', top:'24.5vh', position:'absolute', zIndex:'2', left:'30.3vw'}} />
                 <div id={styles.contentP} 
                     style={{ backgroundColor:`${bgcolor}`, 
                     fontFamily:`${fontstyle}`}}>
-                        {content}
+                        {diary.content}
                 </div>
             
             <button id={styles.btn1_P2} onClick={analyzeSentiment}> 감정분석 </button>
@@ -123,10 +156,11 @@ function DayDiary(){
              <div className={base.container}> 
                 <div id={styles.dateM}
                  style={{ fontFamily:`${fontstyle}`}}> {date}</div>
+                 <img src={spring} alt="spring" style={{width: '21rem', top:'10.9rem', position:'absolute', zIndex:'2'}} />
                 <div id={styles.contentM} 
                     style={{ backgroundColor:`${bgcolor}`, 
                     fontFamily:`${fontstyle}`}}>
-                        {content}
+                        {diary.content}
                 </div>
             
             <button id={styles.btn1_M2} onClick={analyzeSentiment}> 감정분석 </button>

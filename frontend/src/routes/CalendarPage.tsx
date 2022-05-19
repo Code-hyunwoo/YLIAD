@@ -32,7 +32,7 @@ function CalendarPage() {
 
   function readDiary() {
     const selectdate: number = Number(moment(date).format("YYYYMMDD"));
-    navigate(`/dayDiary/${selectdate}`);
+    navigate(`/dayList/${selectdate}`);
   }
 
   return (
