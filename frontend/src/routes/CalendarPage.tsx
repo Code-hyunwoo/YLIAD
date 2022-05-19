@@ -134,7 +134,7 @@ function CalendarPage() {
               // 달을 직접 선택했을 때만 giveMeDate 호출
               onViewChange={(view: any) => giveMeDate(view)}
               tileContent={({ date }: any): any => {
-                const result: EmotionObject[] = dailyEmotion.filter(
+                const oneDay: EmotionObject[] = dailyEmotion.filter(
                   (x) => x.day === moment(date).format("DD")
                 );
                 if (
@@ -146,7 +146,7 @@ function CalendarPage() {
                     <div>
                       <img
                         src={
-                          emotionFireMatch[result[result.length - 1].emotion]
+                          emotionFireMatch[oneDay[oneDay.length - 1].emotion]
                         }
                         alt="joy"
                         className="dot"
@@ -204,6 +204,28 @@ function CalendarPage() {
               onClickDay={(value: Date) => onClickDay(value)}
               onActiveStartDateChange={(view: any) => giveMeDate(view)}
               onViewChange={(view: any) => giveMeDate(view)}
+              tileContent={({ date }: any): any => {
+                const oneDay: EmotionObject[] = dailyEmotion.filter(
+                  (x) => x.day === moment(date).format("DD")
+                );
+                if (
+                  dailyEmotion.find(
+                    (x: EmotionObject) => x.day === moment(date).format("DD")
+                  )
+                ) {
+                  return (
+                    <div>
+                      <img
+                        src={
+                          emotionFireMatch[oneDay[oneDay.length - 1].emotion]
+                        }
+                        alt="joy"
+                        className="dot"
+                      />
+                    </div>
+                  );
+                }
+              }}
             ></Calendar>
           </div>
 
