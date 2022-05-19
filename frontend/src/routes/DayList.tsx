@@ -110,11 +110,9 @@ function DayList(){
                           key={index.diaryDate}
                           id={styles.contentP} 
                           style={{ backgroundColor:'#FB5E3B95', fontFamily:`${fontstyle}`, display:'flex', justifyContent:'space-between'}}
-                          // onClick={()=>readDiary(index)}
                         >
                              <span>{(index.content).slice(0,16)}...</span>
-                            <span> &#32;[{(index.diaryDate).slice(-5)}]</span>
-                            {/* <span> &#91;{index.emotion}&#93;</span> */}
+                            {/* <span> &#32;[{(index.diaryDate).slice(-5)}]</span> */}
                             <img style={{width:'1.5vw', height:'3vh', marginTop:'-0.4vh'}} src={Anger} alt="anger" />
                                 
                     </Link>
@@ -176,7 +174,6 @@ function DayList(){
                          style={{ backgroundColor:'#D3FFB095', fontFamily:`${fontstyle}`, display:'flex', justifyContent:'space-between'}}
                          >
                                 <span>{(index.content).slice(0,16)}...</span>
-                                {/* <span> &#32;[{(index.diaryDate).slice(-5)}]</span> */}
                                 <img style={{width:'1.5vw', height:'3vh', marginTop:'-0.4vh'}} src={Disgust} alt="Disgust" />
                     </Link>
                     }
