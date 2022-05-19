@@ -728,7 +728,7 @@ svg {
   height: 23rem;
   margin: 0.5rem 0 0.5rem 0;
   padding: 3rem 3rem 1.2rem 2.5rem;
-  line-height: 1.55rem;
+  /* line-height: 1.55rem; */
   font-family: 'KOTRAHOPE';
   font-size: 2.3rem;
   color: black;
