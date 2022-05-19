@@ -30,7 +30,7 @@ function Clinic() {
   const textQuery = async (text) => {
     //  First  Need to  take care of the message I sent
     let conversation = {
-      who: nickname,
+      who: "승원",
       content: {
         text: {
           text: text,
