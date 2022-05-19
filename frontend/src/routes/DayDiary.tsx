@@ -1,21 +1,15 @@
-import { useLocation, useParams } from "react-router-dom";
-import base from "./Base.module.css"
+import { useLocation, useParams,Link, Navigate, useNavigate } from "react-router-dom";
+import base from "./Base.module.css";
 import Navbar from "../components/layout/Navbar";
 import Stars2 from "../components/layout/Stars2";
-import styles from "./DayDiary.module.css"
-import { BrowserView, MobileView } from 'react-device-detect';
+import styles from "./DayDiary.module.css";
+import { BrowserView, MobileView } from "react-device-detect";
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import Sentence from "./Sentence";
 import spring from "../assets/images/spring.png";
 import spring2 from "../assets/images/spring2.png";
 
-// interface diary {
-//     state:{
-//         content: string;
-//         emotion: string;
-//     }
-// }
 
 function DayDiary(){
     const params = useParams();
@@ -33,32 +27,21 @@ function DayDiary(){
     const[negative, setNegative] = useState<number>(0)
     const[sentences, setSentences] = useState([])
 
-    const client_id = "ut8m57djxk"
-    const client_Secret = "9ZiLKYJFFiZTN6afWEujreAwZGpsFCkGWHfbfsED"
+  const client_id = "ut8m57djxk";
+  const client_Secret = "9ZiLKYJFFiZTN6afWEujreAwZGpsFCkGWHfbfsED";
+
+  const Font = sessionStorage.getItem("Font");
 
     const token: string | null = sessionStorage.getItem("token");
     const userid: string | null = sessionStorage.getItem("userid");
-    const Font = sessionStorage.getItem("Font");
     
     const location= useLocation();
-    // const LinkProps= useLocation();
-    // const [emotion, setEmotion] = useState<string>('sad');
-    // const emotion = location.state.emotion;
-    // const emotion = location.state as {emotion: string};
-    // type DiaryEmotion = {
-    //     content: string;
-    //     emotion: string;
-    // }
 
     const diary = location.state as {emotion: string, content:string};
-    console.log('diary',diary);
-    // {content:'', emotion:''}
-    console.log('content',diary.content);
 
     useEffect(() => {
 
     },[]);
-    
 
     let bgcolor = diary.emotion;
     if(bgcolor === 'anger'){
@@ -89,36 +72,38 @@ function DayDiary(){
     } else {
         fontstyle = 'KOTRAHOPE'
     }
+  const navigate = useNavigate();
+  function moveToCalendar() {
+    navigate("/calendar");
+  }
 
-    function analyzeSentiment(){
-        axios
-        .post(
-            "/sentiment-analysis/v1/analyze",
-            {
-                "content": content
-               
-            },
-            {
-                headers: {
-                    "X-NCP-APIGW-API-KEY-ID": client_id,
-                    "X-NCP-APIGW-API-KEY": client_Secret,
-                    "Content-Type": "application/json"
-                },
-            }
-        )
-        .then((res) =>{
-            console.log(res)
-            setSenti(res.data.document.sentiment)
-            setPositive(res.data.document.confidence.positive)
-            setNeutral(res.data.document.confidence.neutral)
-            setNegative(res.data.document.confidence.negative)
-            setSentences(res.data.sentences)
-        })
-        .catch(error => {
-            console.log("error", error.response);
-        });
-
-    }
+  function analyzeSentiment() {
+    axios
+      .post(
+        "/sentiment-analysis/v1/analyze",
+        {
+          content: content,
+        },
+        {
+          headers: {
+            "X-NCP-APIGW-API-KEY-ID": client_id,
+            "X-NCP-APIGW-API-KEY": client_Secret,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        setSenti(res.data.document.sentiment);
+        setPositive(res.data.document.confidence.positive);
+        setNeutral(res.data.document.confidence.neutral);
+        setNegative(res.data.document.confidence.negative);
+        setSentences(res.data.sentences);
+      })
+      .catch((error) => {
+        console.log("error", error.response);
+      });
+  }
     
     return (
         <>
@@ -135,27 +120,32 @@ function DayDiary(){
                         {diary.content}
                 </div>
             
-            <button id={styles.btn1_P2} onClick={analyzeSentiment}> 감정분석 </button>
-            <div id={styles.anal_box}>
+             <button id={styles.btn1_P2} onClick={analyzeSentiment}> 감정분석 </button>
+             <img
+                onClick={moveToCalendar}
+                className={styles.backP}
+                src="https://img.icons8.com/office/30/FFFFFF/undo.png"
+                alt="selectDiary"
+             />
+              <div id={styles.anal_box}>
                 <div id={styles.anal_result}> 감정 분류 결과: {senti} </div>
                 <div id={styles.anal_posi}> 긍정: {positive} </div>
                 <div id={styles.anal_neu}> 중립: {neutral} </div>
                 <div id={styles.anal_nega}> 부정: {negative} </div>
-            </div>
-            <div id={styles.anal_box2}>
+              </div>
+              <div id={styles.anal_box2}>
                 <div id={styles.anal_title}> 문장별 감정 분석 </div>
                 {
                 sentences.map((sentence, index) => <Sentence key={index} sentence={sentence}/>
                 )}
+              </div>
             </div>
-
-            </div>
-             </BrowserView>
+            </BrowserView>
 
              <MobileView >
              <div className={base.container}> 
                 <div id={styles.dateM}
-                 style={{ fontFamily:`${fontstyle}`}}> {date}</div>
+                 style={{ fontFamily:`${fontstyle}`}}> {year}-{month}-{day}</div>
                  <img src={spring} alt="spring" style={{width: '21rem', top:'10.9rem', position:'absolute', zIndex:'2'}} />
                 <div id={styles.contentM} 
                     style={{ backgroundColor:`${bgcolor}`, 
@@ -176,14 +166,10 @@ function DayDiary(){
                 sentences.map((sentence, index) => <Sentence key={index} sentence={sentence}/>
                 )}
             </div>
-
-            </div>
-
-             </MobileView>
-        
-        </>
-
-    );
+        </div>
+      </MobileView>
+    </>
+  );
 }
 
 export default DayDiary;

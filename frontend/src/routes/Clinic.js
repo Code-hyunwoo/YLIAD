@@ -19,9 +19,9 @@ function Clinic() {
   const divRef = useRef(null);
   const nickname = sessionStorage.getItem("nickname");
 
-  // useEffect(() => {
-  //   divRef.current.scrollIntoView({ behavior: "smooth" });
-  // });
+  useEffect(() => {
+    divRef.current.scrollIntoView({ behavior: "smooth" });
+  });
 
   useEffect(() => {
     eventQuery("Basic");
