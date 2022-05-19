@@ -25,7 +25,7 @@ function CalendarPage() {
   const id: string | null = sessionStorage.getItem("userid");
 
   const today: string = moment(new Date()).format("YYYYMMDD");
-  // date -> 사용자가 클릭한 날짜 할당
+  // date -> 사용자가 클릭한 날짜 할당(초기값: 오늘 날짜)
   const [date, setDate] = useState<Date>(new Date());
   const [toggleBoal, setToggleBoal] = useState<Boolean>(false);
 
@@ -35,6 +35,12 @@ function CalendarPage() {
   const [year, setYear] = useState<Number>(
     parseInt(moment(date).format("YYYYMM").slice(0, 4))
   );
+
+  type EmotionObject = {
+    day: string;
+    emotion: string;
+  };
+  const [dailyEmotion, setDailyEmotion] = useState<EmotionObject[]>([]);
 
   useEffect(() => {
     axios
@@ -53,8 +59,11 @@ function CalendarPage() {
           },
         }
       )
-      .then((res) => console.log("Response:", res.data));
-  });
+      .then((res) => {
+        console.log(`${month}월에 쓴 일기:`, res.data);
+        setDailyEmotion(res.data);
+      });
+  }, [month]);
 
   // view -> 현재 화면에 보이는 달의 첫 날(activeStartDate)을 포함한 객체(Object)
   // view의 타입 alias 설정
@@ -66,6 +75,8 @@ function CalendarPage() {
   };
 
   function giveMeDate(view: ViewObject) {
+    // console.log("value는 이런값:", moment(view.value).format("DD"));
+    // console.log("view는 이런값:", view.view);
     setToggleBoal(!toggleBoal);
     setMonth(parseInt(moment(view.activeStartDate).format("YYYYMM").slice(-2)));
     setYear(
@@ -118,6 +129,19 @@ function CalendarPage() {
               onActiveStartDateChange={(view: any) => giveMeDate(view)}
               // 달을 직접 선택했을 때만 giveMeDate 호출
               onViewChange={(view: any) => giveMeDate(view)}
+              tileContent={({ date }: any): any => {
+                if (
+                  dailyEmotion.find((x) => x.day === moment(date).format("DD"))
+                ) {
+                  return (
+                    <>
+                      <div className="flex justify-center items-center absoluteDiv">
+                        <div className="dot"></div>
+                      </div>
+                    </>
+                  );
+                }
+              }}
             ></Calendar>
           </div>
 
