@@ -108,14 +108,14 @@
     right: -46vw; */
     position: fixed;
     width: 20vw;
-    top: 35vh;
+    top: 39vh;
     right: 2vw;
 }
 .bubbletreeR{
     z-index: 19;
     position: fixed;
     width: 15vw;
-    top: 36vh;
+    top: 40vh;
     right: 13vw;
     /* position: relative;
     width: 15vw;
@@ -131,7 +131,7 @@
     left: -29vw */
     position: fixed;
     width: 20vw;
-    top: 35vh;
+    top: 39vh;
     left: 2vw;
 }
 .bubbletreeL{
@@ -142,7 +142,7 @@
     left: -37vw */
     position: fixed;
     width: 15vw;
-    top: 36vh;
+    top: 41vh;
     left: 13vw;
 }
 .stone2{
@@ -161,14 +161,13 @@
     position: fixed;
     width: 130vw;
     /* height: 120vh; */
-    top: 40vh;
-    
+    top: 43vh;
 }
 
 .ad{
     z-index: 20;
     position: fixed;
-    width: 15vw;
+    width: 17vw;
     top: 55vh;
     right: 25vw;
     /* z-index: 20;
@@ -186,8 +185,8 @@
     */
     width: 15vw;
     position: fixed;
-    top: 70vh;
-    right: 16vw;
+    top: 71vh;
+    right: 17vw;
 }
 
 .woods{
@@ -195,7 +194,7 @@
     z-index: 22;
     width: 6vw;
     top: 70vh;
-    left: 20.5vw;
+    left: 19.5vw;
     transform: rotate(-5deg)
 }
 
@@ -203,8 +202,8 @@
     position: fixed;
     z-index: 22;
     width: 6vw;
-    top: 75vh;
-    right: 4vw;
+    top: 74vh;
+    right: 5vw;
     transform: rotate(5deg)
 }
 

@@ -187,7 +187,7 @@
     position: relative;
     top: 7rem;
     height: 2.2rem;
-    left: -3.9rem;
+    left: -3rem;
     font-family: 'KOTRAHOPE';
     font-size: 2.4rem;
     color: white;
@@ -206,7 +206,7 @@
     top: 7rem;
     width: 5.3rem;
     height: 2.2rem;
-    left: -3.9rem;
+    left: -6rem;
     font-size: 2rem;
     background-color: beige;
     text-align: center;
@@ -218,7 +218,7 @@
     position: relative;
     /* justify-content: flex-start; */
     top: 6.8rem;
-    left: -5rem;
+    left: -6rem;
     font-size: 2.2rem;
     /* justify-content: flex-start; */
     width: 5.5rem;
@@ -232,7 +232,7 @@
     justify-content: flex-start;
     width: 5.3rem;
     height: 2.2rem;
-    left: -3.9rem;
+    left: -6rem;
     top: 6rem;
     /* margin-right: 35vw; */
 
@@ -269,7 +269,7 @@
 .yearCnt {
     position: relative;
     top: 2.5rem;
-    left: 4.9rem;
+    left: 3.7rem;
     width: 5.5rem;
     margin-right: 10.6rem;
     font-size: 2rem;
@@ -280,7 +280,7 @@
 .monthCnt {
     position: relative;
     top: 2.5rem;
-    right: -1rem;
+    right: -1.9rem;
     font-size: 2rem;
     margin-right: 2.5rem;
     margin-top: 1rem;
@@ -291,7 +291,7 @@
     top: 1.7rem;
     right: -1.8rem;
     font-size: 2.1rem;
-    margin-right: 3.5rem;
+    margin-right: 3.6rem;
     margin-top: 1rem;
     color: white;
 }

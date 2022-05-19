@@ -124,7 +124,6 @@ function Home() {
 
   function onSubmitLogin(e: any) {
     e.preventDefault();
-
     if (loginID === "" || loginPassword === "") {
       toast.error("입력하지 않은 값이 있습니다.", {
         position: "top-center",
@@ -400,9 +399,6 @@ function Home() {
             <button onClick={onClickSignin} id={styles.btn1_M}>
               회원가입
             </button>
-            <Link to="/lobby">
-              <button id={styles.btn1_M}>로비로 이동</button>
-            </Link>
           </div>
 
           {/* 회원가입 */}

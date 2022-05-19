@@ -76,6 +76,7 @@ function Mypage(){
             {
                 label: '# of Votes',
                 data: [anger, love, fear, joy, sad, disgust],
+                // data: [3, 1, 2, 5, 2, 1],
                 backgroundColor: [
                     '#FB5E3B',
                     '#FEA0E4',
@@ -146,14 +147,14 @@ function Mypage(){
             <MobileView>
                 <div className={base.container}> 
                     {/* <h1>마이 페이지</h1> */}
-                    <div className={Styles.nickname}> &#60; {""}해씨볼 님의 일지 &#62;</div>
+                    <div className={Styles.nickname}> &#60; {nickname}님의 일지 &#62;</div>
                     <div className={Styles.firstContent}>
-                        <p className={Styles.total}>전체</p>
+                        <p className={Styles.total}>Total</p>
                         <p className={Styles.totalCnt}>{totalCount} </p>
                     </div>
                     <div className={Styles.firstContent}>
-                        <p className={Styles.year}>올해</p>
-                        <p className={Styles.month}>이번달</p>
+                        <p className={Styles.year}>Year</p>
+                        <p className={Styles.month}>Month</p>
                     </div>
                     <div className={Styles.secondContent}>
                         <p className={Styles.yearCnt}>{yearCount} </p>
