@@ -117,7 +117,7 @@ function Intro() {
                     />
                   </LightTooltip>
                   <a
-                    href="https://bit.ly/DownloadYLIAD"
+                    href="https://bit.ly/YLIADapk"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -273,7 +273,7 @@ function Intro() {
               <div className={styles.downsubsM}>
                 <div className={styles.mobileWeb}>
                   <a
-                    href="https://bit.ly/DownloadYLIAD"
+                    href="https://bit.ly/YLIADapk"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
