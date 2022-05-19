@@ -225,10 +225,9 @@ abbr[title] {
 }
 
 .dot {
-  height: 8px;
-  width: 8px;
-  background-color: #f87171;
-  border-radius: 50%;
-  display: flex;
-  margin-left: 1px;
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  margin-top: -32px;
+  margin-left: -20px;
 }

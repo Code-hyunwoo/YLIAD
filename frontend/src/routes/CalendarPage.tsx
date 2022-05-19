@@ -20,6 +20,20 @@ import red from "../assets/images/red.png";
 import yellow from "../assets/images/yellow.png";
 
 function CalendarPage() {
+  const emotionFireMatch: any = {
+    // anger: <img src={red} alt="anger" className="dot" />,
+    // fear: <img src={purple} alt="fear" className="dot" />,
+    // sad: <img src={blue} alt="sad" className="dot" />,
+    // love: <img src={pink} alt="love" className="dot" />,
+    // joy: <img src={yellow} alt="joy" className="dot" />,
+    // disgust: <img src={green} alt="disgust" className="dot" />,
+    anger: red,
+    fear: purple,
+    sad: blue,
+    love: pink,
+    joy: yellow,
+    disgust: green,
+  };
   // 세션 스토리지에 저장되는 모든 값은 문자열 타입
   const token: string | null = sessionStorage.getItem("token");
   const id: string | null = sessionStorage.getItem("userid");
@@ -75,8 +89,6 @@ function CalendarPage() {
   };
 
   function giveMeDate(view: ViewObject) {
-    // console.log("value는 이런값:", moment(view.value).format("DD"));
-    // console.log("view는 이런값:", view.view);
     setToggleBoal(!toggleBoal);
     setMonth(parseInt(moment(view.activeStartDate).format("YYYYMM").slice(-2)));
     setYear(
@@ -130,13 +142,25 @@ function CalendarPage() {
               // 달을 직접 선택했을 때만 giveMeDate 호출
               onViewChange={(view: any) => giveMeDate(view)}
               tileContent={({ date }: any): any => {
+                const result: EmotionObject[] = dailyEmotion.filter(
+                  (x) => x.day === moment(date).format("DD")
+                );
                 if (
-                  dailyEmotion.find((x) => x.day === moment(date).format("DD"))
+                  dailyEmotion.find(
+                    (x: EmotionObject) => x.day === moment(date).format("DD")
+                  )
                 ) {
+                  console.log("result:", result);
                   return (
                     <>
-                      <div className="flex justify-center items-center absoluteDiv">
-                        <div className="dot"></div>
+                      <div>
+                        <img
+                          src={
+                            emotionFireMatch[result[result.length - 1].emotion]
+                          }
+                          alt="joy"
+                          className="dot"
+                        />
                       </div>
                     </>
                   );
