@@ -31,6 +31,8 @@ function App() {
   const [bgmOn, setbgmOn] = useState<boolean>(false);
   const [audio, setAudio] = useState(new Audio(MyStar));
   const [changeBGM, setChangeBGM] = useState<string>("MyStar");
+  // 접속기기 Mobile인지 여부 확인
+  const isMobile: Boolean = /Mobi/i.test(window.navigator.userAgent);
 
   useEffect(() => {
     if (changeBGM === "MyStar") {
@@ -61,8 +63,12 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Intro />}></Route>
-          <Route path="/home" element={<Home />}></Route>
+          {isMobile ? (
+            <Route path="/" element={<Intro />}></Route>
+          ) : (
+            <Route path="/" element={<Home />}></Route>
+          )}
+          {isMobile ? <Route path="/home" element={<Home />}></Route> : null}
           <Route path="/lobby" element={<Lobby />}></Route>
           <Route path="/calendar" element={<CalendarPage />}></Route>
           <Route path="/clinic" element={<Clinic />}></Route>
