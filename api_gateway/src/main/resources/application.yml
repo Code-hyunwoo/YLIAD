@@ -15,7 +15,12 @@ spring:
         add-to-simple-url-handler-mapping: true
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost:3000"
+            allowedOrigins:
+              - "http://localhost:3000"
+              - "https://10.0.2.2:3000"
+              - "http://10.0.2.2:3000"
+              - "https://k6a308.p.ssafy.io/home"
+              - "https://k6a308.p.ssafy.io"
             allow-credentials: true
             allowedHeaders:
               - x-requested-with
