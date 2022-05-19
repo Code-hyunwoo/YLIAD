@@ -122,7 +122,7 @@ function Home() {
     }
   }
 
-  function onSubmitLoginTemp(e: any) {
+  function onSubmitLogin(e: any) {
     e.preventDefault();
     if (loginID === "" || loginPassword === "") {
       toast.error("입력하지 않은 값이 있습니다.", {
@@ -180,67 +180,6 @@ function Home() {
           });
         });
     }
-  }
-
-  function onSubmitLogin(e: any) {
-    e.preventDefault();
-    navigate("/lobby");
-    // if (loginID === "" || loginPassword === "") {
-    //   toast.error("입력하지 않은 값이 있습니다.", {
-    //     position: "top-center",
-    //     autoClose: 1500,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: "colored",
-    //   });
-    // } else {
-    //   axios
-    //     .post(
-    //       //   "http://k6a308.p.ssafy.io:8001/user-service/api/auth",
-    //       "https://k6a308.p.ssafy.io/user-service/api/auth",
-    //       {
-    //         loginId: loginID,
-    //         password: loginPassword,
-    //       }
-    //     )
-    //     .then((res) => {
-    //       console.log(res);
-    //       sessionStorage.setItem("userid", res.data.id);
-    //       sessionStorage.setItem("token", res.data.jwtToken);
-    //       sessionStorage.setItem("Font", res.data.font);
-    //       sessionStorage.setItem("nickname", res.data.nickname);
-    //       sessionStorage.setItem("theme", res.data.theme);
-
-    //       toast.success("로그인", {
-    //         position: "top-center",
-    //         autoClose: 1500,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "colored",
-    //       });
-    //       console.log("로그인 성공!");
-    //       navigate("/lobby");
-    //     })
-    //     .catch((error) => {
-    //       console.log("error", error.response);
-    //       toast.error(error.response.data.message, {
-    //         position: "top-center",
-    //         autoClose: 1500,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "colored",
-    //       });
-    //     });
-    // }
   }
 
   const changeInputID = (e: any) => {
@@ -431,7 +370,7 @@ function Home() {
                     placeholder="비밀번호"
                   />{" "}
                 </p>
-                <button onClick={onSubmitLoginTemp} id={styles.btn7_P}>
+                <button onClick={onSubmitLogin} id={styles.btn7_P}>
                   {" "}
                   로그인{" "}
                 </button>
