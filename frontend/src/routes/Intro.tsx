@@ -13,7 +13,6 @@ import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import { BrowserView, MobileView } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
-import ucc from "../assets/video/YLIAD2.mp4"
 
 function Intro() {
   const [email, setEmail] = useState<string>("");
