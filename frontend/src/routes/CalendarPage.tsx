@@ -21,12 +21,6 @@ import yellow from "../assets/images/yellow.png";
 
 function CalendarPage() {
   const emotionFireMatch: any = {
-    // anger: <img src={red} alt="anger" className="dot" />,
-    // fear: <img src={purple} alt="fear" className="dot" />,
-    // sad: <img src={blue} alt="sad" className="dot" />,
-    // love: <img src={pink} alt="love" className="dot" />,
-    // joy: <img src={yellow} alt="joy" className="dot" />,
-    // disgust: <img src={green} alt="disgust" className="dot" />,
     anger: red,
     fear: purple,
     sad: blue,
@@ -74,7 +68,6 @@ function CalendarPage() {
         }
       )
       .then((res) => {
-        console.log(`${month}월에 쓴 일기:`, res.data);
         setDailyEmotion(res.data);
       });
   }, [month]);
@@ -102,7 +95,6 @@ function CalendarPage() {
   function onClickDay(value: Date) {
     setModalOpen(true);
     setDate(value);
-    console.log("클릭한 날짜임:", moment(value).format("YYYYMMDD"));
   }
 
   function handleClose() {
@@ -150,19 +142,16 @@ function CalendarPage() {
                     (x: EmotionObject) => x.day === moment(date).format("DD")
                   )
                 ) {
-                  console.log("result:", result);
                   return (
-                    <>
-                      <div>
-                        <img
-                          src={
-                            emotionFireMatch[result[result.length - 1].emotion]
-                          }
-                          alt="joy"
-                          className="dot"
-                        />
-                      </div>
-                    </>
+                    <div>
+                      <img
+                        src={
+                          emotionFireMatch[result[result.length - 1].emotion]
+                        }
+                        alt="joy"
+                        className="dot"
+                      />
+                    </div>
                   );
                 }
               }}
