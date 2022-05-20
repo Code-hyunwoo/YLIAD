@@ -56,7 +56,7 @@ function App() {
       audio.pause();
     } else {
       setbgmOn(true);
-      audio.volume = 0.6;
+      audio.volume = 0.3;
       audio.play();
       audio.loop = true;
     }
