@@ -7,13 +7,13 @@
 ### 서비스별 사용 기술 및 기능 설명
 - 음성 녹음 
 
-: `react-speech-recognition`를 활용 
+: `MediaRecorder`를 활용 
 
     -> 마이크 제어, 음성 녹음 및 재생(결과물 URL로 생성)
 
 - STT
 
-: `Web Speech API` 활용
+: `react-speech-recognition` , `Web Speech API` 활용
 
     -> 마이크 제어, 텍스트 변환 제공
 
