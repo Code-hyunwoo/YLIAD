@@ -20,7 +20,6 @@ function SuperMan(){
         <>
             <BrowserView>
                 <div className={base.container} style={{overflowY:'hidden'}}>
-                    {/* <img src={moon} className={Styles.moon} alt="moon"/> */}
                     <img src={star} className={Styles.star1} alt="star"/>
                     <img src={star2} className={Styles.star2} alt="star"/>
                     <img src={star3} className={Styles.star3} alt="star"/>
@@ -31,15 +30,10 @@ function SuperMan(){
                     <img src={ardsuper} className={Styles.ardsuper} alt="ardsuper"/>
                     <img src={earthShadow} className={Styles.earthShadow} alt="earthShadow"/>
                     <img src={spaceStation} className={Styles.spaceStation} alt="spaceStation"/>
-                    
-
-                    {/* <img src={ground} className={Styles.ground} alt="ground"></img> */}
-                    {/* <img src={ground2} className={Styles.ground} alt="ground"></img> */}
                 </div>
             </BrowserView>
             <MobileView>
                 <div className={base.container}>
-                    {/* <img src={moon} className={Styles.moonM} alt="moon"/> */}
                     <img src={star} className={Styles.star1M} alt="star"/>
                     <img src={star2} className={Styles.star2M} alt="star"/>
                     <img src={star3} className={Styles.star3M} alt="star"/>
@@ -50,9 +44,6 @@ function SuperMan(){
                     <img src={ardsuper} className={Styles.ardsuperM} alt="ardsuper"/>
                     <img src={earthShadow} className={Styles.earthShadowM} alt="earthShadow"/>
                     <img src={spaceStation} className={Styles.spaceStationM} alt="spaceStation"/>
-                    
-                    {/* <img src={ground} className={Styles.groundM} alt="ground"></img> */}
-                    {/* <img src={ground2} className={Styles.ground} alt="ground"></img> */}
                 </div>
             </MobileView>
         </>

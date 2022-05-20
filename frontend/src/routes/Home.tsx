@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import base from "./Base.module.css";
 import styles from "./Home.module.css";
-// import ard from "../assets/images/ardCape.png"
 import ard from "../assets/images/adCape_move_left2.gif";
 import { BrowserView, MobileView } from "react-device-detect";
 import Campfire from "../components/Campfire";
@@ -95,7 +94,6 @@ function Home() {
     } else if (userIDCheck && userPassword === userPassword2) {
       axios
         .post(
-          //   "http://k6a308.p.ssafy.io:8001/user-service/api/users",
           "https://k6a308.p.ssafy.io/user-service/api/users",
           {
             loginId: userID,
@@ -138,7 +136,6 @@ function Home() {
     } else {
       axios
         .post(
-          //   "http://k6a308.p.ssafy.io:8001/user-service/api/auth",
           "https://k6a308.p.ssafy.io/user-service/api/auth",
           {
             loginId: loginID,

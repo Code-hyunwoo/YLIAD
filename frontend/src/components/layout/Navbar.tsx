@@ -26,23 +26,17 @@ function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
   function toggleHamburger() {
     setHamburgerOpen(!hamburgerOpen);
-    // navMenu?.classList.toggle("active");
   }
-  // const navTitle = useRef<HTMLDivElement>(null);
-  // const navMenu = useRef<HTMLDivElement>(null);
-  // const navMenu = document.querySelector(`${Styles.menuP}`);
   return (
     <>
       <BrowserView>
         <div className={Styles.navP}>
-          {/* <div className={Styles.title} ref={navTitle}> */}
           <div className={Styles.title}>
             <img src={moon} alt="moon" style={{marginRight:"0.5vw"}}/>
             <Link to="/lobby" className={Styles.title_name}>
               YLIAD
             </Link>
           </div>
-          {/* <div className={Styles.menuP} ref={navMenu}> */}
           <div className={Styles.menuP}>
             <div className={Styles.menu_itemP}>
               <Link to="/lobby" className={Styles.homeP}>

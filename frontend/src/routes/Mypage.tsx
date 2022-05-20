@@ -17,7 +17,6 @@ import {toast, ToastContainer} from 'react-toastify';
 
 function Mypage(){
     ChartJS.register(ArcElement, Tooltip, Legend);
-    // const token:any = sessionStorage.getItem("token");
     const userid:any = sessionStorage.getItem("userid");
     const token:any = sessionStorage.getItem("token");
     const nickname = sessionStorage.getItem("nickname");
@@ -70,13 +69,11 @@ function Mypage(){
     },[]);
 
     const data = {
-        // labels: graph,
         labels: ['anger', 'love', 'fear', 'joy', 'sad', 'disgust'],
         datasets: [
             {
                 label: '# of Votes',
                 data: [anger, love, fear, joy, sad, disgust],
-                // data: [3, 1, 2, 5, 2, 1],
                 backgroundColor: [
                     '#FB5E3B',
                     '#FEA0E4',
@@ -182,11 +179,9 @@ function Mypage(){
                     </div>
 
                     {/* 차트 */}
-                    {/* <div className={Styles.chart}>차트 자리</div> */}
                     <div style={{ height:'20rem',width:'20rem',margin:'0 auto' }}>
                       <Pie data={data} />
                     </div>
-                    {/* <Link to="/lobby"><button> 로비로 이동 </button></Link> */}
                 </div>
             </MobileView>
         </>

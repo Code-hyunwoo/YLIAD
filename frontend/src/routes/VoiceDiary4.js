@@ -1,4 +1,3 @@
-// import { useState, useCallback } from "react";
 import { useState} from "react";
 import Navbar from "../components/layout/Navbar";
 import base from "./Base.module.css"
@@ -6,13 +5,11 @@ import Styles from "./Voice.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 import { BrowserView, MobileView } from 'react-device-detect';
 import Stars2 from "../components/layout/Stars2";
-// import { render } from "react-dom";
 import useRecorder from "./VoiceRecoder";
-import moment from "moment";
 import spring from "../assets/images/spring.png";
 import spring2 from "../assets/images/spring2.png";
-import AWS from 'aws-sdk';
-import { v1, v3, v4, v5} from 'uuid';
+// import AWS from 'aws-sdk';
+// import { v1, v3, v4, v5} from 'uuid';
 import axios from "axios";
 import {toast, ToastContainer} from 'react-toastify';
 
@@ -166,16 +163,12 @@ function VoiceDiary4(){
                 }
             )
             .then(async (res) => {
-                // console.log("저장 완료!", res)
-                // console.log(dailytext.transcript);
                 setDailyText('');
-                // transcript = '';
                 navigate(`/selectdiary/${date}/${color}`)
                 send();
             })
             .catch(error => {
-                console.log("저장 실패!", error.response)
-                // console.log(dailytext.transcript);
+                // console.log("저장 실패!", error.response)
                 fail();
             })
     };
@@ -201,28 +194,12 @@ function VoiceDiary4(){
                     fontFamily:`${fontstyle}`}}>
                         <p style={{ padding:'1.7vw'}}>{transcript}</p>
                     </div>
-                    
-                    {/* <div className={Styles.cylinderP} style={{right:'31.34vw'}}></div> */}
-                    {/* <div className={Styles.cylinderP} style={{right:'30vw'}}></div> */}
                     <div className={Styles.recodeGroupP}>
                         {isRecording?
-                            // <button className={Styles.recodingP} onClick={stopRecording} style={{backgroundColor:`${color}`}}> </button>
                             <button className={Styles.recodingP} onClick={stopRecording}> </button>
                             :
                             <button className={Styles.recodeP} onClick={startRecording}> </button>
                         }
-                        {/* <div className={start.inactive? Styles.stopP: Styles.replayP} onClick={start}></div> */}
-                        {/* <div className={audioURL? Styles.replayP: Styles.stopP} onClick={start}></div> */}
-                        {/* {audioURL?
-                            (replay?
-                                <div className={Styles.stopP} onClick={stop}></div>
-                                :
-                                <div className={Styles.replayP} onClick={getReplay}></div>
-                            )   
-                            :
-                            <div className={Styles.replayP}></div>
-                        } */}
-                        {/* <div className={replay? Styles.stopP: Styles.replayP} onClick={start}></div> */}
                     </div>
                     <div className={Styles.buttonP}>
                         <div className={Styles.audioP}>
@@ -235,14 +212,11 @@ function VoiceDiary4(){
                             <img onClick={moveselectDiary} className={Styles.backP} src="https://img.icons8.com/office/30/FFFFFF/undo.png" alt="selectDiary"/>
                         </div>
                     </div>
-                    {/* <div className={Styles.infoP}> 녹음 시간은 최대 10분입니다. </div> */}
                 </div>
             </BrowserView>
             <MobileView>
-                {/* <div style={{backgroundImage:"linear-gradient(#F2789F, #FEE3EC)"}}>     */}
                     <div className={base.container} > 
                         {/* <h1>음성 일기</h1> */}
-                        {/* <div className={Styles.cylinder}></div> */}
                         <img src={spring} alt="spring" style={{width: '22rem', top:'8.7rem', position:'absolute', zIndex:'2'}} />
                         <div className={Styles.time} style={{backgroundColor:`${bgcolor}`,
                         fontFamily:`${fontstyle}`}}>
@@ -254,14 +228,7 @@ function VoiceDiary4(){
                                 :
                                 <button className={Styles.recode} onClick={startRecording} > </button>
                             }
-                            {/* <div className={start.inactive? Styles.stopP: Styles.replayP} onClick={start}></div> */}
-                            {/* <div className={audioURL? Styles.replayP: Styles.stopP} onClick={start}></div> */}
-                            {/* {audioURL?
-                                <div className={replay? Styles.stop: Styles.replay} onClick={start}></div>
-                                
-                                :
-                                <div className={Styles.replay}></div>
-                            } */}
+                            
                         </div>
                         <div className={Styles.button}>
                             <div className={Styles.audio}>
@@ -273,12 +240,9 @@ function VoiceDiary4(){
                                 <img onClick={confirm} className={Styles.save} src="https://img.icons8.com/ios-filled/32/FFFFFF/installing-updates--v1.png" alt="SavaDiary"/>
                                 <img onClick={moveselectDiary} className={Styles.back} src="https://img.icons8.com/office/30/FFFFFF/undo.png" alt="selectDiary"/>
                             </div>
-                            {/* <img className={Styles.save} src="https://img.icons8.com/ios-filled/32/FFFFFF/installing-updates--v1.png" alt="SavaDiary"/> */}
-                            {/* <img onClick={moveselectDiary} className={Styles.back} src="https://img.icons8.com/office/30/FFFFFF/undo.png" alt="selectDiary"/> */}
+                           
                         </div>
-                        {/* <div className={Styles.info}> 녹음 시간은 최대 10분입니다. </div> */}
                     </div>
-                {/* </div> */}
             </MobileView>
         </>
     );

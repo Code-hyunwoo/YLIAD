@@ -1,5 +1,3 @@
-// import { Link } from "react-router-dom";
-// import base from "./Base.module.css"
 import Styles from "./Stars.module.css";
 
 function Stars(){

@@ -39,7 +39,6 @@ function Fire(){
                     <img src={Cactus} className={Styles.Cactus2} alt="Cactus" />
                     <img src={pyramid} className={Styles.pyramid} alt="pyramid" />
                     <img src={ground} className={Styles.ground} alt="ground"></img>
-                    {/* <img src={ground2} className={Styles.ground} alt="ground"></img> */}
                 </div>
             </BrowserView>
             <MobileView>
@@ -60,7 +59,6 @@ function Fire(){
                     <img src={Cactus} className={Styles.Cactus2M} alt="Cactus" />
                     <img src={pyramid} className={Styles.pyramidM} alt="pyramid" />
                     <img src={ground} className={Styles.groundM} alt="ground"></img>
-                    {/* <img src={ground2} className={Styles.ground} alt="ground"></img> */}
                 </div>
             </MobileView>
         </>

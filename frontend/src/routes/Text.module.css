@@ -44,17 +44,10 @@
 /* PC 버전 */
 .cylinderP{
   position:absolute;
-  /* left:31.34vw; */
-  /* left:29.9vw; */
   top: 18vh;
-  /* width: 2.95vw; */
-  /* height:2vh; */
   width: 1.9vw;
   height:1.3vh;
-  /* border-radius: 50% / 25%; */
-  /* border-radius: 44% / 55%; */
   border-radius: 105vw / 38vw;
-  /* background-color: rgb(0, 0, 255); */
   background-image: linear-gradient(
   120deg,
   /* 노랑: 연한건 FFE692 진한건 FFDE6D*/
@@ -90,14 +83,11 @@
 .cylinderP:after{
   z-index: 10;
   position: absolute;
-  /* width:3vw; */
-  /* height:50vh; */
   width:2vw;
   height:58vh;
   left:0;
   top:-0.3vh;
   
-  /* background-color:  rgba(0, 0, 255, 0.8); */
   background-image: linear-gradient(
   120deg,
   /* 노랑: 연한건 FFE692 진한건 FFDE6D*/
@@ -114,7 +104,6 @@
   /* 파랑: 연한건 6AA6FF 진한건 3B5AFB*/
    #6AA6FF95
 );
-  /* border-radius: 100px / 37.5px; */
   border-radius: 100vw / 37.5vw;
   content: '';
 }
@@ -126,7 +115,6 @@
     width: 30vw;
     height: 45vh;
     top: 5vh;
-    /* padding-top: 20vh; */
     background-color: rgba(255, 255, 255, 0);
   }
   
@@ -134,12 +122,7 @@
   #paperP::before {
     content: '';
     width: 0.1vw;
-    /* height: 100%; */
-    /* height: 40vh; */
-    /* padding-top: 50vh; */
-    /* margin-top: 54vh; */
     position: absolute;
-    /* top: 0; */
     left: 40px;
     background-color: rgba(255,0,0,0.6);
   }
@@ -159,22 +142,14 @@
 }
 
   #contentP {
-    /* z-index: -1; */
       position: absolute;
       justify-content: center;
-      /* display: flex; */
       top: 20.5vh;
-      /* width: 30vw; */
-      /* width: 31.7vw; */
       width: 33.6vw;
-      /* height: 45vh; */
       height: 51vh;
-      /* padding-top: 3vh; */
       padding-top: 1.5vh;
       padding-left: 2vw;
       padding-right: 2vw;
-      /* line-height: 3.6vh; */
-      /* font-family: 'Dancing Script', cursive; */
       font-family: 'SDMiSaeng';
       font-size: 2vw;
       color: white;
@@ -197,7 +172,6 @@
       #6AA6FF95
     );
       border-image-slice: 1;
-      /* background-image: repeating-linear-gradient(rgba(119, 191, 246, 0) 0px, rgba(119, 191, 246, 0) 25px, rgb(113, 125, 250) 26px); */
       overflow: auto;
     }
   
@@ -227,14 +201,10 @@
 .cylinder{
   position:absolute;
   left:25.5rem;
-  /* top: 8.5rem; */
   width: 1.85rem;
   height:0.6rem;
   transform: rotate( 90deg );
-  /* border-radius: 50% / 25%; */
-  /* border-radius: 44% / 55%; */
   border-radius: 105rem / 38rem;
-  /* background-color: rgb(0, 0, 255); */
   background-image: linear-gradient(
   120deg,
   /* 노랑: 연한건 FFE692 진한건 FFDE6D*/
@@ -275,7 +245,6 @@
   left:0;
   top:-0.2rem;
   
-  /* background-color:  rgba(0, 0, 255, 0.8); */
   background-image: linear-gradient(
   120deg,
   /* 노랑: 연한건 FFE692 진한건 FFDE6D*/
@@ -291,7 +260,6 @@
   /* 파랑: 연한건 6AA6FF 진한건 3B5AFB*/
    #6AA6FF95
 );
-  /* border-radius: 100px / 37.5px; */
   border-radius: 100rem / 37.5rem;
   content: '';
 }
@@ -299,28 +267,17 @@
 #paper {
   width: 20rem;
   height: 27rem;
-  /* width: 140vw; */
-  /* height: 95vh; */
-  /* position: relative; */
   position: absolute;
-  /* margin: 20px auto; */
-  /* margin: 0.5vh auto; */
   padding-top: 27rem;
-  /* padding-bottom: 4vh; */
   background-color: rgba(255, 255, 255, 0);
-  /* box-shadow: 0px 0px 5px 0px #888; */
 }
 
 /* styling red vertical line */
 #paper::before {
   content: '';
   width: 0.1rem;
-  /* height: 100%; */
-  /* height: 40vh; */
   padding-top: 50rem;
-  /* margin-top: 54vh; */
   position: absolute;
-  /* top: 0; */
   left: 40.1rem;
   background-color: rgba(255,0,0,0.6);
 }
@@ -335,13 +292,11 @@
     padding-left: 1rem;
     padding-right: 1rem;
     line-height: 3.5rem;
-    /* line-height: 2.5rem; */
     font-family: 'SDMiSaeng';
     font-size:2.3rem;
     color: white;
     resize: none;
     border: 0.3rem solid transparent ;
-    /* border-image: linear-gradient( */
     border-image: linear-gradient(
     120deg,
     /* 노랑: 연한건 FFE692 진한건 FFDE6D*/
@@ -359,8 +314,6 @@
   );
     border-image-slice: 1;
     overflow: auto;
-    /* border-radius: 1rem; */
-    /* background-image: repeating-linear-gradient(rgba(119, 191, 246, 0) 0px, rgba(119, 191, 246, 0) 24px, rgb(113, 125, 250) 25px); */
 }
 
 #content::-webkit-scrollbar {

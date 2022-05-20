@@ -24,18 +24,7 @@ function Lobby(){
             <Fire /> : theme ==='bandi'?
             <Firefly/>: theme ==='super'?
             <SuperMan/>: <Fire/>
-        }
-            {/* <Firefly /> */}
-                {/* <img className={Styles.earthP} src="https://img.icons8.com/officel/400/000000/globe-asia.png" alt="earth"/> */}
-            {/* <BrowserView >
-                <div className={base.container}> 
-                </div>
-            </BrowserView>
-            <MobileView>
-                <div className={base.container}>
-                </div>
-            </MobileView> */}
-                    {/* <img className={Styles.earth} src="https://img.icons8.com/officel/500/000000/globe-asia.png" alt="earth"/> */}
+            }
         </>
     );
 }

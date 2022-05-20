@@ -41,22 +41,14 @@
 }
 
 #contentP {
-  /* z-index: -1; */
   position: relative;
   justify-content: center;
-  /* display: flex; */
   top: 18vh;
-  /* width: 30vw; */
-  /* width: 31.7vw; */
   width: 30vw;
-  /* height: 45vh; */
   height: 30vh;
-  /* padding-top: 3vh; */
   padding-top: 1.5vh;
   padding-left: 2vw;
   padding-right: 2vw;
-  /* line-height: 3.6vh; */
-  /* font-family: 'Dancing Script', cursive; */
   font-family: "KOTRAHOPE";
   font-size: 1.5vw;
   color: white;
@@ -73,7 +65,6 @@
     /* 파랑: 연한건 6AA6FF 진한건 3B5AFB*/ #6aa6ff95
   );
   border-image-slice: 1;
-  /* background-image: repeating-linear-gradient(rgba(119, 191, 246, 0) 0px, rgba(119, 191, 246, 0) 25px, rgb(113, 125, 250) 26px); */
   overflow: auto;
 }
 
@@ -91,22 +82,14 @@
 }
 
 #contentM {
-  /* z-index: -1; */
   position: relative;
   justify-content: center;
-  /* display: flex; */
   top: 7rem;
-  /* width: 30vw; */
-  /* width: 31.7vw; */
   width: 17rem;
-  /* height: 45vh; */
   height: 13rem;
-  /* padding-top: 3vh; */
   padding-top: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  /* line-height: 3.6vh; */
-  /* font-family: 'Dancing Script', cursive; */
   font-family: "KOTRAHOPE";
   font-size: 1.7rem;
   color: white;
@@ -123,7 +106,6 @@
     /* 파랑: 연한건 6AA6FF 진한건 3B5AFB*/ #6aa6ff95
   );
   border-image-slice: 1;
-  /* background-image: repeating-linear-gradient(rgba(119, 191, 246, 0) 0px, rgba(119, 191, 246, 0) 25px, rgb(113, 125, 250) 26px); */
   overflow: auto;
 }
 

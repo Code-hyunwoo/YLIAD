@@ -10,7 +10,6 @@
 .firefly{
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     right: 30vw;
     top: 21vh;
     transform: rotate(-10deg);
@@ -19,7 +18,6 @@
 .firefly2{
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     left: 30vw;
     top: 30vh;
     transform: rotate(20deg);
@@ -28,7 +26,6 @@
 .firefly3{
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     right: 35vw;
     top: 54vh;
     transform: rotate(70deg);
@@ -38,7 +35,6 @@
     z-index: 20;
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     left: 35vw;
     top: 77vh;
     transform: rotate(-70deg);
@@ -47,7 +43,6 @@
 .firefly5{
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     right: 55vw;
     top: 47vh;
     transform: rotate(-140deg);
@@ -56,7 +51,6 @@
 .firefly6{
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     right: 9vw;
     top: 34vh;
     transform: rotate(-80deg);
@@ -65,7 +59,6 @@
 .firefly7{
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     left: 15vw;
     top: 31vh;
     transform: rotate(60deg);
@@ -75,7 +68,6 @@
     z-index: 22;
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     right: 15vw;
     top: 70vh;
     transform: rotate(30deg);
@@ -84,7 +76,6 @@
 .firefly9{
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     left: 17vw;
     top: 31vh;
     transform: rotate(-50deg);
@@ -94,7 +85,6 @@
     z-index: 22;
     position: absolute;
     width: 2vw;
-    /* height: 3vh; */
     left: 18vw;
     top: 59vh;
     transform: rotate(-80deg);
@@ -102,10 +92,6 @@
 
 .basictree1R{
     z-index: 20;
-    /* position: relative;
-    width: 20vw;
-    top: 30vh;
-    right: -46vw; */
     position: fixed;
     width: 20vw;
     top: 39vh;
@@ -117,18 +103,12 @@
     width: 15vw;
     top: 40vh;
     right: 13vw;
-    /* position: relative;
-    width: 15vw;
-    top: 25vh;
-    right: -20vw; */
+
 }
 
 .basictree1L{
     z-index: 20;
-    /* position: relative;
-    width: 20vw;
-    top: -17vh;
-    left: -29vw */
+
     position: fixed;
     width: 20vw;
     top: 39vh;
@@ -136,10 +116,7 @@
 }
 .bubbletreeL{
     z-index: 19;
-    /* position: relative;
-    width: 15vw;
-    top: -22vh;
-    left: -37vw */
+
     position: fixed;
     width: 15vw;
     top: 41vh;
@@ -147,10 +124,7 @@
 }
 .stone2{
     z-index: 19;
-    /* position: relative;
-    width: 5vw;
-    top: -5vh;
-    left: -50.5vw */
+
     position: fixed;
     width: 5vw;
     top: 85vh;
@@ -160,7 +134,6 @@
 .ground{
     position: fixed;
     width: 130vw;
-    /* height: 120vh; */
     top: 43vh;
 }
 
@@ -170,19 +143,12 @@
     width: 17vw;
     top: 55vh;
     right: 25vw;
-    /* z-index: 20;
-    position: relative;
-    width: 15vw;
-    top: -40vh;
-    right: -25vw; */
+
 }
 
 .stone{
     z-index: 19;
-    /* position: relative;
-    top: -40vh; 
-    right: -19vw;
-    */
+
     width: 15vw;
     position: fixed;
     top: 71vh;
@@ -221,7 +187,6 @@
 .fireflyM{
     position: absolute;
     width: 2rem;
-    /* height: 3vh; */
     right: 4rem;
     top: 11rem;
     transform: rotate(-10deg);
@@ -230,7 +195,6 @@
 .firefly2M{
     position: absolute;
     width: 1.5rem;
-    /* height: 3vh; */
     left: 3rem;
     top: 16rem;
     transform: rotate(20deg);
@@ -239,7 +203,6 @@
 .firefly3M{
     position: absolute;
     width: 1.5rem;
-    /* height: 3vh; */
     right: 5rem;
     top: 21rem;
     transform: rotate(70deg);
@@ -248,7 +211,6 @@
 .firefly4M{
     position: absolute;
     width: 2rem;
-    /* height: 3vh; */
     left: 8rem;
     top: 25rem;
     transform: rotate(-100deg);
@@ -257,7 +219,6 @@
 .firefly5M{
     position: absolute;
     width: 2rem;
-    /* height: 3vh; */
     right: 12rem;
     top: 18rem;
     transform: rotate(-180deg);
@@ -265,10 +226,7 @@
 
 .basictree1RM{
     z-index: 20;
-    /* position: relative;
-    width: 20vw;
-    top: 30vh;
-    right: -46vw; */
+
     position: fixed;
     width: 10rem;
     top: 34rem;
@@ -280,18 +238,12 @@
     width: 8rem;
     top: 34rem;
     right: 3rem;
-    /* position: relative;
-    width: 15vw;
-    top: 25vh;
-    right: -20vw; */
+
 }
 
 .basictree1LM{
     z-index: 20;
-    /* position: relative;
-    width: 20vw;
-    top: -17vh;
-    left: -29vw */
+
     position: fixed;
     width: 10rem;
     top: 34rem;
@@ -299,10 +251,7 @@
 }
 .bubbletreeLM{
     z-index: 19;
-    /* position: relative;
-    width: 15vw;
-    top: -22vh;
-    left: -37vw */
+
     position: fixed;
     width: 8rem;
     top: 34rem;
@@ -310,10 +259,7 @@
 }
 .stone2M{
     z-index: 19;
-    /* position: relative;
-    width: 5vw;
-    top: -5vh;
-    left: -50.5vw */
+
     position: fixed;
     width: 3rem;
     top: 43rem;
@@ -333,19 +279,12 @@
     width: 13rem;
     top: 40rem;
     right: 6rem;
-    /* z-index: 20;
-    position: relative;
-    width: 15vw;
-    top: -40vh;
-    right: -25vw; */
+
 }
 
 .stoneM{
     z-index: 19;
-    /* position: relative;
-    top: -40vh; 
-    right: -19vw;
-    */
+
     position: fixed;
     width: 13rem;
     top: 46rem;

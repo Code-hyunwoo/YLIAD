@@ -79,15 +79,12 @@
     position: absolute;
     width: 6vw;
     top: 3vh;
-    /* left: 1vw; */
 }
 
 #USER {
     position: absolute;
     width: 2.5vw;
     right: -3.5vw;
-    
-    /* left: 1vw; */
 }
 
 #MessageBox_P{

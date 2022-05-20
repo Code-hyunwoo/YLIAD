@@ -52,7 +52,6 @@ function Firefly(){
                     </div>
 
                     <img src={ground} className={Styles.ground} alt="ground"></img>
-                    {/* <img src={ground2} className={Styles.ground} alt="ground"></img> */}
                 </div>
             </BrowserView>
             <MobileView>
@@ -80,7 +79,6 @@ function Firefly(){
                     </div>
                     
                     <img src={ground} className={Styles.groundM} alt="ground"></img>
-                    {/* <img src={ground2} className={Styles.ground} alt="ground"></img> */}
                 </div>
             </MobileView>
         </>

@@ -12,14 +12,11 @@ import Sad from "../assets/images/sad.png";
 import Fear from "../assets/images/fear.png";
 import Anger from "../assets/images/anger.png";
 import Disgust from "../assets/images/disgust.png";
-import DayDiary from "./DayDiary";
-import moment from "moment";
 
 function DayList(){
     const params = useParams();
     const navigate = useNavigate();
     const date: string|undefined = params.date; //넘어오는 값은 20220519'st
-    // const date ="2022-05-22"
     const year = date?.slice(0,4);
     const month = date?.slice(4,6);
     const day = date?.slice(-2);
@@ -112,7 +109,6 @@ function DayList(){
                           style={{ backgroundColor:'#FB5E3B95', fontFamily:`${fontstyle}`, display:'flex', justifyContent:'space-between'}}
                         >
                              <span>{(index.content).slice(0,16)}...</span>
-                            {/* <span> &#32;[{(index.diaryDate).slice(-5)}]</span> */}
                             <img style={{width:'1.5vw', height:'3vh', marginTop:'-0.4vh'}} src={Anger} alt="anger" />
                                 
                     </Link>
