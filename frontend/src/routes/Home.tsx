@@ -212,7 +212,7 @@ function Home() {
     } else {
       axios
         .get(
-          `https://k6a308.p.ssafy.io:8001/user-service/api/users/loginId/${userID}`
+          `https://k6a308.p.ssafy.io/user-service/api/users/loginId/${userID}`
         )
         .then((res) => {
           console.log(res);
