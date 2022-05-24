@@ -6,6 +6,12 @@ import moving from "../assets/images/movingad.gif";
 import read from "../assets/images/read.png";
 import web from "../assets/images/chrome.png";
 import ucc from "../assets/videos/YLIAD2.mp4";
+import analyze from "../assets/images/analyze.gif";
+import chat from "../assets/images/chat.gif";
+import mood from "../assets/images/mood.gif";
+import theme from "../assets/images/theme.gif";
+import trash from "../assets/images/trash.gif";
+
 import { toast, ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { styled } from "@mui/material/styles";
@@ -329,22 +335,21 @@ function Intro() {
         {/* 섹션 3 - 서비스 기능 */}
         <section className={styles.section3M}>
           <div className={styles.feature1M}>
-            <img src={read} alt="YLIAD1" />
+            <img src={chat} alt="YLIAD1" />
             <div className={styles.feature_textM}>
               <p>
                 YLIAD는
                 <br />
-                인공지능입니다.
+                인공지능이에요.
               </p>
               <span>
-                인공지능 챗봇을 통해 힘든 마음을 치유하고,
-                <br />
-                감정분석도 받아보세요.
+                인공지능 아드와 채팅하며 재밌게 놀거나
+                <br /> 힘들었던 마음을 털어놔보세요.
               </span>
             </div>
           </div>
           <div className={styles.feature2M}>
-            <img src={read} alt="YLIAD2" />
+            <img src={trash} alt="YLIAD2" />
             <div className={styles.feature_textM}>
               <p>
                 YLIAD는
@@ -352,14 +357,14 @@ function Intro() {
                 감정쓰레기통입니다.
               </p>
               <span>
-                감정쓰레기통에서는
+                감정쓰레기통에서 잊고 싶은 기억을
                 <br />
-                잊고 싶은 오늘의 기억을 버려두고 가세요.
+                불태우고 스트레스를 해소하세요.
               </span>
             </div>
           </div>
           <div className={styles.feature3M}>
-            <img src={read} alt="YLIAD3" />
+            <img src={analyze} alt="YLIAD3" />
             <div className={styles.feature_textM}>
               <p>
                 아드는 당신보다
@@ -374,17 +379,19 @@ function Intro() {
             </div>
           </div>
           <div className={styles.feature4M}>
-            <img src={read} alt="YLIAD4" />
+            <div style={{ display: "flex" }} className={styles.funM}>
+              <img src={theme} alt="YLIAD4" />
+              <img src={mood} alt="YLIAD5" />
+            </div>
             <div className={styles.feature_textM}>
               <p>
-                YLIAD는
+                나만의 다이어리를
                 <br />
-                앵무새입니다.
+                꾸며보세요.
               </p>
               <span>
-                당신이 하는 말을 듣고
-                <br />
-                대신 일기를 적어줄 거예요.
+                선택한 테마에 따라 배경이 바뀌고,
+                <br />내 감정에 알맞게 달력이 꾸며집니다.
               </span>
             </div>
           </div>
